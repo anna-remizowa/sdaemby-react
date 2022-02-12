@@ -1,0 +1,17 @@
+@import '../../styles/variables/variables';
+
+.list {
+  display: flex;
+
+  .item {
+	margin-right: 56px;
+	@extend %base-text;
+	color: $blue-gray;
+	cursor: pointer;
+
+	&.active {
+	  color: $black;
+	}
+  }
+}
+

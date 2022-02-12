@@ -1,0 +1,69 @@
+@import '../../styles/variables/variables';
+
+.footer {
+  padding: 39px 0 50px;
+  background: white;
+  box-shadow: 0 -11px 40px rgba(39, 95, 158, 0.05);
+
+  .wrapper {
+	display: flex;
+  }
+
+  .text, .textLogo, .textSmall {
+	color: $blue-gray;
+  }
+
+  .text {
+	color: $black;
+  }
+
+  .textLogo {
+	margin: 10px 0 36px;
+	font-size: 12px;
+	line-height: 15px;
+	color: $blue-gray;
+	text-transform: uppercase;
+  }
+
+  .textSmall {
+	font-size: 11px;
+	line-height: 13px;
+  }
+
+  .textWrapper {
+	max-width: 297px;
+	width: 100%;
+  }
+
+  .info {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+	&:first-of-type {
+	  margin-right: 30px;
+	}
+
+	&:last-of-type {
+	  margin-right: 80px;
+	}
+
+	.infoWrapper {
+	  display: flex;
+	  justify-content: space-between;
+
+	  &:first-of-type {
+		margin-bottom: 47px;
+	  }
+	}
+  }
+
+  .socialsWrapper {
+	display: flex;
+	align-items: center;
+  }
+
+  .cardImg:not(:last-of-type) {
+	margin-right: 15px;
+  }
+}

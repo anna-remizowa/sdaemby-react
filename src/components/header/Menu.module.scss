@@ -1,0 +1,13 @@
+@import '../../styles/variables/variables';
+
+.list {
+  display: flex;
+
+  .item {
+	margin-right: 80px;
+	font-weight: 600;
+	@extend %base-text;
+	color: $black;
+	cursor: pointer;
+  }
+}

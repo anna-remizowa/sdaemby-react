@@ -1,0 +1,41 @@
+@import '../../styles/variables/variables';
+
+.header {
+  .top, .bottom {
+	display: flex;
+	padding-top: 11px;
+	padding-bottom: 12px;
+	background-color: $gray;
+  }
+
+  .top {
+	justify-content: space-between;
+  }
+
+  .login {
+	display: flex;
+  }
+
+  .textBookmarks, .textLogin {
+	cursor: pointer;
+  }
+
+  .textBookmarks {
+	margin-right: 11px;
+  }
+
+  .textLogin {
+	color: $purple;
+  }
+
+  .bottom {
+	align-items: center;
+	background-color: white;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+
+	& > *:last-child{
+	  margin-left:auto
+	}
+  }
+}
+
