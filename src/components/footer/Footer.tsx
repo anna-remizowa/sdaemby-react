@@ -2,14 +2,6 @@ import React from 'react';
 
 import styles from './Footer.module.scss';
 
-import Logo from '../../assets/images/logo.png';
-import Visa from '../../assets/images/visa.png';
-import Mastercard from '../../assets/images/mastercard.png';
-import Belkart from '../../assets/images/belkart.png';
-import Securecode from '../../assets/images/securecode.png';
-import Verified from '../../assets/images/verified-by-visa.png';
-import Webpay from '../../assets/images/webpay.png';
-
 import {
   apartments,
   company,
@@ -18,13 +10,23 @@ import {
 } from '../../data/footer.data';
 
 import { FooterMenu, MenuType } from './FooterMenu';
+import { ImageHTML, ImageItem, Images } from '../../assets/images';
+
+const cards: ImageItem[] = [
+  Images.Visa,
+  Images.Webpay,
+  Images.Verified,
+  Images.Mastercard,
+  Images.Securecode,
+  Images.Belkart,
+];
 
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={['wrapper', styles.wrapper].join(' ')}>
         <div className={styles.info}>
-          <img className="logo" src={Logo} alt="" />
+          <ImageHTML img={Images.Logo} />
           <p className={styles.textLogo}>Сдаём Бай</p>
           <div className={styles.textWrapper}>
             {company.map((pInfo, index) => {
@@ -38,25 +40,22 @@ export const Footer = () => {
         </div>
         <div className={styles.info}>
           <div className={styles.infoWrapper}>
-            <FooterMenu titles={titlesOne} menuType={[MenuType.BOLD]} />
+            <FooterMenu items={titlesOne} menuType={[MenuType.BOLD]} />
             <FooterMenu
-              titles={apartments}
+              items={apartments}
               menuType={[MenuType.BASE, MenuType.COLUMN]}
               header={'Квартиры'}
             />
-            <FooterMenu titles={titlesTwo} menuType={[MenuType.BASE]} />
+            <FooterMenu items={titlesTwo} menuType={[MenuType.BASE]} />
           </div>
           <div className={styles.infoWrapper}>
             <div className={styles.socialsWrapper}>
               <p className={styles.text}>Мы в соцсетях</p>
             </div>
             <div className={styles.socialsWrapper}>
-              <img className={styles.cardImg} src={Visa} alt="" />
-              <img className={styles.cardImg} src={Webpay} alt="" />
-              <img className={styles.cardImg} src={Verified} alt="" />
-              <img className={styles.cardImg} src={Mastercard} alt="" />
-              <img className={styles.cardImg} src={Securecode} alt="" />
-              <img className={styles.cardImg} src={Belkart} alt="" />
+              {cards.map((card, index) => (
+                <ImageHTML img={card} key={index} />
+              ))}
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-export const titles = [
+export const headerMenuTop = [
   {
     id: 1,
     name: 'Главная',
@@ -22,7 +22,7 @@ export const titles = [
   },
 ];
 
-export const menu = [
+export const headerMenuBottom = [
   {
     id: 1,
     name: 'Квартиры на сутки',

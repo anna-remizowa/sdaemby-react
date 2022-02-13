@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TitleArray } from '../model/Title';
+import { IMenu } from '../model/IMenuItem';
 import styles from './FooterMenu.module.scss';
 
 export enum MenuType {
@@ -8,12 +8,12 @@ export enum MenuType {
   COLUMN,
 }
 
-interface FooterTitleArray extends TitleArray {
+interface IMenuFooter extends IMenu {
   header?: string;
   menuType: MenuType[];
 }
 
-export const FooterMenu: FC<FooterTitleArray> = (props: FooterTitleArray) => {
+export const FooterMenu: FC<IMenuFooter> = (props: IMenuFooter) => {
   const menuClasses: string[] = [];
   props.menuType.forEach((type) => {
     switch (type) {
@@ -33,13 +33,13 @@ export const FooterMenu: FC<FooterTitleArray> = (props: FooterTitleArray) => {
     <div>
       {props.header ? <p className={styles.header}>{props.header}</p> : ''}
       <ul className={[styles.list, ...menuClasses].join(' ')}>
-        {props.titles.map((title) => {
+        {props.items.map((item) => {
           return (
             <li
-              key={title.id}
+              key={item.id}
               className={[styles.item, ...menuClasses].join(' ')}
             >
-              {title.name}
+              {item.name}
             </li>
           );
         })}
