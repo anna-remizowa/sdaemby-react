@@ -3,21 +3,40 @@
 .list {
   display: flex;
 
-  .item {
+  .item{
 	margin-right: 56px;
-	@extend %base-text;
-	color: $blue-gray;
 	cursor: pointer;
 
 	&.bold {
+	  display: flex;
+	  align-items: center;
 	  margin-right: 80px;
-	  font-weight: 600;
-	  color: $black;
+	}
+
+	& > svg{
+	  margin-right: 5px;
+	}
+
+	&Link{
+	  @extend %base-text;
+	  color: $blue-gray;
+
+	  &.bold {
+		font-weight: 600;
+		color: $black;
+	  }
+
+	  &.active {
+		color: $black;
+	  }
+
+	  & ~ svg {
+		margin: 0 0 0 15px;
+	  }
 	}
 
 	&.active {
 	  position: relative;
-	  color: $black;
 
 	  &:after {
 		position: absolute;

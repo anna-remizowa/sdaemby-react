@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
 
 import styles from './HeaderMenu.module.scss';
+import { IMenu } from '../../model/IMenuItem';
+import { SVG } from '../shared/svg/svg';
+import { PositionSVG } from '../../app.constants';
 
-import { IMenu } from '../model/IMenuItem';
-
-export interface IMenuHeader extends IMenu {
+export interface HeaderMenuProps extends IMenu {
   headerTypeBold?: boolean;
 }
 
-export const HeaderMenu: FC<IMenuHeader> = (props: IMenuHeader) => {
+export const HeaderMenu: FC<HeaderMenuProps> = (props: HeaderMenuProps) => {
   return (
     <ul className={styles.list}>
       {props.items.map((item) => {
@@ -21,7 +22,30 @@ export const HeaderMenu: FC<IMenuHeader> = (props: IMenuHeader) => {
               item.active ? styles.active : '',
             ].join(' ')}
           >
-            {item.name}
+            {item.svg &&
+            item.positionSVG !== undefined &&
+            item.positionSVG === PositionSVG.LEFT ? (
+              <SVG data={item.svg} />
+            ) : (
+              ''
+            )}
+            <a
+              href={item.href}
+              className={[
+                styles.itemLink,
+                props.headerTypeBold ? styles.bold : '',
+                item.active ? styles.active : '',
+              ].join(' ')}
+            >
+              {item.name}
+            </a>
+            {item.svg &&
+            item.positionSVG !== undefined &&
+            item.positionSVG === PositionSVG.RIGHT ? (
+              <SVG data={item.svg} />
+            ) : (
+              ''
+            )}
           </li>
         );
       })}

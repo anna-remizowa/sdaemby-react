@@ -12,13 +12,23 @@
 	margin-right: 102px;
   }
 
-  .item {
-	@extend %base-text;
-	cursor: pointer;
+  .item{
+
+	&Link{
+	  @extend %base-text;
+	  cursor: pointer;
+
+	  &.base {
+		color: $blue-gray;
+	  }
+
+	  &.baseBold {
+		font-weight: bold;
+		color: $black;
+	  }
+	}
 
 	&.base {
-	  color: $blue-gray;
-
 	  &:not(:last-of-type) {
 		margin-bottom: 8px;
 	  }

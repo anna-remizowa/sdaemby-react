@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import styles from './Footer.module.scss';
 
@@ -9,8 +9,9 @@ import {
   titlesTwo,
 } from '../../data/footer.data';
 
-import { FooterMenu, MenuType } from './FooterMenu';
+import { FooterMenu } from './FooterMenu';
 import { ImageHTML, ImageItem, Images } from '../../assets/images';
+import { MenuType } from '../../app.constants';
 
 const cards: ImageItem[] = [
   Images.Visa,
@@ -21,7 +22,7 @@ const cards: ImageItem[] = [
   Images.Belkart,
 ];
 
-export const Footer = () => {
+export const Footer: FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={['wrapper', styles.wrapper].join(' ')}>
@@ -42,9 +43,9 @@ export const Footer = () => {
           <div className={styles.infoWrapper}>
             <FooterMenu items={titlesOne} menuType={[MenuType.BOLD]} />
             <FooterMenu
-              items={apartments}
+              items={apartments.items}
               menuType={[MenuType.BASE, MenuType.COLUMN]}
-              header={'Квартиры'}
+              header={apartments.header}
             />
             <FooterMenu items={titlesTwo} menuType={[MenuType.BASE]} />
           </div>

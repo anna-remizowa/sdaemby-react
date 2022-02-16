@@ -1,19 +1,14 @@
 import React, { FC } from 'react';
 import styles from './Button.module.scss';
+import { ButtonType } from '../../../app.constants';
 
-export enum ButtonType {
-  PURPLE,
-  BASE,
-  YELLOW,
-}
-
-interface IButton {
+interface ButtonProps {
   title: string;
   width: number;
   types: ButtonType[];
 }
 
-export const Button: FC<IButton> = (props: IButton) => {
+export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const classes = [styles.button];
   props.types.forEach((type) => {
     switch (type) {

@@ -1,19 +1,14 @@
 import React, { FC } from 'react';
-import { IMenu } from '../model/IMenuItem';
 import styles from './FooterMenu.module.scss';
+import { IMenu } from '../../model/IMenuItem';
+import { MenuType } from '../../app.constants';
 
-export enum MenuType {
-  BOLD,
-  BASE,
-  COLUMN,
-}
-
-interface IMenuFooter extends IMenu {
+interface FooterMenuProps extends IMenu {
   header?: string;
   menuType: MenuType[];
 }
 
-export const FooterMenu: FC<IMenuFooter> = (props: IMenuFooter) => {
+export const FooterMenu: FC<FooterMenuProps> = (props: FooterMenuProps) => {
   const menuClasses: string[] = [];
   props.menuType.forEach((type) => {
     switch (type) {
@@ -36,10 +31,15 @@ export const FooterMenu: FC<IMenuFooter> = (props: IMenuFooter) => {
         {props.items.map((item) => {
           return (
             <li
-              key={item.id}
               className={[styles.item, ...menuClasses].join(' ')}
+              key={item.id}
             >
-              {item.name}
+              <a
+                href={item.href}
+                className={[styles.itemLink, ...menuClasses].join(' ')}
+              >
+                {item.name}
+              </a>
             </li>
           );
         })}

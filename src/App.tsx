@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { Header } from './components/header/Header';
-import { Footer } from './components/footer/Footer';
+import { BaseLayout } from './layouts/BaseLayout';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <main />
-      <Footer />
-    </div>
+    <>
+      <BaseLayout>
+        <main />
+      </BaseLayout>
+    </>
   );
 }
 

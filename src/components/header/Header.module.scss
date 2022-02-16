@@ -21,7 +21,20 @@
   }
 
   .textBookmarks {
-	margin-right: 11px;
+	position: relative;
+	margin-right: 67px;
+	color: $blue-gray;
+
+	&:after{
+	  position: absolute;
+	  right: -30px;
+	  content: '';
+	  width: 18px;
+	  height: 18px;
+	  mask-image: url('../../assets/svg/favorite.svg');
+	  mask-size: cover;
+	  background-color: $blue-gray;
+	}
   }
 
   .textLogin {
