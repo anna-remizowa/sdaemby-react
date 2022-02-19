@@ -8,7 +8,7 @@ interface ButtonProps {
   types: ButtonType[];
 }
 
-export const Button: FC<ButtonProps> = (props: ButtonProps) => {
+export const Button: FC<ButtonProps> = (props) => {
   const classes = [styles.button];
   props.types.forEach((type) => {
     switch (type) {

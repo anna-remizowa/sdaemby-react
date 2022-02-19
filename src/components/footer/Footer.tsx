@@ -12,6 +12,8 @@ import {
 import { FooterMenu } from './FooterMenu';
 import { ImageHTML, ImageItem, Images } from '../../assets/images';
 import { MenuType } from '../../app.constants';
+import { SVG, SVGItem } from '../shared/svg/svg';
+import { SvgDataSet } from '../shared/svg/svg.data';
 
 const cards: ImageItem[] = [
   Images.Visa,
@@ -20,6 +22,27 @@ const cards: ImageItem[] = [
   Images.Mastercard,
   Images.Securecode,
   Images.Belkart,
+];
+
+const socials: SVGItem[] = [
+  {
+    svg: SvgDataSet.Instagram,
+    width: 24,
+    height: 25,
+    color: '#1E2123',
+  },
+  {
+    svg: SvgDataSet.VK,
+    width: 25,
+    height: 15,
+    color: '#1E2123',
+  },
+  {
+    svg: SvgDataSet.Facebook,
+    width: 21,
+    height: 21,
+    color: '#1E2123',
+  },
 ];
 
 export const Footer: FC = () => {
@@ -52,6 +75,13 @@ export const Footer: FC = () => {
           <div className={styles.infoWrapper}>
             <div className={styles.socialsWrapper}>
               <p className={styles.text}>Мы в соцсетях</p>
+              {socials.map((social, index) => {
+                return (
+                  <a href="#" className={styles.icon} key={index}>
+                    <SVG data={social} />
+                  </a>
+                );
+              })}
             </div>
             <div className={styles.socialsWrapper}>
               {cards.map((card, index) => (

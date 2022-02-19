@@ -1,0 +1,28 @@
+@import '../../../styles/variables/variables';
+
+.pagination {
+  display: flex;
+}
+
+.link {
+  margin-right: 14px;
+  font-size: 18px;
+  line-height: 22px;
+  color: $dark-gray;
+}
+
+.active {
+  position: relative;
+  font-weight: bold;
+  color: black;
+
+  &:after {
+	position: absolute;
+	left: -6px;
+	bottom: -2px;
+	content: '';
+	height: 2px;
+	width: 22px;
+	background-color: $yellow;
+  }
+}

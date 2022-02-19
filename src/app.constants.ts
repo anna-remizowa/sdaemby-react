@@ -14,3 +14,5 @@ export enum PositionSVG {
   LEFT,
   RIGHT,
 }
+
+export const HOME = 'home';

@@ -5,7 +5,7 @@ import styles from './images.module.scss';
 export interface ImageItem {
   src: string;
   alt: string;
-  clazz: string[];
+  clazz?: string[];
 }
 
 interface ImageProps {
@@ -48,12 +48,17 @@ export const Images: { [key: string]: ImageItem } = {
     alt: 'Webpay',
     clazz: [styles.card, styles.webpay],
   },
+  News1: {
+    src: require('./images/news_1.png'),
+    alt: 'News',
+    clazz: [styles.newsItemImg],
+  },
 };
 
 export const ImageHTML: FC<ImageProps> = (props: ImageProps) => {
   return (
     <img
-      className={props.img.clazz.join(' ')}
+      className={props.img.clazz ? props.img.clazz.join(' ') : ''}
       src={props.img.src}
       alt={props.img.alt}
     />

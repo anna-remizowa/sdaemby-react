@@ -9,7 +9,7 @@ export interface HeaderMenuProps extends IMenu {
   headerTypeBold?: boolean;
 }
 
-export const HeaderMenu: FC<HeaderMenuProps> = (props: HeaderMenuProps) => {
+export const HeaderMenu: FC<HeaderMenuProps> = (props) => {
   return (
     <ul className={styles.list}>
       {props.items.map((item) => {

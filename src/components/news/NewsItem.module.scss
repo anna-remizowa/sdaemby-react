@@ -1,0 +1,45 @@
+@import '../../styles/variables/variables';
+
+.newsItem {
+  max-width: 406px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: white;
+  filter: drop-shadow(0 20px 40px rgba(135, 124, 202, 0.15));
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 28px 20px 18px;
+}
+
+.header {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 19px;
+  color: $black;
+}
+
+.text {
+  margin-bottom: 20px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #F8F8F8;
+  @extend %base-text;
+  color: $dark-gray;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.date{
+  padding: 10px 8px;
+  border-radius: 18px;
+  @extend %base-text;
+  color: $blue-gray;
+  background-color: $gray;
+}

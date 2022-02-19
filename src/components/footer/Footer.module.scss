@@ -63,3 +63,11 @@
 	align-items: center;
   }
 }
+
+.icon {
+  margin-left: 22px;
+
+  &:first-of-type {
+	margin-left: 28px;
+  }
+}

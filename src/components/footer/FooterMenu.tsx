@@ -8,7 +8,7 @@ interface FooterMenuProps extends IMenu {
   menuType: MenuType[];
 }
 
-export const FooterMenu: FC<FooterMenuProps> = (props: FooterMenuProps) => {
+export const FooterMenu: FC<FooterMenuProps> = (props) => {
   const menuClasses: string[] = [];
   props.menuType.forEach((type) => {
     switch (type) {
