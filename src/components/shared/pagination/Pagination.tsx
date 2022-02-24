@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import clsx from 'clsx';
 
 import styles from './Pagination.module.scss';
 
@@ -8,25 +9,27 @@ interface PaginationProps {
   maxNumber: number;
 }
 
-export const Pagination: FC<PaginationProps> = (props) => {
+export const Pagination: FC<PaginationProps> = ({
+  countPages,
+  activePage,
+  maxNumber,
+}) => {
   return (
     <div className={styles.pagination}>
-      {Array.from(Array(props.countPages).keys()).map((number) => {
+      {Array.from(Array(countPages).keys()).map((number) => {
         return (
           <div key={number}>
-            {number + 1 <= props.maxNumber ||
-            number + 1 === props.countPages ? (
+            {number + 1 <= maxNumber || number + 1 === countPages ? (
               <a
-                className={[
+                className={clsx(
                   styles.link,
-                  number + 1 === props.activePage ? styles.active : '',
-                ].join(' ')}
+                  number + 1 === activePage ? styles.active : ''
+                )}
                 href="#"
               >
                 {number + 1}
               </a>
-            ) : number === props.maxNumber &&
-              number + 1 !== props.countPages ? (
+            ) : number === maxNumber && number + 1 !== countPages ? (
               <a className={styles.link} href="#">
                 ...
               </a>

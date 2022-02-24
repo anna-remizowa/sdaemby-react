@@ -1,6 +1,6 @@
 import { HOME } from '../app.constants';
 
-export const newsPageBreadcrumbs = [
+export const BREADCRUMBS_NEWS_PAGE = [
   {
     name: HOME,
     href: '#',

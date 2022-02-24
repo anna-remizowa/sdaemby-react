@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 
-import { HOME } from '../../../app.constants';
-import { SVG } from '../svg/svg';
-import { SvgDataSet } from '../svg/svg.data';
+import { SVG } from 'components/shared/svg/svg';
+
+import { HOME } from 'app.constants';
+import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
 
 import styles from './Breadcrumbs.module.scss';
 
@@ -15,21 +16,16 @@ interface BreadcrumbProps {
   breadcrumbs: Breadcrumb[];
 }
 
-export const Breadcrumbs: FC<BreadcrumbProps> = (props) => {
+export const Breadcrumbs: FC<BreadcrumbProps> = ({ breadcrumbs }) => {
   return (
     <div className={styles.breadcrumbs}>
-      {props.breadcrumbs.map((breadcrumb, index) => {
+      {breadcrumbs.map((breadcrumb, index) => {
         return (
           <a className={styles.link} href={breadcrumb.href} key={index}>
             {breadcrumb.name === HOME ? (
-              <SVG
-                data={{
-                  svg: SvgDataSet.Home,
-                  width: 12,
-                  height: 12,
-                  color: '#664EF9',
-                }}
-              />
+              <SVG svg={SVG_DATA_SET.Home} width={12} height={12}>
+                <path d={SVG_DATA_SET.Home.path} fill={'#664EF9'} />
+              </SVG>
             ) : (
               breadcrumb.name
             )}

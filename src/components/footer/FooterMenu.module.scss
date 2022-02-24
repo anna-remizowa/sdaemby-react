@@ -12,38 +12,6 @@
 	margin-right: 102px;
   }
 
-  .item{
-
-	&Link{
-	  @extend %base-text;
-	  cursor: pointer;
-
-	  &.base {
-		color: $blue-gray;
-	  }
-
-	  &.baseBold {
-		font-weight: bold;
-		color: $black;
-	  }
-	}
-
-	&.base {
-	  &:not(:last-of-type) {
-		margin-bottom: 8px;
-	  }
-	}
-
-	&.baseBold {
-	  font-weight: bold;
-	  color: $black;
-
-	  &:not(:last-of-type) {
-		margin-bottom: 21px;
-	  }
-	}
-  }
-
   &.column {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -54,8 +22,40 @@
 	}
   }
 
-  &:last-of-type{
+  &:last-of-type {
 	margin-right: 60px;
+  }
+}
+
+.item {
+
+  &Link {
+	@extend %base-text;
+	cursor: pointer;
+
+	&.base {
+	  color: $blue-gray;
+	}
+
+	&.baseBold {
+	  font-weight: bold;
+	  color: $black;
+	}
+  }
+
+  &.base {
+	&:not(:last-of-type) {
+	  margin-bottom: 8px;
+	}
+  }
+
+  &.baseBold {
+	font-weight: bold;
+	color: $black;
+
+	&:not(:last-of-type) {
+	  margin-bottom: 21px;
+	}
   }
 }
 

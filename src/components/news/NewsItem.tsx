@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import { ImageHTML, ImageItem } from '../../assets/images';
+
+import { ImageHTML, ImageItem } from 'assets/images';
+import { ButtonType } from 'app.constants';
+import { Button } from 'components/shared/button/Button';
 
 import styles from './NewsItem.module.scss';
-import { ButtonType } from '../../app.constants';
-import { Button } from '../shared/button/Button';
 
 export interface News {
   image: ImageItem;
@@ -12,16 +13,16 @@ export interface News {
   date: string;
 }
 
-export const NewsItem: FC<News> = (props) => {
+export const NewsItem: FC<News> = ({ header, image, content, date }) => {
   return (
     <div className={styles.newsItem}>
-      <ImageHTML img={props.image} />
+      <ImageHTML img={image} />
       <div className={styles.content}>
-        <h3 className={styles.header}>{props.header}</h3>
-        <p className={styles.text}>{props.content}</p>
+        <h3 className={styles.header}>{header}</h3>
+        <p className={styles.text}>{content}</p>
         <div className={styles.buttons}>
-          <p className={styles.date}>{props.date}</p>
-          <Button title={'Читать'} types={[ButtonType.BASE]} width={81} />
+          <p className={styles.date}>{date}</p>
+          <Button types={[ButtonType.BASE]}>Читать</Button>
         </div>
       </div>
     </div>

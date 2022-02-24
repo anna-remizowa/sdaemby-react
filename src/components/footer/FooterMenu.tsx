@@ -1,16 +1,23 @@
 import React, { FC } from 'react';
+import clsx from 'clsx';
+
+import { IMenu } from 'model/IMenuItem';
+import { MenuType } from 'app.constants';
+
 import styles from './FooterMenu.module.scss';
-import { IMenu } from '../../model/IMenuItem';
-import { MenuType } from '../../app.constants';
 
 interface FooterMenuProps extends IMenu {
   header?: string;
   menuType: MenuType[];
 }
 
-export const FooterMenu: FC<FooterMenuProps> = (props) => {
+export const FooterMenu: FC<FooterMenuProps> = ({
+  items,
+  header,
+  menuType,
+}) => {
   const menuClasses: string[] = [];
-  props.menuType.forEach((type) => {
+  menuType.forEach((type) => {
     switch (type) {
       case MenuType.BASE:
         menuClasses.push(styles.base);
@@ -26,17 +33,14 @@ export const FooterMenu: FC<FooterMenuProps> = (props) => {
 
   return (
     <div>
-      {props.header ? <p className={styles.header}>{props.header}</p> : ''}
-      <ul className={[styles.list, ...menuClasses].join(' ')}>
-        {props.items.map((item) => {
+      {header ? <p className={styles.header}>{header}</p> : ''}
+      <ul className={clsx(styles.list, ...menuClasses)}>
+        {items.map((item) => {
           return (
-            <li
-              className={[styles.item, ...menuClasses].join(' ')}
-              key={item.id}
-            >
+            <li className={clsx(styles.item, ...menuClasses)} key={item.id}>
               <a
                 href={item.href}
-                className={[styles.itemLink, ...menuClasses].join(' ')}
+                className={clsx(styles.itemLink, ...menuClasses)}
               >
                 {item.name}
               </a>

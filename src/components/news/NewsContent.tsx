@@ -1,11 +1,15 @@
 import React, { FC } from 'react';
+import clsx from 'clsx';
 
-import { Breadcrumb, Breadcrumbs } from '../shared/breadcrumbs/Breadcrumbs';
-import { Search } from '../shared/search/Search';
+import {
+  Breadcrumb,
+  Breadcrumbs,
+} from 'components/shared/breadcrumbs/Breadcrumbs';
+import { Search } from 'components/shared/search/Search';
 import { News, NewsItem } from './NewsItem';
+import { Pagination } from 'components/shared/pagination/Pagination';
 
 import styles from './NewsContent.module.scss';
-import { Pagination } from '../shared/pagination/Pagination';
 
 interface NewsProps {
   header: string;
@@ -13,16 +17,16 @@ interface NewsProps {
   news: News[];
 }
 
-export const NewsContent: FC<NewsProps> = (props) => {
+export const NewsContent: FC<NewsProps> = ({ header, news, breadcrumbs }) => {
   return (
-    <div className={['wrapper', styles.news].join(' ')}>
-      <Breadcrumbs breadcrumbs={props.breadcrumbs} />
+    <div className={clsx('wrapper', styles.news)}>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className={styles.headerBox}>
-        <h1 className={styles.header}>{props.header}</h1>
+        <h1 className={styles.header}>{header}</h1>
         <Search defaultValue="Поиск по статьям" />
       </div>
       <div className={styles.newsBox}>
-        {props.news.map((item, index) => {
+        {news.map((item, index) => {
           return (
             <NewsItem
               header={item.header}

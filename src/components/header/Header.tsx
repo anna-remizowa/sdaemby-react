@@ -1,37 +1,33 @@
 import React, { FC } from 'react';
+import clsx from 'clsx';
+
+import { HeaderMenu } from './HeaderMenu';
+import { Button } from 'components/shared/button/Button';
+import { ImageHTML, Images } from 'assets/images';
+
+import { ButtonType } from 'app.constants';
+import { HEADER } from 'data/header.data';
 
 import styles from './Header.module.scss';
 
-import { headerMenuBottom, headerMenuTop } from '../../data/header.data';
-
-import { HeaderMenu } from './HeaderMenu';
-import { Button } from '../shared/button/Button';
-import { ImageHTML, Images } from '../../assets/images';
-import { ButtonType } from '../../app.constants';
-
 export const Header: FC = () => {
   return (
-    <header className={styles.header}>
-      <div className={['wrapper', styles.top].join(' ')}>
-        <HeaderMenu items={headerMenuTop} />
+    <header>
+      <div className={clsx('wrapper-full', styles.top)}>
+        <HeaderMenu items={HEADER.top} />
         <div className={styles.login}>
-          <a href="#" className={['text', styles.textBookmarks].join(' ')}>
+          <a href="#" className={clsx('text', styles.textBookmarks)}>
             Закладки
           </a>
-          <div className="icon" />
-          <a href="#" className={['text', styles.textLogin].join(' ')}>
+          <a href="#" className={clsx('text', styles.textLogin)}>
             Вход и регистрация
           </a>
         </div>
       </div>
-      <div className={['wrapper', styles.bottom].join(' ')}>
+      <div className={clsx('wrapper-full', styles.bottom)}>
         <ImageHTML img={Images.Logo} />
-        <HeaderMenu items={headerMenuBottom} headerTypeBold={true} />
-        <Button
-          title={'+ Разместить объявление'}
-          types={[ButtonType.PURPLE]}
-          width={224}
-        />
+        <HeaderMenu items={HEADER.bottom} headerTypeBold />
+        <Button types={[ButtonType.HIGHLIGHT]}>+ Разместить объявление</Button>
       </div>
     </header>
   );

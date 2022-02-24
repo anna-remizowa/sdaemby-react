@@ -1,6 +1,6 @@
 import { Images } from '../assets/images';
 
-export const news = [
+export const NEWS = [
   {
     image: Images.News1,
     header: 'Линия Сталина: суровый отдых в усадьбах на сутки',

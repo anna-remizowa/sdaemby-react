@@ -1,27 +1,25 @@
 import React, { FC } from 'react';
+
 import { SvgData } from './svg.data';
 
-export interface SVGItem {
+export interface SVGProps {
   svg: SvgData;
   width: number;
   height: number;
-  color: string;
+  color?: string;
+  children?: React.ReactNode;
 }
 
-export interface SVGItemProps {
-  data: SVGItem;
-}
-
-export const SVG: FC<SVGItemProps> = (props) => {
+export const SVG: FC<SVGProps> = ({ svg, width, height, children }) => {
   return (
     <svg
-      width={props.data.width}
-      height={props.data.height}
-      viewBox={props.data.svg.viewBox}
+      width={width}
+      height={height}
+      viewBox={svg.viewBox}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d={props.data.svg.path} fill={props.data.color} />
+      {children}
     </svg>
   );
 };

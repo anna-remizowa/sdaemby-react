@@ -2,51 +2,51 @@
 
 .list {
   display: flex;
+}
 
-  .item{
-	margin-right: 56px;
-	cursor: pointer;
+.item {
+  margin-right: 56px;
+  cursor: pointer;
 
-	&.bold {
-	  display: flex;
-	  align-items: center;
-	  margin-right: 80px;
+  &.primary {
+	display: flex;
+	align-items: center;
+	margin-right: 80px;
+  }
+
+  &.active {
+	position: relative;
+
+	&:after {
+	  position: absolute;
+	  left: 0;
+	  bottom: -11px;
+	  content: '';
+	  width: 100%;
+	  height: 3px;
+	  background-color: $yellow;
 	}
+  }
+}
 
-	& > svg{
-	  margin-right: 5px;
-	}
+.link {
+  @extend %base-text;
+  color: $blue-gray;
 
-	&Link{
-	  @extend %base-text;
-	  color: $blue-gray;
+  &.primary {
+	font-weight: 600;
+	color: $black;
+  }
 
-	  &.bold {
-		font-weight: 600;
-		color: $black;
-	  }
+  &.active {
+	color: $black;
+  }
 
-	  &.active {
-		color: $black;
-	  }
+  & > svg {
+	margin-right: 5px;
+  }
 
-	  & ~ svg {
-		margin: 0 0 0 15px;
-	  }
-	}
-
-	&.active {
-	  position: relative;
-
-	  &:after {
-		position: absolute;
-		left: 0;
-		bottom: -11px;
-		content: '';
-		width: 100%;
-		height: 3px;
-		background-color: $yellow;
-	  }
-	}
+  & span ~ svg {
+	margin: 0 0 0 15px;
   }
 }

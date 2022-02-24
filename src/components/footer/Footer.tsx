@@ -1,19 +1,15 @@
 import React, { FC } from 'react';
-
-import styles from './Footer.module.scss';
-
-import {
-  apartments,
-  company,
-  titlesOne,
-  titlesTwo,
-} from '../../data/footer.data';
+import clsx from 'clsx';
 
 import { FooterMenu } from './FooterMenu';
-import { ImageHTML, ImageItem, Images } from '../../assets/images';
-import { MenuType } from '../../app.constants';
-import { SVG, SVGItem } from '../shared/svg/svg';
-import { SvgDataSet } from '../shared/svg/svg.data';
+import { ImageHTML, ImageItem, Images } from 'assets/images';
+import { MenuType } from 'app.constants';
+import { SVG, SVGProps } from 'components//shared/svg/svg';
+
+import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
+import { FOOTER } from 'data/footer.data';
+
+import styles from './Footer.module.scss';
 
 const cards: ImageItem[] = [
   Images.Visa,
@@ -24,21 +20,21 @@ const cards: ImageItem[] = [
   Images.Belkart,
 ];
 
-const socials: SVGItem[] = [
+const socials: SVGProps[] = [
   {
-    svg: SvgDataSet.Instagram,
+    svg: SVG_DATA_SET.Instagram,
     width: 24,
     height: 25,
     color: '#1E2123',
   },
   {
-    svg: SvgDataSet.VK,
+    svg: SVG_DATA_SET.VK,
     width: 25,
     height: 15,
     color: '#1E2123',
   },
   {
-    svg: SvgDataSet.Facebook,
+    svg: SVG_DATA_SET.Facebook,
     width: 21,
     height: 21,
     color: '#1E2123',
@@ -48,12 +44,12 @@ const socials: SVGItem[] = [
 export const Footer: FC = () => {
   return (
     <footer className={styles.footer}>
-      <div className={['wrapper', styles.wrapper].join(' ')}>
+      <div className={clsx('wrapper-full', styles.wrapper)}>
         <div className={styles.info}>
           <ImageHTML img={Images.Logo} />
           <p className={styles.textLogo}>Сдаём Бай</p>
           <div className={styles.textWrapper}>
-            {company.map((pInfo, index) => {
+            {FOOTER.company.map((pInfo, index) => {
               return (
                 <p key={index} className={styles.textSmall}>
                   {pInfo}
@@ -64,13 +60,13 @@ export const Footer: FC = () => {
         </div>
         <div className={styles.info}>
           <div className={styles.infoWrapper}>
-            <FooterMenu items={titlesOne} menuType={[MenuType.BOLD]} />
+            <FooterMenu items={FOOTER.titlesOne} menuType={[MenuType.BOLD]} />
             <FooterMenu
-              items={apartments.items}
+              items={FOOTER.apartments.items}
               menuType={[MenuType.BASE, MenuType.COLUMN]}
-              header={apartments.header}
+              header={FOOTER.apartments.header}
             />
-            <FooterMenu items={titlesTwo} menuType={[MenuType.BASE]} />
+            <FooterMenu items={FOOTER.titlesTwo} menuType={[MenuType.BASE]} />
           </div>
           <div className={styles.infoWrapper}>
             <div className={styles.socialsWrapper}>
@@ -78,7 +74,13 @@ export const Footer: FC = () => {
               {socials.map((social, index) => {
                 return (
                   <a href="#" className={styles.icon} key={index}>
-                    <SVG data={social} />
+                    <SVG
+                      svg={social.svg}
+                      width={social.width}
+                      height={social.height}
+                    >
+                      <path d={social.svg.path} fill={social.color} />
+                    </SVG>
                   </a>
                 );
               })}

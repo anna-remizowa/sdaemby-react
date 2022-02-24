@@ -2,8 +2,8 @@ import React from 'react';
 
 import { BaseLayout } from './layouts/BaseLayout';
 import { NewsContent } from './components/news/NewsContent';
-import { news } from './data/news.data';
-import { newsPageBreadcrumbs } from './data/breadcrumbs.data';
+import { NEWS } from './data/news.data';
+import { BREADCRUMBS_NEWS_PAGE } from './data/breadcrumbs.data';
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <BaseLayout>
         <NewsContent
           header="Новости"
-          news={news}
-          breadcrumbs={newsPageBreadcrumbs}
+          news={NEWS}
+          breadcrumbs={BREADCRUMBS_NEWS_PAGE}
         />
       </BaseLayout>
     </>

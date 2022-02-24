@@ -1,31 +1,14 @@
 @import-normalize;
 @import '../variables/variables';
 
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
-
-body {
-  box-sizing: border-box;
-  height: 100%;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
-}
-
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
 }
 
 body,
@@ -83,17 +66,25 @@ main {
   flex: 1 0 auto;
 }
 
-.container, .container > * {
+.container {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   min-height: 100%;
 }
 
-.wrapper {
-  max-width: 100%;
+.wrapper-full, .wrapper {
+  width: 100%;
   margin: 0 auto;
   padding: 0 80px;
+}
+
+.wrapper-full {
+  max-width: 1920px;
+}
+
+.wrapper {
+  max-width: 1440px;
 }
 
 .text {

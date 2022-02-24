@@ -1,5 +1,5 @@
 export enum ButtonType {
-  PURPLE,
+  HIGHLIGHT,
   BASE,
   YELLOW,
 }

@@ -4,15 +4,15 @@ import { Header } from '../components/header/Header';
 import { Footer } from '../components/footer/Footer';
 
 interface BaseLayoutProps {
-  children: React.ReactChild | React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
       <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
