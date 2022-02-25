@@ -2,14 +2,16 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 
 import { FooterMenu } from './FooterMenu';
-import { ImageHTML, ImageItem, Images } from 'assets/images';
+import { ImageItem, Images } from 'components/shared/images/images';
 import { MenuType } from 'app.constants';
-import { SVG, SVGProps } from 'components//shared/svg/svg';
+import { SVGProps } from 'components//shared/svg/svg';
+import { Payments } from '../shared/payments/Payments';
 
 import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
 import { FOOTER } from 'data/footer.data';
 
 import styles from './Footer.module.scss';
+import { FooterSocials } from './FooterSocials';
 
 const cards: ImageItem[] = [
   Images.Visa,
@@ -46,7 +48,11 @@ export const Footer: FC = () => {
     <footer className={styles.footer}>
       <div className={clsx('wrapper-full', styles.wrapper)}>
         <div className={styles.info}>
-          <ImageHTML img={Images.Logo} />
+          <img
+            className={clsx(Images.Logo.clazz ? Images.Logo.clazz : '')}
+            src={Images.Logo.src}
+            alt={Images.Logo.alt}
+          />
           <p className={styles.textLogo}>Сдаём Бай</p>
           <div className={styles.textWrapper}>
             {FOOTER.company.map((pInfo, index) => {
@@ -69,27 +75,8 @@ export const Footer: FC = () => {
             <FooterMenu items={FOOTER.titlesTwo} menuType={[MenuType.BASE]} />
           </div>
           <div className={styles.infoWrapper}>
-            <div className={styles.socialsWrapper}>
-              <p className={styles.text}>Мы в соцсетях</p>
-              {socials.map((social, index) => {
-                return (
-                  <a href="#" className={styles.icon} key={index}>
-                    <SVG
-                      svg={social.svg}
-                      width={social.width}
-                      height={social.height}
-                    >
-                      <path d={social.svg.path} fill={social.color} />
-                    </SVG>
-                  </a>
-                );
-              })}
-            </div>
-            <div className={styles.socialsWrapper}>
-              {cards.map((card, index) => (
-                <ImageHTML img={card} key={index} />
-              ))}
-            </div>
+            <FooterSocials socials={socials} title={'Мы в соцсетях'} />
+            <Payments images={cards} />
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ import styles from './Breadcrumbs.module.scss';
 
 export interface Breadcrumb {
   name: string;
-  href: string;
+  href?: string;
 }
 
 interface BreadcrumbProps {
@@ -21,7 +21,11 @@ export const Breadcrumbs: FC<BreadcrumbProps> = ({ breadcrumbs }) => {
     <div className={styles.breadcrumbs}>
       {breadcrumbs.map((breadcrumb, index) => {
         return (
-          <a className={styles.link} href={breadcrumb.href} key={index}>
+          <a
+            className={styles.link}
+            href={breadcrumb.href ? breadcrumb.href : ''}
+            key={index}
+          >
             {breadcrumb.name === HOME ? (
               <SVG svg={SVG_DATA_SET.Home} width={12} height={12}>
                 <path d={SVG_DATA_SET.Home.path} fill={'#664EF9'} />

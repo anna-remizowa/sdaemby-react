@@ -1,4 +1,4 @@
-@import '../../styles/variables/variables';
+@import '../../../styles/variables/variables';
 
 .newsItem {
   max-width: 406px;
@@ -34,12 +34,4 @@
 .buttons{
   display: flex;
   justify-content: space-between;
-}
-
-.date{
-  padding: 10px 8px;
-  border-radius: 18px;
-  @extend %base-text;
-  color: $blue-gray;
-  background-color: $gray;
 }

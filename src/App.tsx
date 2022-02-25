@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BaseLayout } from './layouts/BaseLayout';
-import { NewsContent } from './components/news/NewsContent';
+import { NewsContent } from './components/pages/news/NewsContent';
 import { NEWS } from './data/news.data';
 import { BREADCRUMBS_NEWS_PAGE } from './data/breadcrumbs.data';
 

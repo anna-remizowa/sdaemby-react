@@ -28,21 +28,6 @@
 }
 
 .item {
-
-  &Link {
-	@extend %base-text;
-	cursor: pointer;
-
-	&.base {
-	  color: $blue-gray;
-	}
-
-	&.baseBold {
-	  font-weight: bold;
-	  color: $black;
-	}
-  }
-
   &.base {
 	&:not(:last-of-type) {
 	  margin-bottom: 8px;
@@ -56,6 +41,20 @@
 	&:not(:last-of-type) {
 	  margin-bottom: 21px;
 	}
+  }
+}
+
+.link {
+  @extend %base-text;
+  cursor: pointer;
+
+  &.base {
+	color: $blue-gray;
+  }
+
+  &.baseBold {
+	font-weight: bold;
+	color: $black;
   }
 }
 

@@ -20,6 +20,7 @@ interface NewsProps {
 export const NewsContent: FC<NewsProps> = ({ header, news, breadcrumbs }) => {
   return (
     <div className={clsx('wrapper', styles.news)}>
+      <div className={styles.background} />
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className={styles.headerBox}>
         <h1 className={styles.header}>{header}</h1>

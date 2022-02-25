@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { HeaderMenu } from './HeaderMenu';
 import { Button } from 'components/shared/button/Button';
-import { ImageHTML, Images } from 'assets/images';
+import { Images } from 'components/shared/images/images';
 
 import { ButtonType } from 'app.constants';
 import { HEADER } from 'data/header.data';
@@ -25,7 +25,11 @@ export const Header: FC = () => {
         </div>
       </div>
       <div className={clsx('wrapper-full', styles.bottom)}>
-        <ImageHTML img={Images.Logo} />
+        <img
+          className={clsx(Images.Logo.clazz ? Images.Logo.clazz : '')}
+          src={Images.Logo.src}
+          alt={Images.Logo.alt}
+        />
         <HeaderMenu items={HEADER.bottom} headerTypeBold />
         <Button types={[ButtonType.HIGHLIGHT]}>+ Разместить объявление</Button>
       </div>

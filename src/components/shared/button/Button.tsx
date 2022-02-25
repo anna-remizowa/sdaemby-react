@@ -11,23 +11,16 @@ interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = ({ types, children }) => {
-  const classes = [styles.button];
-  types.forEach((type) => {
-    switch (type) {
-      case ButtonType.BASE:
-        classes.push(styles.base);
-        break;
-      case ButtonType.HIGHLIGHT:
-        classes.push(styles.highlight);
-        break;
-      case ButtonType.YELLOW:
-        classes.push(styles.yellow);
-        break;
-    }
-  });
-
   return (
-    <button type="button" className={clsx(classes)}>
+    <button
+      type="button"
+      className={clsx(
+        styles.button,
+        types.includes(ButtonType.BASE) && styles.base,
+        types.includes(ButtonType.HIGHLIGHT) && styles.highlight,
+        types.includes(ButtonType.YELLOW) && styles.yellow
+      )}
+    >
       {children}
     </button>
   );

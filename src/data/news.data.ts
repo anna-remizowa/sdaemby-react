@@ -1,4 +1,4 @@
-import { Images } from '../assets/images';
+import { Images } from 'components/shared/images/images';
 
 export const NEWS = [
   {

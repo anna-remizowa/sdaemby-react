@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
 
-import { ImageHTML, ImageItem } from 'assets/images';
-import { ButtonType } from 'app.constants';
+import clsx from 'clsx';
+
+import { ImageItem } from 'components/shared/images/images';
+import { ButtonType, LabelType } from 'app.constants';
 import { Button } from 'components/shared/button/Button';
+import { Label } from 'components/shared/label/Label';
 
 import styles from './NewsItem.module.scss';
 
@@ -16,12 +19,16 @@ export interface News {
 export const NewsItem: FC<News> = ({ header, image, content, date }) => {
   return (
     <div className={styles.newsItem}>
-      <ImageHTML img={image} />
+      <img
+        className={clsx(image.clazz ? image.clazz : '')}
+        src={image.src}
+        alt={image.alt}
+      />
       <div className={styles.content}>
         <h3 className={styles.header}>{header}</h3>
         <p className={styles.text}>{content}</p>
         <div className={styles.buttons}>
-          <p className={styles.date}>{date}</p>
+          <Label title={date} type={LabelType.BASE} />
           <Button types={[ButtonType.BASE]}>Читать</Button>
         </div>
       </div>

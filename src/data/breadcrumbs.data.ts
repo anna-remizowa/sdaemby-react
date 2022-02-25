@@ -7,6 +7,6 @@ export const BREADCRUMBS_NEWS_PAGE = [
   },
   {
     name: 'Новости',
-    href: '#',
+    href: '',
   },
 ];

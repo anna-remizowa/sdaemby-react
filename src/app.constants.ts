@@ -4,6 +4,11 @@ export enum ButtonType {
   YELLOW,
 }
 
+export enum LabelType {
+  PURPLE,
+  BASE,
+}
+
 export enum MenuType {
   BOLD,
   BASE,
