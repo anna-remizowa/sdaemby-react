@@ -4,14 +4,13 @@ import clsx from 'clsx';
 import { FooterMenu } from './FooterMenu';
 import { ImageItem, Images } from 'components/shared/images/images';
 import { MenuType } from 'app.constants';
-import { SVGProps } from 'components//shared/svg/svg';
 import { Payments } from '../shared/payments/Payments';
 
 import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
 import { FOOTER } from 'data/footer.data';
 
 import styles from './Footer.module.scss';
-import { FooterSocials } from './FooterSocials';
+import { FooterSocials, FooterSocialsSVG } from './FooterSocials';
 
 const cards: ImageItem[] = [
   Images.Visa,
@@ -22,7 +21,7 @@ const cards: ImageItem[] = [
   Images.Belkart,
 ];
 
-const socials: SVGProps[] = [
+const socials: FooterSocialsSVG[] = [
   {
     svg: SVG_DATA_SET.Instagram,
     width: 24,

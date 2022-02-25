@@ -1,0 +1,62 @@
+import { FC } from 'react';
+
+interface NotFoundSVGProps {
+  color: string;
+}
+
+export const NotFoundSVG: FC<NotFoundSVGProps> = ({ color }) => {
+  return (
+    <>
+      <g opacity="0.3" filter="url(#filter0_d_552_2303)">
+        <path
+          d="M30 201.328H128.868V237.481H170.507V201.328H196.053V166.481H170.507V31.8119H115.994L30 167.083V201.328ZM129.672 166.481H73.8518V164.874L128.063 79.2122H129.672V166.481Z"
+          fill={color}
+        />
+        <path
+          d="M305.834 242C357.631 242 388.911 202.634 389.011 134.847C389.112 67.5629 357.43 29 305.834 29C254.137 29 222.757 67.4625 222.656 134.847C222.455 202.433 253.936 241.9 305.834 242ZM305.834 205.948C282.198 205.948 266.91 182.248 267.011 134.847C267.111 88.1499 282.299 64.6507 305.834 64.6507C329.268 64.6507 344.556 88.1499 344.556 134.847C344.657 182.248 329.369 205.948 305.834 205.948Z"
+          fill={color}
+        />
+        <path
+          d="M416.947 201.328H515.814V237.481H557.453V201.328H583V166.481H557.453V31.8119H502.94L416.947 167.083V201.328ZM516.619 166.481H460.798V164.874L515.01 79.2122H516.619V166.481Z"
+          fill={color}
+        />
+      </g>
+      <defs>
+        <filter
+          id="filter0_d_552_2303"
+          x="0"
+          y="0"
+          width="613"
+          height="273"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy="1" />
+          <feGaussianBlur stdDeviation="15" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_552_2303"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_552_2303"
+            result="shape"
+          />
+        </filter>
+      </defs>
+    </>
+  );
+};

@@ -27,7 +27,7 @@ export const Breadcrumbs: FC<BreadcrumbProps> = ({ breadcrumbs }) => {
             key={index}
           >
             {breadcrumb.name === HOME ? (
-              <SVG svg={SVG_DATA_SET.Home} width={12} height={12}>
+              <SVG viewBox={SVG_DATA_SET.Home.viewBox} width={12} height={12}>
                 <path d={SVG_DATA_SET.Home.path} fill={'#664EF9'} />
               </SVG>
             ) : (

@@ -27,4 +27,14 @@
 	background-color: $yellow;
 	color: black;
   }
+
+  &.big{
+	padding: 12px 24px;
+	background-color: $yellow;
+	border-radius: 33px;
+
+	& > svg {
+	  margin-right: 10px;
+	}
+  }
 }

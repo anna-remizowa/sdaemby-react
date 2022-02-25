@@ -35,7 +35,11 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({ items, headerTypeBold }) => {
               )}
             >
               {item.svg !== undefined && item.svg === PositionSVG.LEFT ? (
-                <SVG svg={SVG_DATA_SET.Location} width={8} height={10}>
+                <SVG
+                  viewBox={SVG_DATA_SET.Location.viewBox}
+                  width={8}
+                  height={10}
+                >
                   <path d={SVG_DATA_SET.Location.path} fill={'#1E2123'} />
                 </SVG>
               ) : (
@@ -43,7 +47,11 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({ items, headerTypeBold }) => {
               )}
               <span>{item.name}</span>
               {item.svg !== undefined && item.svg === PositionSVG.RIGHT ? (
-                <SVG svg={SVG_DATA_SET.Location} width={12} height={15}>
+                <SVG
+                  viewBox={SVG_DATA_SET.Location.viewBox}
+                  width={12}
+                  height={15}
+                >
                   <path d={SVG_DATA_SET.Location.path} fill={'#FFD54F'} />
                 </SVG>
               ) : (

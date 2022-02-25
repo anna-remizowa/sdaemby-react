@@ -2,6 +2,7 @@ export enum ButtonType {
   HIGHLIGHT,
   BASE,
   YELLOW,
+  BIG,
 }
 
 export enum LabelType {
