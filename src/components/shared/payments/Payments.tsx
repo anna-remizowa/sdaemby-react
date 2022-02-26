@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { ImageItem } from 'components/shared/images/images';
+import { ImageItem } from 'data/images.data';
 
 import styles from './Payments.module.scss';
 import clsx from 'clsx';

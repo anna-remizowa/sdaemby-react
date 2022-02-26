@@ -11,7 +11,7 @@ html, body {
   height: 100%;
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
@@ -79,7 +79,7 @@ main {
   min-height: 100%;
 }
 
-.wrapper-full, .wrapper {
+.wrapper-full, .wrapper, .wrapper-narrow {
   width: 100%;
   margin: 0 auto;
   padding: 0 80px;
@@ -91,6 +91,10 @@ main {
 
 .wrapper {
   max-width: 1440px;
+}
+
+.wrapper-narrow {
+  max-width: 1004px;
 }
 
 .text {

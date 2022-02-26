@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
 import { FooterMenu } from './FooterMenu';
-import { ImageItem, Images } from 'components/shared/images/images';
+import { ImageItem, ImagesData } from 'data/images.data';
 import { MenuType, ROUTING } from 'app.constants';
-import { Payments } from '../shared/payments/Payments';
+import { Payments } from 'components/shared/payments/Payments';
 import { FooterSocials, FooterSocialsSVG } from './FooterSocials';
 
 import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
@@ -14,12 +14,12 @@ import { FOOTER } from 'data/footer.data';
 import styles from './Footer.module.scss';
 
 const cards: ImageItem[] = [
-  Images.Visa,
-  Images.Webpay,
-  Images.Verified,
-  Images.Mastercard,
-  Images.Securecode,
-  Images.Belkart,
+  ImagesData.Visa,
+  ImagesData.Webpay,
+  ImagesData.Verified,
+  ImagesData.Mastercard,
+  ImagesData.Securecode,
+  ImagesData.Belkart,
 ];
 
 const socials: FooterSocialsSVG[] = [
@@ -53,9 +53,9 @@ export const Footer: FC = () => {
         <div className={styles.info}>
           <Link to={`/${ROUTING.home}`}>
             <img
-              className={clsx(Images.Logo.clazz ? Images.Logo.clazz : '')}
-              src={Images.Logo.src}
-              alt={Images.Logo.alt}
+              className={'logo'}
+              src={ImagesData.Logo.src}
+              alt={ImagesData.Logo.alt}
             />
           </Link>
           <p className={styles.textLogo}>Сдаём Бай</p>

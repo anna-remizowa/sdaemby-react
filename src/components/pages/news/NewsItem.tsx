@@ -1,35 +1,32 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-import clsx from 'clsx';
-
-import { ImageItem } from 'components/shared/images/images';
-import { ButtonType, LabelType } from 'app.constants';
+import { ButtonType, LabelType, ROUTING } from 'app.constants';
 import { Button } from 'components/shared/button/Button';
 import { Label } from 'components/shared/label/Label';
+import { News } from '../../../model/News';
 
 import styles from './NewsItem.module.scss';
 
-export interface News {
-  image: ImageItem;
-  header: string;
-  content: string;
-  date: string;
-}
-
-export const NewsItem: FC<News> = ({ header, image, content, date }) => {
+export const NewsItem: FC<News> = ({
+  id,
+  header,
+  image,
+  alt,
+  content,
+  date,
+}) => {
   return (
     <div className={styles.newsItem}>
-      <img
-        className={clsx(image.clazz ? image.clazz : '')}
-        src={image.src}
-        alt={image.alt}
-      />
+      <img className={styles.img} src={image} alt={alt} />
       <div className={styles.content}>
         <h3 className={styles.header}>{header}</h3>
         <p className={styles.text}>{content}</p>
         <div className={styles.buttons}>
           <Label title={date} type={LabelType.BASE} />
-          <Button types={[ButtonType.BASE]}>Читать</Button>
+          <Link to={`/${ROUTING.news}/:${id}`}>
+            <Button types={[ButtonType.BASE]}>Читать</Button>
+          </Link>
         </div>
       </div>
     </div>

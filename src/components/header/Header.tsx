@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { HeaderMenu } from './HeaderMenu';
 import { Button } from 'components/shared/button/Button';
-import { Images } from 'components/shared/images/images';
+import { ImagesData } from 'data/images.data';
 
 import { ButtonType, ROUTING } from 'app.constants';
 import { HEADER } from 'data/header.data';
@@ -34,9 +34,9 @@ export const Header: FC = () => {
       <div className={clsx('wrapper-full', styles.bottom)}>
         <Link to={`/${ROUTING.home}`}>
           <img
-            className={clsx(Images.Logo.clazz ? Images.Logo.clazz : '')}
-            src={Images.Logo.src}
-            alt={Images.Logo.alt}
+            className={'logo'}
+            src={ImagesData.Logo.src}
+            alt={ImagesData.Logo.alt}
           />
         </Link>
 

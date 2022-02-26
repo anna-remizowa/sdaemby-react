@@ -3,11 +3,13 @@ import React from 'react';
 import { BaseLayout } from './layouts/BaseLayout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NewsContent } from './components/pages/news/NewsContent';
-import { NEWS } from './data/news.data';
-import { BREADCRUMBS_NEWS_PAGE } from './data/breadcrumbs.data';
 import { NotFound } from './components/pages/404/NotFound';
 import { Home } from './components/pages/home/Home';
+import { NewsDetail } from './components/pages/news-detail/NewsDetail';
+
 import { ROUTING } from './app.constants';
+import { NEWS } from './data/news.data';
+import { BREADCRUMBS_NEWS_PAGE } from './data/breadcrumbs.data';
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
               />
             }
           />
+          <Route path={`${ROUTING.news}/:newsId`} element={<NewsDetail />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

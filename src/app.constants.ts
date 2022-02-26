@@ -36,3 +36,16 @@ export const ROUTING = {
   favorites: 'favorites',
   login: 'login',
 };
+
+export const enum SocialsType {
+  VK = 'VK',
+  FACEBOOK = 'Facebook_V2',
+  VIBER = 'Viber',
+  TELEGRAM = 'Telegram',
+  WHATSAPP = 'WhatsApp',
+}
+
+export const enum COLORS {
+  PURPLE = '#664EF9',
+  PURPLE_BACKGROUND = 'rgba(102, 78, 249, 0.1)',
+}

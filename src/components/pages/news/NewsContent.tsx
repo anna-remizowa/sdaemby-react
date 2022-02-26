@@ -6,18 +6,23 @@ import {
   Breadcrumbs,
 } from 'components/shared/breadcrumbs/Breadcrumbs';
 import { Search } from 'components/shared/search/Search';
-import { News, NewsItem } from './NewsItem';
+import { NewsItem } from './NewsItem';
 import { Pagination } from 'components/shared/pagination/Pagination';
+import { News } from '../../../model/News';
 
 import styles from './NewsContent.module.scss';
 
-interface NewsProps {
+export interface NewsContentProps {
   header: string;
   breadcrumbs: Breadcrumb[];
   news: News[];
 }
 
-export const NewsContent: FC<NewsProps> = ({ header, news, breadcrumbs }) => {
+export const NewsContent: FC<NewsContentProps> = ({
+  header,
+  news,
+  breadcrumbs,
+}) => {
   return (
     <div className={clsx('wrapper', styles.news)}>
       <div className={styles.background} />
@@ -27,14 +32,16 @@ export const NewsContent: FC<NewsProps> = ({ header, news, breadcrumbs }) => {
         <Search defaultValue="Поиск по статьям" />
       </div>
       <div className={styles.newsBox}>
-        {news.map((item, index) => {
+        {news.map((item) => {
           return (
             <NewsItem
+              id={item.id}
               header={item.header}
               content={item.content}
               date={item.date}
               image={item.image}
-              key={index}
+              alt={item.alt}
+              key={item.id}
             />
           );
         })}

@@ -1,12 +1,12 @@
 import { PositionSVG } from 'app.constants';
 
-export interface IMenuItem {
+export interface MenuItem {
   id: number;
   name: string;
   href: string;
   svg?: PositionSVG;
 }
 
-export interface IMenu {
-  items: IMenuItem[];
+export interface Menu {
+  items: MenuItem[];
 }

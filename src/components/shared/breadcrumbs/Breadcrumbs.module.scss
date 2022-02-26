@@ -12,6 +12,10 @@
   line-height: 100%;
   color: $dark-gray;
 
+  &:not(:last-of-type) {
+	color: $purple-light;
+  }
+
   &:not(:last-of-type):after {
 	position: absolute;
 	top: 6px;

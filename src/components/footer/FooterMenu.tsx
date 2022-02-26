@@ -2,12 +2,12 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import { IMenu } from 'model/IMenuItem';
+import { Menu } from 'model/Menu';
 import { MenuType } from 'app.constants';
 
 import styles from './FooterMenu.module.scss';
 
-interface FooterMenuProps extends IMenu {
+interface FooterMenuProps extends Menu {
   header?: string;
   href?: string;
   menuType: MenuType[];

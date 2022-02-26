@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 
-import { IMenu } from 'model/IMenuItem';
+import { Menu } from 'model/Menu';
 import { SVG } from 'components/shared/svg/svg';
 
 import { PositionSVG } from 'app.constants';
@@ -10,7 +10,7 @@ import { PositionSVG } from 'app.constants';
 import styles from './HeaderMenu.module.scss';
 import { SVG_DATA_SET } from '../shared/svg/svg.data';
 
-export interface HeaderMenuProps extends IMenu {
+export interface HeaderMenuProps extends Menu {
   headerTypeBold?: boolean;
 }
 
