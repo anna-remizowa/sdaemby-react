@@ -1,56 +1,55 @@
-import { PositionSVG } from '../app.constants';
+import { PositionSVG, ROUTING } from '../app.constants';
 
 export const HEADER = {
   top: [
     {
       id: 1,
       name: 'Главная',
-      href: '#',
+      href: ROUTING.home,
     },
     {
       id: 2,
       name: 'Новости',
-      href: '#',
+      href: ROUTING.news,
     },
     {
       id: 3,
       name: 'Размещение и тарифы',
-      href: '#',
+      href: ROUTING.rates,
     },
     {
       id: 4,
       name: 'Объявления на карте',
-      href: '#',
-      active: true,
+      href: ROUTING.ads,
       svg: PositionSVG.LEFT,
     },
     {
       id: 5,
       name: 'Контакты',
-      href: '#',
+      href: ROUTING.contacts,
     },
   ],
   bottom: [
     {
       id: 1,
       name: 'Квартиры на сутки',
-      href: '#',
+      href: ROUTING.apartmentsDay,
       svg: PositionSVG.RIGHT,
     },
     {
       id: 2,
       name: 'Коттеджи и усадьбы',
-      href: '#',
+      href: ROUTING.cottages,
     },
     {
       id: 3,
       name: 'Бани и сауны',
-      href: '#',
+      href: ROUTING.baths,
     },
     {
       id: 4,
       name: 'Авто напрокат',
-      href: '#',
+      href: ROUTING.carRental,
     },
   ],
 };

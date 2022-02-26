@@ -1,12 +1,11 @@
-import { HOME } from '../app.constants';
+import { HOME, ROUTING } from '../app.constants';
 
 export const BREADCRUMBS_NEWS_PAGE = [
   {
     name: HOME,
-    href: '#',
+    href: ROUTING.home,
   },
   {
     name: 'Новости',
-    href: '',
   },
 ];

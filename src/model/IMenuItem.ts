@@ -4,7 +4,6 @@ export interface IMenuItem {
   id: number;
   name: string;
   href: string;
-  active?: boolean;
   svg?: PositionSVG;
 }
 

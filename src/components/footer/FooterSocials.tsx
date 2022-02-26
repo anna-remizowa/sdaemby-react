@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 
 import { SVG } from '../shared/svg/svg';
+import { SvgData } from '../shared/svg/svg.data';
 
 import styles from './FooterSocials.module.scss';
-import { SvgData } from '../shared/svg/svg.data';
 
 export interface FooterSocialsSVG {
   svg: SvgData;
   width: number;
   height: number;
   color: string;
+  href: string;
 }
 
 interface FooterSocialsProps {
@@ -23,7 +24,12 @@ export const FooterSocials: FC<FooterSocialsProps> = ({ title, socials }) => {
       <p className={styles.text}>{title}</p>
       {socials.map((social, index) => {
         return (
-          <a href="#" className={styles.icon} key={index}>
+          <a
+            href={social.href}
+            target="_blank"
+            className={styles.icon}
+            key={index}
+          >
             <SVG
               viewBox={social.svg.viewBox}
               width={social.width}

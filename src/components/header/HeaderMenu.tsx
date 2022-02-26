@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
+import { NavLink } from 'react-router-dom';
 
 import { IMenu } from 'model/IMenuItem';
 import { SVG } from 'components/shared/svg/svg';
@@ -20,19 +21,17 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({ items, headerTypeBold }) => {
         return (
           <li
             key={item.id}
-            className={clsx(
-              styles.item,
-              headerTypeBold ? styles.primary : '',
-              item.active ? styles.active : ''
-            )}
+            className={clsx(styles.item, headerTypeBold ? styles.primary : '')}
           >
-            <a
-              href={item.href}
-              className={clsx(
-                styles.link,
-                headerTypeBold ? styles.primary : '',
-                item.active ? styles.active : ''
-              )}
+            <NavLink
+              to={`/${item.href}`}
+              className={({ isActive }) =>
+                clsx(
+                  styles.link,
+                  headerTypeBold ? styles.primary : '',
+                  isActive ? styles.active : ''
+                )
+              }
             >
               {item.svg !== undefined && item.svg === PositionSVG.LEFT ? (
                 <SVG
@@ -57,7 +56,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({ items, headerTypeBold }) => {
               ) : (
                 ''
               )}
-            </a>
+            </NavLink>
           </li>
         );
       })}

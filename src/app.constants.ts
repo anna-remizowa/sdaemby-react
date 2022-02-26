@@ -22,3 +22,17 @@ export enum PositionSVG {
 }
 
 export const HOME = 'home';
+
+export const ROUTING = {
+  home: '',
+  news: 'news',
+  rates: 'rates',
+  ads: 'ads',
+  contacts: 'contacts',
+  apartmentsDay: 'apartments',
+  cottages: 'cottages',
+  baths: 'baths',
+  carRental: 'carRental',
+  favorites: 'favorites',
+  login: 'login',
+};

@@ -1,12 +1,14 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
-import styles from './NotFound.module.scss';
 import { Button } from '../../shared/button/Button';
-import { ButtonType } from '../../../app.constants';
+import { ButtonType, ROUTING } from '../../../app.constants';
 import { SVG_DATA_SET } from '../../shared/svg/svg.data';
 import { SVG } from '../../shared/svg/svg';
 import { NotFoundSVG } from '../../shared/svg/components.svg';
+
+import styles from './NotFound.module.scss';
 
 export const NotFound: FC = () => {
   return (
@@ -18,12 +20,14 @@ export const NotFound: FC = () => {
             Возможно, у вас опечатка в адресе страницы, или её просто не
             существует
           </p>
-          <Button types={[ButtonType.BIG]}>
-            <SVG viewBox={SVG_DATA_SET.Home.viewBox} width={12} height={12}>
-              <path d={SVG_DATA_SET.Home.path} fill={'#1E2123'} />
-            </SVG>
-            Вернуться на главную
-          </Button>
+          <Link to={`/${ROUTING.home}`}>
+            <Button types={[ButtonType.BIG]}>
+              <SVG viewBox={SVG_DATA_SET.Home.viewBox} width={12} height={12}>
+                <path d={SVG_DATA_SET.Home.path} fill={'#1E2123'} />
+              </SVG>
+              Вернуться на главную
+            </Button>
+          </Link>
         </div>
         <SVG viewBox={'0 0 613 273'} width={613} height={273}>
           <NotFoundSVG color={'white'} />

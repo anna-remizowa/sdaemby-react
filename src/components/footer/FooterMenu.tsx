@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 import { IMenu } from 'model/IMenuItem';
 import { MenuType } from 'app.constants';
@@ -8,17 +9,25 @@ import styles from './FooterMenu.module.scss';
 
 interface FooterMenuProps extends IMenu {
   header?: string;
+  href?: string;
   menuType: MenuType[];
 }
 
 export const FooterMenu: FC<FooterMenuProps> = ({
   items,
   header,
+  href,
   menuType,
 }) => {
   return (
     <div>
-      {header ? <p className={styles.header}>{header}</p> : ''}
+      {header ? (
+        <Link to={`/${href}`}>
+          <p className={styles.header}>{header}</p>
+        </Link>
+      ) : (
+        ''
+      )}
       <ul
         className={clsx(
           styles.list,
@@ -38,8 +47,8 @@ export const FooterMenu: FC<FooterMenuProps> = ({
               )}
               key={item.id}
             >
-              <a
-                href={item.href}
+              <Link
+                to={`/${item.href}`}
                 className={clsx(
                   styles.link,
                   menuType.includes(MenuType.BASE) && styles.base,
@@ -48,7 +57,7 @@ export const FooterMenu: FC<FooterMenuProps> = ({
                 )}
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           );
         })}

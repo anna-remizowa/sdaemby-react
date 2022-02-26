@@ -1,3 +1,5 @@
+import { ROUTING } from '../app.constants';
+
 export const FOOTER = {
   company: [
     'ИП Шушкевич Андрей Викторович',
@@ -11,74 +13,75 @@ export const FOOTER = {
     {
       id: 1,
       name: 'Коттеджи и усадьбы',
-      href: '#',
+      href: ROUTING.cottages,
     },
     {
       id: 2,
       name: 'Бани и сауны',
-      href: '#',
+      href: ROUTING.baths,
     },
     {
       id: 3,
       name: 'Авто на прокат',
-      href: '#',
+      href: ROUTING.carRental,
     },
   ],
   titlesTwo: [
     {
       id: 1,
       name: 'Новости',
-      href: '#',
+      href: ROUTING.news,
     },
     {
       id: 2,
       name: 'Размещение и тарифы',
-      href: '#',
+      href: ROUTING.rates,
     },
     {
       id: 3,
       name: 'Объявления на карте',
-      href: '#',
+      href: ROUTING.ads,
     },
     {
       id: 4,
       name: 'Контакты',
-      href: '#',
+      href: ROUTING.contacts,
     },
   ],
 
   apartments: {
     header: 'Квартиры',
+    href: ROUTING.apartmentsDay,
     items: [
       {
         id: 1,
         name: 'Квартиры в Минске',
-        href: '#',
+        href: 'appart1',
       },
       {
         id: 2,
         name: 'Квартиры в Витебске',
-        href: '#',
+        href: 'appart2',
       },
       {
         id: 3,
         name: 'Квартиры в Гомеле',
-        href: '#',
+        href: 'appart3',
       },
       {
         id: 4,
         name: 'Квартиры в Гродно',
-        href: '#',
+        href: 'appart4',
       },
       {
         id: 5,
         name: 'Квартиры в Бресте',
-        href: '#',
+        href: 'appart5',
       },
       {
         id: 6,
         name: 'Квартиры в Могилеве',
-        href: '#',
+        href: 'appart6',
       },
     ],
   },

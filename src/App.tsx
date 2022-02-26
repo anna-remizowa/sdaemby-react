@@ -7,15 +7,16 @@ import { NEWS } from './data/news.data';
 import { BREADCRUMBS_NEWS_PAGE } from './data/breadcrumbs.data';
 import { NotFound } from './components/pages/404/NotFound';
 import { Home } from './components/pages/home/Home';
+import { ROUTING } from './app.constants';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<BaseLayout />}>
+        <Route path={ROUTING.home} element={<BaseLayout />}>
           <Route index element={<Home />} />
           <Route
-            path="news"
+            path={ROUTING.news}
             element={
               <NewsContent
                 header={NEWS.header}

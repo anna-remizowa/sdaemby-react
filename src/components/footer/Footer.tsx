@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 import { FooterMenu } from './FooterMenu';
 import { ImageItem, Images } from 'components/shared/images/images';
-import { MenuType } from 'app.constants';
+import { MenuType, ROUTING } from 'app.constants';
 import { Payments } from '../shared/payments/Payments';
+import { FooterSocials, FooterSocialsSVG } from './FooterSocials';
 
 import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
 import { FOOTER } from 'data/footer.data';
 
 import styles from './Footer.module.scss';
-import { FooterSocials, FooterSocialsSVG } from './FooterSocials';
 
 const cards: ImageItem[] = [
   Images.Visa,
@@ -27,18 +28,21 @@ const socials: FooterSocialsSVG[] = [
     width: 24,
     height: 25,
     color: '#1E2123',
+    href: 'https://www.instagram.com/',
   },
   {
     svg: SVG_DATA_SET.VK,
     width: 25,
     height: 15,
     color: '#1E2123',
+    href: 'https://vk.com/',
   },
   {
     svg: SVG_DATA_SET.Facebook,
     width: 21,
     height: 21,
     color: '#1E2123',
+    href: 'https://ru-ru.facebook.com/',
   },
 ];
 
@@ -47,11 +51,13 @@ export const Footer: FC = () => {
     <footer className={styles.footer}>
       <div className={clsx('wrapper-full', styles.wrapper)}>
         <div className={styles.info}>
-          <img
-            className={clsx(Images.Logo.clazz ? Images.Logo.clazz : '')}
-            src={Images.Logo.src}
-            alt={Images.Logo.alt}
-          />
+          <Link to={`/${ROUTING.home}`}>
+            <img
+              className={clsx(Images.Logo.clazz ? Images.Logo.clazz : '')}
+              src={Images.Logo.src}
+              alt={Images.Logo.alt}
+            />
+          </Link>
           <p className={styles.textLogo}>Сдаём Бай</p>
           <div className={styles.textWrapper}>
             {FOOTER.company.map((pInfo, index) => {
@@ -70,6 +76,7 @@ export const Footer: FC = () => {
               items={FOOTER.apartments.items}
               menuType={[MenuType.BASE, MenuType.COLUMN]}
               header={FOOTER.apartments.header}
+              href={FOOTER.apartments.href}
             />
             <FooterMenu items={FOOTER.titlesTwo} menuType={[MenuType.BASE]} />
           </div>
