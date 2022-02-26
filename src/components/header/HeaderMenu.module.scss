@@ -5,45 +5,11 @@
 }
 
 .item {
+  display: flex;
+  align-items: center;
   margin-right: 56px;
 
   &.primary {
 	margin-right: 80px;
-  }
-}
-
-.link {
-  @extend %base-text;
-  color: $blue-gray;
-  transition: color 0.3s ease-out;
-
-  &.primary {
-	display: flex;
-	align-items: center;
-	font-weight: 600;
-	color: $black;
-  }
-
-  &.active:not(.primary), &:hover:not(.primary) {
-	position: relative;
-	color: $black;
-
-	&:after {
-	  position: absolute;
-	  left: 0;
-	  bottom: -11px;
-	  content: '';
-	  width: 100%;
-	  height: 3px;
-	  background-color: $yellow;
-	}
-  }
-
-  & > svg {
-	margin-right: 5px;
-  }
-
-  & span ~ svg {
-	margin: 0 0 0 15px;
   }
 }

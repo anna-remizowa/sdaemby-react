@@ -1,0 +1,34 @@
+@import '../../../styles/variables/variables';
+
+.dropdown {
+  position: absolute;
+  display: none;
+  z-index: 20;
+
+  &.show{
+    display: flex;
+  }
+}
+
+.dropdownWrapper{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(135, 124, 202, 0.3);
+}
+
+.item {
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background-color .3s ease-out;
+
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+.link {
+  @extend %base-text;
+  font-weight: 500;
+  color: $black;
+  white-space: nowrap;
+}

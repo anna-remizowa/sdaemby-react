@@ -5,6 +5,7 @@ export interface MenuItem {
   name: string;
   href: string;
   svg?: PositionSVG;
+  items?: MenuItem[];
 }
 
 export interface Menu {
