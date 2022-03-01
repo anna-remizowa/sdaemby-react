@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
-import { SVG } from '../shared/svg/svg';
-import { SvgData } from '../shared/svg/svg.data';
+import { SVG } from 'components/shared/svg/svg';
+import { SvgData } from 'components/shared/svg/svg.data';
 
 import styles from './FooterSocials.module.scss';
 
@@ -14,14 +14,13 @@ export interface FooterSocialsSVG {
 }
 
 interface FooterSocialsProps {
-  title: string;
   socials: FooterSocialsSVG[];
 }
 
-export const FooterSocials: FC<FooterSocialsProps> = ({ title, socials }) => {
+export const FooterSocials: FC<FooterSocialsProps> = ({ socials }) => {
   return (
     <div className={styles.wrapper}>
-      <p className={styles.text}>{title}</p>
+      <p className={styles.text}>{'Мы в соцсетях'}</p>
       {socials.map((social, index) => {
         return (
           <a

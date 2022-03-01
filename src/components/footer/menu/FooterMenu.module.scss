@@ -1,4 +1,4 @@
-@import '../../styles/variables/variables';
+@import '../../../styles/variables/variables';
 
 .list {
   display: flex;
@@ -6,10 +6,34 @@
 
   &.baseBold {
 	margin-right: 69px;
+
+	& .item{
+	  font-weight: bold;
+	  color: $black;
+
+	  &:not(:last-of-type) {
+		margin-bottom: 21px;
+	  }
+	}
+
+	& .link {
+	  font-weight: inherit;
+	  color: inherit;
+	}
   }
 
   &.base {
 	margin-right: 102px;
+
+	& .item {
+	  &:not(:last-of-type) {
+		margin-bottom: 8px;
+	  }
+	}
+
+	& .link {
+	  color: $blue-gray;
+	}
   }
 
   &.column {
@@ -27,35 +51,8 @@
   }
 }
 
-.item {
-  &.base {
-	&:not(:last-of-type) {
-	  margin-bottom: 8px;
-	}
-  }
-
-  &.baseBold {
-	font-weight: bold;
-	color: $black;
-
-	&:not(:last-of-type) {
-	  margin-bottom: 21px;
-	}
-  }
-}
-
 .link {
   @extend %base-text;
-  cursor: pointer;
-
-  &.base {
-	color: $blue-gray;
-  }
-
-  &.baseBold {
-	font-weight: bold;
-	color: $black;
-  }
 }
 
 .header {

@@ -17,11 +17,11 @@ export enum MenuType {
 }
 
 export enum PositionSVG {
-  LEFT,
-  RIGHT,
+  LEFT = 'LEFT',
+  RIGHT = 'RIGHT',
 }
 
-export const HOME = 'home';
+export const HOME = 'Главная';
 
 export const ROUTING = {
   home: '',

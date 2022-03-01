@@ -2,24 +2,47 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import { FooterMenu } from './FooterMenu';
-import { ImageItem, ImagesData } from 'data/images.data';
-import { MenuType, ROUTING } from 'app.constants';
-import { Payments } from 'components/shared/payments/Payments';
-import { FooterSocials, FooterSocialsSVG } from './FooterSocials';
+import { FooterMenu } from './menu/FooterMenu';
+import { FooterSocials, FooterSocialsSVG } from './socials/FooterSocials';
+import { FooterPayments, ImageItem } from './payments/FooterPayments';
 
+import { MenuType, ROUTING } from 'app.constants';
 import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
 import { FOOTER } from 'data/footer.data';
 
 import styles from './Footer.module.scss';
 
 const cards: ImageItem[] = [
-  ImagesData.Visa,
-  ImagesData.Webpay,
-  ImagesData.Verified,
-  ImagesData.Mastercard,
-  ImagesData.Securecode,
-  ImagesData.Belkart,
+  {
+    src: require('../../assets/images/visa.png'),
+    alt: 'Visa',
+    clazz: 'card visa',
+  },
+  {
+    src: require('../../assets/images/mastercard.png'),
+    alt: 'Mastercard',
+    clazz: 'card mastercard',
+  },
+  {
+    src: require('../../assets/images/belkart.png'),
+    alt: 'Belkart',
+    clazz: 'card belkart',
+  },
+  {
+    src: require('../../assets/images/verified-by-visa.png'),
+    alt: 'Verified',
+    clazz: 'card verified',
+  },
+  {
+    src: require('../../assets/images/securecode.png'),
+    alt: 'Securecode',
+    clazz: 'card securecode',
+  },
+  {
+    src: require('../../assets/images/webpay.png'),
+    alt: 'Webpay',
+    clazz: 'card webpay',
+  },
 ];
 
 const socials: FooterSocialsSVG[] = [
@@ -54,8 +77,8 @@ export const Footer: FC = () => {
           <Link to={`/${ROUTING.home}`}>
             <img
               className={'logo'}
-              src={ImagesData.Logo.src}
-              alt={ImagesData.Logo.alt}
+              src={require('../../assets/images/logo.png')}
+              alt={'Логотип'}
             />
           </Link>
           <p className={styles.textLogo}>Сдаём Бай</p>
@@ -81,8 +104,8 @@ export const Footer: FC = () => {
             <FooterMenu items={FOOTER.titlesTwo} menuType={[MenuType.BASE]} />
           </div>
           <div className={styles.infoWrapper}>
-            <FooterSocials socials={socials} title={'Мы в соцсетях'} />
-            <Payments images={cards} />
+            <FooterSocials socials={socials} />
+            <FooterPayments images={cards} />
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 
 import { Menu } from 'model/Menu';
-import { HeaderLink } from './HeaderLink';
+import { HeaderLink } from 'components/header/link/HeaderLink';
 
 import styles from './HeaderMenu.module.scss';
 
@@ -17,7 +17,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({ items, headerTypeBold }) => {
         return (
           <li
             key={item.id}
-            className={clsx(styles.item, headerTypeBold ? styles.primary : '')}
+            className={clsx(styles.item, { [styles.primary]: headerTypeBold })}
           >
             <HeaderLink link={item} headerTypeBold={headerTypeBold} />
           </li>

@@ -8,7 +8,7 @@ import {
 import { Search } from 'components/shared/search/Search';
 import { NewsItem } from './NewsItem';
 import { Pagination } from 'components/shared/pagination/Pagination';
-import { News } from '../../../model/News';
+import { News } from 'model/News';
 
 import styles from './NewsContent.module.scss';
 
@@ -33,17 +33,7 @@ export const NewsContent: FC<NewsContentProps> = ({
       </div>
       <div className={styles.newsBox}>
         {news.map((item) => {
-          return (
-            <NewsItem
-              id={item.id}
-              header={item.header}
-              content={item.content}
-              date={item.date}
-              image={item.image}
-              alt={item.alt}
-              key={item.id}
-            />
-          );
+          return <NewsItem {...item} key={item.id} />;
         })}
       </div>
       <Pagination countPages={11} activePage={1} maxNumber={7} />

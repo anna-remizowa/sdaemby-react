@@ -15,8 +15,8 @@ export const Label: FC<LabelProps> = ({ title, type }) => {
     <p
       className={clsx(
         styles.label,
-        type === LabelType.BASE && styles.base,
-        type === LabelType.PURPLE && styles.purple
+        { [styles.base]: LabelType.BASE },
+        { [styles.purple]: type === LabelType.PURPLE }
       )}
     >
       {title}

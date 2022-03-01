@@ -1,15 +1,19 @@
 import React, { FC } from 'react';
-
-import { ImageItem } from 'data/images.data';
-
-import styles from './Payments.module.scss';
 import clsx from 'clsx';
+
+import styles from './FooterPayments.module.scss';
+
+export interface ImageItem {
+  src: string;
+  alt: string;
+  clazz?: string;
+}
 
 interface PaymentsProps {
   images: ImageItem[];
 }
 
-export const Payments: FC<PaymentsProps> = ({ images }) => {
+export const FooterPayments: FC<PaymentsProps> = ({ images }) => {
   return (
     <div className={styles.payments}>
       {images.map((card, index) => (

@@ -2,9 +2,8 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import { HeaderMenu } from './HeaderMenu';
+import { HeaderMenu } from './menu/HeaderMenu';
 import { Button } from 'components/shared/button/Button';
-import { ImagesData } from 'data/images.data';
 
 import { ButtonType, ROUTING } from 'app.constants';
 import { HEADER } from 'data/header.data';
@@ -35,8 +34,8 @@ export const Header: FC = () => {
         <Link to={`/${ROUTING.home}`}>
           <img
             className={'logo'}
-            src={ImagesData.Logo.src}
-            alt={ImagesData.Logo.alt}
+            src={require('../../assets/images/logo.png')}
+            alt={'Логотип'}
           />
         </Link>
 

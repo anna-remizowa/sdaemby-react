@@ -38,24 +38,8 @@ export const FooterMenu: FC<FooterMenuProps> = ({
       >
         {items.map((item) => {
           return (
-            <li
-              className={clsx(
-                styles.item,
-                menuType.includes(MenuType.BASE) && styles.base,
-                menuType.includes(MenuType.BOLD) && styles.baseBold,
-                menuType.includes(MenuType.COLUMN) && styles.column
-              )}
-              key={item.id}
-            >
-              <Link
-                to={`/${item.href}`}
-                className={clsx(
-                  styles.link,
-                  menuType.includes(MenuType.BASE) && styles.base,
-                  menuType.includes(MenuType.BOLD) && styles.baseBold,
-                  menuType.includes(MenuType.COLUMN) && styles.column
-                )}
-              >
+            <li className={clsx(styles.item)} key={item.id}>
+              <Link to={`/${item.href}`} className={clsx(styles.link)}>
                 {item.name}
               </Link>
             </li>

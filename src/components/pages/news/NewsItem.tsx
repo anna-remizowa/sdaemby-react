@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { ButtonType, LabelType, ROUTING } from 'app.constants';
 import { Button } from 'components/shared/button/Button';
 import { Label } from 'components/shared/label/Label';
-import { News } from '../../../model/News';
+import { News } from 'model/News';
 
 import styles from './NewsItem.module.scss';
+import { getDateFromISO } from 'utils/getDateFromISO';
 
 export const NewsItem: FC<News> = ({
   id,
@@ -23,7 +24,7 @@ export const NewsItem: FC<News> = ({
         <h3 className={styles.header}>{header}</h3>
         <p className={styles.text}>{content}</p>
         <div className={styles.buttons}>
-          <Label title={date} type={LabelType.BASE} />
+          <Label title={getDateFromISO(date)} type={LabelType.BASE} />
           <Link to={`/${ROUTING.news}/:${id}`}>
             <Button types={[ButtonType.BASE]}>Читать</Button>
           </Link>

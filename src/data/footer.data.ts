@@ -1,5 +1,3 @@
-import { ROUTING } from '../app.constants';
-
 export const FOOTER = {
   company: [
     'ИП Шушкевич Андрей Викторович',
@@ -13,45 +11,45 @@ export const FOOTER = {
     {
       id: 1,
       name: 'Коттеджи и усадьбы',
-      href: ROUTING.cottages,
+      href: 'cottages',
     },
     {
       id: 2,
       name: 'Бани и сауны',
-      href: ROUTING.baths,
+      href: 'baths',
     },
     {
       id: 3,
       name: 'Авто на прокат',
-      href: ROUTING.carRental,
+      href: 'carRental',
     },
   ],
   titlesTwo: [
     {
       id: 1,
       name: 'Новости',
-      href: ROUTING.news,
+      href: 'news',
     },
     {
       id: 2,
       name: 'Размещение и тарифы',
-      href: ROUTING.rates,
+      href: 'rates',
     },
     {
       id: 3,
       name: 'Объявления на карте',
-      href: ROUTING.ads,
+      href: 'ads',
     },
     {
       id: 4,
       name: 'Контакты',
-      href: ROUTING.contacts,
+      href: 'contacts',
     },
   ],
 
   apartments: {
     header: 'Квартиры',
-    href: ROUTING.apartmentsDay,
+    href: 'apartments',
     items: [
       {
         id: 1,

@@ -21,10 +21,9 @@ export const Pagination: FC<PaginationProps> = ({
           <div key={number}>
             {number + 1 <= maxNumber || number + 1 === countPages ? (
               <a
-                className={clsx(
-                  styles.link,
-                  number + 1 === activePage ? styles.active : ''
-                )}
+                className={clsx(styles.link, {
+                  [styles.active]: number + 1 === activePage,
+                })}
                 href="#"
               >
                 {number + 1}
