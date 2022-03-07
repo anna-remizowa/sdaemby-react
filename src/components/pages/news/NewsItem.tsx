@@ -5,9 +5,9 @@ import { ButtonType, LabelType, ROUTING } from 'app.constants';
 import { Button } from 'components/shared/button/Button';
 import { Label } from 'components/shared/label/Label';
 import { News } from 'model/News';
+import { getDateFromISO } from 'utils/getDateFromISO';
 
 import styles from './NewsItem.module.scss';
-import { getDateFromISO } from 'utils/getDateFromISO';
 
 export const NewsItem: FC<News> = ({
   id,

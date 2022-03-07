@@ -1,20 +1,29 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import clsx from 'clsx';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import { HeaderMenu } from './menu/HeaderMenu';
 import { Button } from 'components/shared/button/Button';
 
-import { ButtonType, ROUTING } from 'app.constants';
-import { HEADER } from 'data/header.data';
+import { API_URL, ButtonType, REST_API, ROUTING } from 'app.constants';
+import { IHeader } from '../../model/IHeader';
 
 import styles from './Header.module.scss';
 
 export const Header: FC = () => {
+  const [appHeader, setAppHeader] = useState<IHeader>({});
+
+  useEffect(() => {
+    axios.get<IHeader>(API_URL + REST_API.header).then((resp) => {
+      setAppHeader(resp.data);
+    });
+  }, []);
+
   return (
     <header>
       <div className={clsx('wrapper-full', styles.top)}>
-        <HeaderMenu items={HEADER.top} />
+        <HeaderMenu items={appHeader.top ? appHeader.top : []} />
         <div className={styles.login}>
           <Link
             to={`/${ROUTING.favorites}`}
@@ -39,7 +48,10 @@ export const Header: FC = () => {
           />
         </Link>
 
-        <HeaderMenu items={HEADER.bottom} headerTypeBold />
+        <HeaderMenu
+          items={appHeader.bottom ? appHeader.bottom : []}
+          headerTypeBold
+        />
         <Button types={[ButtonType.HIGHLIGHT]}>+ Разместить объявление</Button>
       </div>
     </header>

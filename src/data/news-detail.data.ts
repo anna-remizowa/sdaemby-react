@@ -1,6 +1,7 @@
-import { NewsDetailProps } from 'components/pages/news-detail/NewsDetail';
+import { INewsDetail } from '../model/INewsDetail';
+import { BREADCRUMBS_NEWS_DETAIL } from './breadcrumbs.data';
 
-export const NEWS_DETAIL: NewsDetailProps = {
+export const NEWS_DETAIL: INewsDetail = {
   news: {
     id: 1,
     image: require('../assets/images/news_1_big.png'),
@@ -47,4 +48,5 @@ export const NEWS_DETAIL: NewsDetailProps = {
       date: '2008-01-14T13:52:16.043',
     },
   ],
+  breadcrumbs: BREADCRUMBS_NEWS_DETAIL,
 };

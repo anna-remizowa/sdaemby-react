@@ -1,3 +1,14 @@
+export const API_URL = '';
+
+export const DEVELOPMENT_MODE = 'development';
+export const PRODUCTION_MODE = 'production';
+
+export const REST_API = {
+  header: '/header',
+  footer: '/footer',
+  news: '/news',
+};
+
 export enum ButtonType {
   HIGHLIGHT,
   BASE,

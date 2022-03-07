@@ -19,4 +19,7 @@ export const BREADCRUMBS_NEWS_DETAIL: Breadcrumb[] = [
     name: 'Новости',
     href: 'news',
   },
+  {
+    name: 'Линия Сталина: суровый отдых в усадьбах на сутки ',
+  },
 ];

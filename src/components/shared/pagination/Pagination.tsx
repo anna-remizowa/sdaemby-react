@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 
 import styles from './Pagination.module.scss';
+import { Link } from 'react-router-dom';
+import { ROUTING } from '../../../app.constants';
 
 interface PaginationProps {
   countPages: number;
@@ -20,14 +22,14 @@ export const Pagination: FC<PaginationProps> = ({
         return (
           <div key={number}>
             {number + 1 <= maxNumber || number + 1 === countPages ? (
-              <a
+              <Link
                 className={clsx(styles.link, {
                   [styles.active]: number + 1 === activePage,
                 })}
-                href="#"
+                to={`/${ROUTING.news}?page=${number + 1}`}
               >
                 {number + 1}
-              </a>
+              </Link>
             ) : number === maxNumber && number + 1 !== countPages ? (
               <a className={styles.link} href="#">
                 ...

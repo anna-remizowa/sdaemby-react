@@ -1,5 +1,9 @@
+import { BREADCRUMBS_NEWS_PAGE } from './breadcrumbs.data';
+
 export const NEWS = {
   header: 'Новости',
+  maxPage: 11,
+  breadcrumbs: BREADCRUMBS_NEWS_PAGE,
   news: [
     {
       id: 1,

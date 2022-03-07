@@ -1,3 +1,5 @@
+import { Breadcrumb } from '../components/shared/breadcrumbs/Breadcrumbs';
+
 export interface News {
   id: number;
   image: string;
@@ -5,4 +7,12 @@ export interface News {
   header: string;
   content: string;
   date: string;
+}
+
+export interface NewsPage {
+  header?: string;
+  news?: News[];
+  activePage?: number;
+  maxPage?: number;
+  breadcrumbs?: Breadcrumb[];
 }
