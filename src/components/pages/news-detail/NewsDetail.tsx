@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { Breadcrumbs } from 'components/shared/breadcrumbs/Breadcrumbs';
 import { Label } from 'components/shared/label/Label';
 import { API_URL, COLORS, LabelType, REST_API } from 'app.constants';
-import { Socials } from 'components/shared/socials/Socials';
+import { ShareWith } from 'components/shared/sharewith/ShareWith';
 import { NewsItem } from 'components/pages/news/NewsItem';
 import { INewsDetail } from 'model/INewsDetail';
 import { getDateFromISO } from 'utils/getDateFromISO';
@@ -43,11 +43,19 @@ export const NewsDetail: FC = () => {
                   title={getDateFromISO(appNewsDetail.news.date)}
                   type={LabelType.PURPLE}
                 />
-                <Socials
+                <ShareWith
                   title={'Поделиться'}
                   iconBackgroundColor={COLORS.PURPLE_BACKGROUND}
                   iconColor={COLORS.PURPLE}
                   url={window.location.href}
+                  round={true}
+                  shares={{
+                    VK: { isInclude: true, width: 20, height: 12 },
+                    Facebook: { isInclude: true, width: 10, height: 17 },
+                    Viber: { isInclude: true, width: 17, height: 18 },
+                    Telegram: { isInclude: true, width: 19, height: 14 },
+                    Whatsapp: { isInclude: true, width: 17, height: 17 },
+                  }}
                 />
               </div>
             </div>

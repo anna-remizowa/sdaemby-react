@@ -4,12 +4,19 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import { FooterMenu } from './menu/FooterMenu';
-import { FooterSocials, FooterSocialsSVG } from './socials/FooterSocials';
 import { FooterPayments, ImageItem } from './payments/FooterPayments';
 import { IFooter } from 'model/IFooter';
+import { Socials, SocialsSVG } from 'components/shared/socials/Socials';
 
-import { API_URL, MenuType, REST_API, ROUTING } from 'app.constants';
-import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
+import {
+  API_URL,
+  COLORS,
+  MenuType,
+  REST_API,
+  ROUTING,
+  ShareWithType,
+  SocialType,
+} from 'app.constants';
 
 import styles from './Footer.module.scss';
 
@@ -46,26 +53,23 @@ const cards: ImageItem[] = [
   },
 ];
 
-const socials: FooterSocialsSVG[] = [
+const socials: SocialsSVG[] = [
   {
-    svg: SVG_DATA_SET.Instagram,
+    tag: ShareWithType.INSTAGRAM,
     width: 24,
     height: 25,
-    color: '#1E2123',
     href: 'https://www.instagram.com/',
   },
   {
-    svg: SVG_DATA_SET.VK,
+    tag: ShareWithType.VK,
     width: 25,
     height: 15,
-    color: '#1E2123',
     href: 'https://vk.com/',
   },
   {
-    svg: SVG_DATA_SET.Facebook,
+    tag: ShareWithType.FACEBOOK,
     width: 21,
     height: 21,
-    color: '#1E2123',
     href: 'https://ru-ru.facebook.com/',
   },
 ];
@@ -128,7 +132,12 @@ export const Footer: FC = () => {
             />
           </div>
           <div className={styles.infoWrapper}>
-            <FooterSocials socials={socials} />
+            <Socials
+              socials={socials}
+              types={[SocialType.BASE]}
+              header={'Мы в соцсетях'}
+              iconColor={COLORS.BLACK}
+            />
             <FooterPayments images={cards} />
           </div>
         </div>

@@ -2,13 +2,12 @@ import React, { FC, useState } from 'react';
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 
-import { PositionSVG } from 'app.constants';
-import { SVG } from 'components/shared/svg/svg';
-import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
+import { COLORS, PositionSVG } from 'app.constants';
 import { MenuItem } from 'model/Menu';
 import { Dropdown } from 'components/shared/dropdown/Dropdown';
 
 import styles from './HeaderLink.module.scss';
+import { LocationSVG } from '../../shared/svg/components.svg';
 
 interface HeaderLinkProps {
   link: MenuItem;
@@ -35,18 +34,14 @@ export const HeaderLink: FC<HeaderLinkProps> = ({ link, headerTypeBold }) => {
       >
         {link.positionSVG !== undefined &&
         link.positionSVG === PositionSVG.LEFT.toString() ? (
-          <SVG viewBox={SVG_DATA_SET.Location.viewBox} width={8} height={10}>
-            <path d={SVG_DATA_SET.Location.path} fill={'#1E2123'} />
-          </SVG>
+          <LocationSVG color={COLORS.BLACK} width={8} height={10} />
         ) : (
           ''
         )}
         <span>{link.name}</span>
         {link.positionSVG !== undefined &&
         link.positionSVG === PositionSVG.RIGHT.toString() ? (
-          <SVG viewBox={SVG_DATA_SET.Location.viewBox} width={12} height={15}>
-            <path d={SVG_DATA_SET.Location.path} fill={'#FFD54F'} />
-          </SVG>
+          <LocationSVG color={COLORS.YELLOW} width={12} height={15} />
         ) : (
           ''
         )}

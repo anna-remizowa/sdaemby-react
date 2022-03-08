@@ -7,6 +7,23 @@ export const REST_API = {
   header: '/header',
   footer: '/footer',
   news: '/news',
+  contacts: '/contacts',
+};
+
+export const HOME = 'Главная';
+
+export const ROUTING = {
+  home: '',
+  news: 'news',
+  rates: 'rates',
+  ads: 'ads',
+  contacts: 'contactus',
+  apartmentsDay: 'apartments',
+  cottages: 'cottages',
+  baths: 'baths',
+  carRental: 'carRental',
+  favorites: 'favorites',
+  login: 'login',
 };
 
 export enum ButtonType {
@@ -32,31 +49,26 @@ export enum PositionSVG {
   RIGHT = 'RIGHT',
 }
 
-export const HOME = 'Главная';
+export enum SocialType {
+  BASE,
+  PURPLE,
+  VERTICAL,
+}
 
-export const ROUTING = {
-  home: '',
-  news: 'news',
-  rates: 'rates',
-  ads: 'ads',
-  contacts: 'contacts',
-  apartmentsDay: 'apartments',
-  cottages: 'cottages',
-  baths: 'baths',
-  carRental: 'carRental',
-  favorites: 'favorites',
-  login: 'login',
-};
-
-export const enum SocialsType {
+export const enum ShareWithType {
   VK = 'VK',
-  FACEBOOK = 'Facebook_V2',
+  FACEBOOK = 'Facebook',
   VIBER = 'Viber',
   TELEGRAM = 'Telegram',
   WHATSAPP = 'WhatsApp',
+  INSTAGRAM = 'Instagram',
 }
 
 export const enum COLORS {
   PURPLE = '#664EF9',
   PURPLE_BACKGROUND = 'rgba(102, 78, 249, 0.1)',
+  BLACK = '#1E2123',
+  WHITE = 'white',
+  YELLOW = '#FFD54F',
+  GRAY_OPACITY = 'rgba(255, 255, 255, 0.1)',
 }

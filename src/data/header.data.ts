@@ -24,7 +24,7 @@ export const HEADER = {
     {
       id: 5,
       name: 'Контакты',
-      href: 'contacts',
+      href: 'contactus',
     },
   ],
   bottom: [

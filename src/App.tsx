@@ -6,6 +6,7 @@ import { NewsContent } from './components/pages/news/NewsContent';
 import { NotFound } from './components/pages/404/NotFound';
 import { Home } from './components/pages/home/Home';
 import { NewsDetail } from './components/pages/news-detail/NewsDetail';
+import { Contacts } from './components/pages/contacts/Contacts';
 
 import { DEVELOPMENT_MODE, ROUTING } from './app.constants';
 
@@ -21,6 +22,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path={ROUTING.news} element={<NewsContent />} />
           <Route path={`${ROUTING.news}/:newsId`} element={<NewsDetail />} />
+          <Route path={ROUTING.contacts} element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -1,84 +1,60 @@
 import React, { FC } from 'react';
-import {
-  FacebookShareButton,
-  TelegramShareButton,
-  ViberShareButton,
-  VKShareButton,
-  WhatsappShareButton,
-} from 'react-share';
+import clsx from 'clsx';
 
-import { Icon } from '../icon/Icon';
-import { SocialsType } from '../../../app.constants';
+import { SocialItem } from './SocialItem';
+import { SocialType } from 'app.constants';
 
 import styles from './Socials.module.scss';
 
+export interface SocialsSVG {
+  tag: string;
+  width: number;
+  height: number;
+  color?: string;
+  href: string;
+}
+
 interface SocialsProps {
-  title: string;
-  iconBackgroundColor: string;
-  iconColor: string;
-  url: string;
+  socials: SocialsSVG[];
+  header?: string;
+  types: SocialType[];
+  iconColor?: string;
 }
 
 export const Socials: FC<SocialsProps> = ({
-  title,
-  iconBackgroundColor,
+  socials,
+  header,
+  types,
   iconColor,
-  url,
 }) => {
+  const color = iconColor ? iconColor : 'white';
   return (
-    <div className={styles.socials}>
-      <p className={styles.text}>{title}</p>
-
-      <VKShareButton url={url}>
-        <Icon
-          type={SocialsType.VK}
-          backgroundColor={iconBackgroundColor}
-          color={iconColor}
-          round={true}
-          iconWidth={17}
-          iconHeight={9}
-        />
-      </VKShareButton>
-      <FacebookShareButton url={url}>
-        <Icon
-          type={SocialsType.FACEBOOK}
-          backgroundColor={iconBackgroundColor}
-          color={iconColor}
-          round={true}
-          iconWidth={8}
-          iconHeight={17}
-        />
-      </FacebookShareButton>
-      <ViberShareButton url={url}>
-        <Icon
-          type={SocialsType.VIBER}
-          backgroundColor={iconBackgroundColor}
-          color={iconColor}
-          round={true}
-          iconWidth={16}
-          iconHeight={18}
-        />
-      </ViberShareButton>
-      <TelegramShareButton url={url}>
-        <Icon
-          type={SocialsType.TELEGRAM}
-          backgroundColor={iconBackgroundColor}
-          color={iconColor}
-          round={true}
-          iconWidth={16}
-          iconHeight={14}
-        />
-      </TelegramShareButton>
-      <WhatsappShareButton url={url}>
-        <Icon
-          type={SocialsType.WHATSAPP}
-          backgroundColor={iconBackgroundColor}
-          color={iconColor}
-          round={true}
-          iconWidth={17}
-          iconHeight={16}
-        />
-      </WhatsappShareButton>
+    <div
+      className={clsx(
+        styles.wrapper,
+        types.includes(SocialType.BASE) && styles.base,
+        types.includes(SocialType.PURPLE) && styles.purple,
+        types.includes(SocialType.VERTICAL) && styles.vertical
+      )}
+    >
+      {header ? <p className={styles.text}>{header}</p> : ''}
+      {socials.map((social, index) => {
+        return (
+          <a
+            href={social.href}
+            target="_blank"
+            className={styles.icon}
+            key={index}
+          >
+            <SocialItem
+              tag={social.tag}
+              color={color}
+              width={social.width}
+              height={social.height}
+            />
+          </a>
+        );
+      })}
     </div>
   );
 };

@@ -1,23 +1,37 @@
 @import '../../../styles/variables/variables';
 
-.socials{
+.wrapper {
   display: flex;
   align-items: center;
 
-  & > * {
-    margin-right: 15px;
+  &.base {
+	.icon {
+	  margin-left: 22px;
 
-    &:not(:first-child, :last-child){
-      margin-right: 20px;
-    }
+	  &:first-of-type {
+		margin-left: 28px;
+	  }
+	}
+  }
 
-    &:last-child{
-      margin-right: 0;
-    }
+  &.purple {
+	.icon {
+	  margin-bottom: 15px;
+	  padding: 13px;
+	  background-color: $gray-opacity;
+	  border-radius: 25px;
+	}
   }
 }
 
-.text{
-  @extend %base-text;
+.vertical {
+  flex-direction: column;
+}
+
+.text {
   color: $black;
 }
+
+
+
+

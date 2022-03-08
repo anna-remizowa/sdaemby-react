@@ -1,0 +1,21 @@
+@import '../../../styles/variables/variables';
+
+.contacts {
+  flex: 1;
+  background-image: url("../../../assets/images/background.png");
+  background-color: $purple;
+  background-size: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  padding-top: 77px;
+  padding-bottom: 95px;
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.socials {
+  margin-left: 33px;
+}
