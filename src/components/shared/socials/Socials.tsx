@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 
 import { SocialItem } from './SocialItem';
-import { SocialType } from 'app.constants';
+import { COLORS, SocialType } from 'app.constants';
 
 import styles from './Socials.module.scss';
 
@@ -27,14 +27,12 @@ export const Socials: FC<SocialsProps> = ({
   types,
   iconColor,
 }) => {
-  const color = iconColor ? iconColor : 'white';
+  const color = iconColor ? iconColor : COLORS.WHITE;
   return (
     <div
       className={clsx(
         styles.wrapper,
-        types.includes(SocialType.BASE) && styles.base,
-        types.includes(SocialType.PURPLE) && styles.purple,
-        types.includes(SocialType.VERTICAL) && styles.vertical
+        types.map<string>((type) => styles[type]).join(' ')
       )}
     >
       {header ? <p className={styles.text}>{header}</p> : ''}

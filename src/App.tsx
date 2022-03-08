@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === DEVELOPMENT_MODE) {
   require('mock/MockAdapter');
 }
 
+/*todo: добавить redux*/
 function App() {
   return (
     <BrowserRouter>

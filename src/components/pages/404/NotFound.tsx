@@ -19,7 +19,7 @@ export const NotFound: FC = () => {
             существует
           </p>
           <Link to={`/${ROUTING.home}`}>
-            <Button types={[ButtonType.BIG]}>
+            <Button types={[ButtonType.BIG, ButtonType.YELLOW]}>
               <HomeSVG color={COLORS.BLACK} width={12} height={12} />
               Вернуться на главную
             </Button>

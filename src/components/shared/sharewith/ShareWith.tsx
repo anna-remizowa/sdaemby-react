@@ -52,13 +52,18 @@ export const ShareWith: FC<ShareWithProps> = ({
   size,
   shares,
 }) => {
+  const props = {
+    backgroundColor: iconBackgroundColor,
+    round: round,
+    size: size,
+  };
   return (
     <div className={styles.socials}>
       {title ? <p className={styles.text}>{title}</p> : ''}
 
       {shares.VK && shares.VK.isInclude ? (
         <VKShareButton url={url}>
-          <Icon backgroundColor={iconBackgroundColor} round={round} size={size}>
+          <Icon {...props}>
             <VkSVG
               color={iconColor}
               width={shares.VK.width ? shares.VK.width : WIDTH_DEFAULT}
@@ -72,7 +77,7 @@ export const ShareWith: FC<ShareWithProps> = ({
 
       {shares.Facebook && shares.Facebook.isInclude ? (
         <FacebookShareButton url={url}>
-          <Icon backgroundColor={iconBackgroundColor} round={round} size={size}>
+          <Icon {...props}>
             <FacebookV2SVG
               color={iconColor}
               width={
@@ -90,7 +95,7 @@ export const ShareWith: FC<ShareWithProps> = ({
 
       {shares.Viber && shares.Viber.isInclude ? (
         <ViberShareButton url={url}>
-          <Icon backgroundColor={iconBackgroundColor} round={round} size={size}>
+          <Icon {...props}>
             <ViberSVG
               color={iconColor}
               width={shares.Viber.width ? shares.Viber.width : WIDTH_DEFAULT}
@@ -106,7 +111,7 @@ export const ShareWith: FC<ShareWithProps> = ({
 
       {shares.Telegram && shares.Telegram.isInclude ? (
         <TelegramShareButton url={url}>
-          <Icon backgroundColor={iconBackgroundColor} round={round} size={size}>
+          <Icon {...props}>
             <TelegramSVG
               color={iconColor}
               width={
@@ -124,7 +129,7 @@ export const ShareWith: FC<ShareWithProps> = ({
 
       {shares.Whatsapp && shares.Whatsapp.isInclude ? (
         <WhatsappShareButton url={url}>
-          <Icon backgroundColor={iconBackgroundColor} round={round} size={size}>
+          <Icon {...props}>
             <WhatsAppSVG
               color={iconColor}
               width={

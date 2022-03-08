@@ -8,18 +8,23 @@ import styles from './Button.module.scss';
 interface ButtonProps {
   types: ButtonType[];
   children: React.ReactNode;
+  isSubmit?: true;
+  width?: number;
 }
 
-export const Button: FC<ButtonProps> = ({ types, children }) => {
+export const Button: FC<ButtonProps> = ({
+  types,
+  isSubmit,
+  width,
+  children,
+}) => {
   return (
     <button
-      type="button"
+      type={isSubmit ? 'submit' : 'button'}
+      style={{ width: width ? `${width}px` : 'auto' }}
       className={clsx(
         styles.button,
-        types.includes(ButtonType.BASE) && styles.base,
-        types.includes(ButtonType.HIGHLIGHT) && styles.highlight,
-        types.includes(ButtonType.YELLOW) && styles.yellow,
-        types.includes(ButtonType.BIG) && styles.big
+        types.map<string>((type) => styles[type]).join(' ')
       )}
     >
       {children}

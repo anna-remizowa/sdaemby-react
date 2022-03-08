@@ -27,21 +27,22 @@ export const ROUTING = {
 };
 
 export enum ButtonType {
-  HIGHLIGHT,
-  BASE,
-  YELLOW,
-  BIG,
+  HIGHLIGHT = 'highlight',
+  BASE = 'base',
+  YELLOW = 'yellow',
+  PURPLE = 'purple',
+  BIG = 'big',
 }
 
 export enum LabelType {
-  PURPLE,
-  BASE,
+  PURPLE = 'purple',
+  BASE = 'base',
 }
 
 export enum MenuType {
-  BOLD,
-  BASE,
-  COLUMN,
+  BOLD = 'baseBold',
+  BASE = 'base',
+  COLUMN = 'column',
 }
 
 export enum PositionSVG {
@@ -50,9 +51,9 @@ export enum PositionSVG {
 }
 
 export enum SocialType {
-  BASE,
-  PURPLE,
-  VERTICAL,
+  BASE = 'base',
+  PURPLE = 'purple',
+  VERTICAL = 'vertical',
 }
 
 export const enum ShareWithType {
@@ -62,6 +63,16 @@ export const enum ShareWithType {
   TELEGRAM = 'Telegram',
   WHATSAPP = 'WhatsApp',
   INSTAGRAM = 'Instagram',
+}
+
+export const enum FormElementType {
+  INPUT,
+  TEXTAREA,
+}
+
+export const enum FormIconType {
+  USER = 'user',
+  MAIL = 'mail',
 }
 
 export const enum COLORS {

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { SVG } from './svg';
 
-interface SVGProps {
+export interface SVGProps {
   color: string;
   width: number;
   height: number;

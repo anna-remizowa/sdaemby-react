@@ -31,9 +31,7 @@ export const FooterMenu: FC<FooterMenuProps> = ({
       <ul
         className={clsx(
           styles.list,
-          menuType.includes(MenuType.BASE) && styles.base,
-          menuType.includes(MenuType.BOLD) && styles.baseBold,
-          menuType.includes(MenuType.COLUMN) && styles.column
+          menuType.map<string>((type) => styles[type]).join(' ')
         )}
       >
         {items.map((item) => {

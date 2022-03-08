@@ -2,15 +2,15 @@ import React, { FC } from 'react';
 import {
   FacebookSVG,
   InstagramSvg,
+  SVGProps,
   TelegramSVG,
   ViberSVG,
   VkSVG,
   WhatsAppSVG,
 } from 'components/shared/svg/components.svg';
 
-/*fixme: что за тип должен быть вместо any?? ругается на JSX.Element и FC<SVGProps>*/
 interface IComponentsSVG {
-  [key: string]: any;
+  [key: string]: FC<SVGProps>;
 }
 
 export const ComponentsSVG: IComponentsSVG = {
