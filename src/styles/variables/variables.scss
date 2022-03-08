@@ -1,14 +1,17 @@
 $gray: #f8f8f8;
+$gray-light: #bdbdbd;
 $blue-gray: #8291a3;
 $dark-gray: #686868;
+$gray-opacity: rgba(255, 255, 255, 0.1);
 $black: #1e2123;
-$purple-light: #4E64F9;
+$purple-light: #4e64f9;
 $purple: #664ef9;
 $purple-dark: #612bfb;
+$purple-input: rgba(102, 78, 249, 0.8);
+$purple-opacity: rgba(45, 57, 136, 0.5);
 $light-purple: rgba(102, 78, 249, 0.1);
 $yellow: #ffd54f;
-$yellow-dark: #FEC100;
-$gray-opacity: rgba(255, 255, 255, 0.1);
+$yellow-dark: #fec100;
 $red-error: red;
 
 %base-text {
@@ -16,7 +19,7 @@ $red-error: red;
   line-height: 17px;
 }
 
-%h1{
+%h1 {
   font-weight: bold;
   font-size: 30px;
   line-height: 100%;

@@ -2,9 +2,12 @@
 
 .background {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 430px;
   padding-top: 82px;
+  padding-bottom: 117px;
   margin-bottom: 90px;
   background-image: url("../../../assets/images/background_round.png");
   border-bottom-left-radius: 50px;
@@ -12,6 +15,7 @@
 }
 
 .headerBig {
+  margin-bottom: 50px;
   font-weight: bold;
   font-size: 30px;
   line-height: 36px;

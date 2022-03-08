@@ -8,6 +8,7 @@ export const REST_API = {
   footer: '/footer',
   news: '/news',
   contacts: '/contacts',
+  apartFilter: '/filter/apartments',
 };
 
 export const HOME = 'Главная';
@@ -68,6 +69,13 @@ export const enum ShareWithType {
 export const enum FormElementType {
   INPUT,
   TEXTAREA,
+}
+
+export const enum FormElementLabelType {
+  BASE = 'base',
+  COLUMN = 'column',
+  LIGHT = 'light',
+  PURPLE = 'purple',
 }
 
 export const enum FormIconType {

@@ -1,7 +1,7 @@
 @import '../../../styles/variables/variables';
 
 .button {
-  min-height: 37px;
+  height: 37px;
   border: none;
   border-radius: 17px;
   @extend %base-text;

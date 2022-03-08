@@ -1,0 +1,16 @@
+@import '../../../styles/variables/variables';
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  padding: 0 20px 5px 0;
+  border-right: 1px solid rgba(102, 78, 249, 0.1);
+
+  &:not(:first-of-type) {
+	padding-left: 20px;
+  }
+
+}

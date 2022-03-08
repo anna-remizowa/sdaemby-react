@@ -1,17 +1,14 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { ButtonType, FormElementType, FormIconType } from 'app.constants';
+import { ButtonType, FormElementLabelType, FormIconType } from 'app.constants';
 import { Button } from 'components/shared/button/Button';
 import { FormElement } from 'components/shared/forms/FormElement';
+import { TextAreaForm } from 'components/shared/forms/TextAreaForm';
+import { InputForm } from 'components/shared/forms/InputForm';
 
 import styles from './ContactsForm.module.scss';
-
-export type IFormData = {
-  name: string;
-  email: string;
-  text: string;
-};
+import { IFormData } from 'model/IFormData';
 
 /*todo: модалка после отправки формы*/
 export const ContactsForm: FC = () => {
@@ -23,56 +20,66 @@ export const ContactsForm: FC = () => {
 
   const onSubmit = handleSubmit((data) => console.log(data));
 
-  const dataProps = {
-    register: register,
-    errors: errors,
-  };
-
   return (
     <div className={styles.form}>
       <form onSubmit={onSubmit}>
         <div className={styles.inputBox}>
           <FormElement
-            type={FormElementType.INPUT}
             name={'name'}
             label={'Ваше имя'}
+            labelTypes={[FormElementLabelType.COLUMN]}
             icon={FormIconType.USER}
-            placeholder={'Введите имя'}
             errorText={'Введите корректное имя'}
-            options={{
-              required: true,
-            }}
-            {...dataProps}
-          />
+            errors={errors}
+          >
+            <InputForm
+              name={'name'}
+              placeholder={'Введите имя'}
+              register={register}
+              options={{
+                required: true,
+              }}
+            />
+          </FormElement>
 
           <FormElement
-            type={FormElementType.INPUT}
-            inputType={'email'}
             name={'email'}
-            label="Ваша электронная почта"
+            label={'Ваша электронная почта'}
+            labelTypes={[FormElementLabelType.COLUMN]}
             icon={FormIconType.MAIL}
-            placeholder={'Введите email'}
             errorText={'Введите корректный email'}
-            options={{
-              required: true,
-              pattern: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
-            }}
-            {...dataProps}
-          />
+            errors={errors}
+          >
+            <InputForm
+              name={'email'}
+              inputType={'email'}
+              placeholder={'Введите email'}
+              register={register}
+              options={{
+                required: true,
+                pattern: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+              }}
+            />
+          </FormElement>
         </div>
 
         <div className={styles.inputBox}>
           <FormElement
-            type={FormElementType.TEXTAREA}
             name={'text'}
-            label="Ваше сообщение"
-            placeholder={'Сообщение'}
+            label={'Ваше сообщение'}
+            labelTypes={[FormElementLabelType.COLUMN]}
             errorText={'Это поле не может быть пустым'}
-            options={{
-              required: true,
-            }}
-            {...dataProps}
-          />
+            errors={errors}
+          >
+            <TextAreaForm
+              name={'text'}
+              placeholder={'Сообщение'}
+              register={register}
+              options={{
+                required: true,
+              }}
+            />
+          </FormElement>
         </div>
 
         <Button

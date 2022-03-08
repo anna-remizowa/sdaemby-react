@@ -1,0 +1,52 @@
+@import '../../../styles/variables/variables';
+
+.tabs {
+  -webkit-tap-highlight-color: transparent;
+
+  & .list {
+	padding: 0;
+  }
+
+  & .tab {
+	display: inline-block;
+	list-style: none;
+	padding: 13px 20px;
+	@extend %base-text;
+	font-weight: 600;
+	color: white;
+	background-color: $purple-opacity;
+	outline: none;
+	cursor: pointer;
+
+	&Selected {
+	  background-color: white;
+	  color: $purple;
+	  border-radius: 10px 10px 0 0;
+	}
+
+	&Disabled {
+	  color: GrayText;
+	  cursor: default;
+	}
+
+	&:first-of-type {
+	  border-top-left-radius: 10px;
+	}
+
+	&:last-of-type {
+	  border-top-right-radius: 10px;
+	}
+
+  }
+
+  & .panel {
+	display: none;
+	padding: 15px 20px;
+	background-color: white;
+	border-radius: 0 10px 10px 10px;
+
+	&Selected {
+	  display: block;
+	}
+  }
+}

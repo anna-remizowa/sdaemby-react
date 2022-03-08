@@ -1,0 +1,101 @@
+@import '../variables/variables';
+
+.select {
+  position: relative;
+  width: 150px;
+
+  &:hover {
+	& .select__indicator {
+	  color: $purple;
+	}
+  }
+
+  &__control {
+	position: relative;
+	height: 37px;
+	padding: 9px 12px 11px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $gray;
+	border: 2px solid $gray;
+	border-radius: 20px;
+	cursor: pointer;
+	outline: 0;
+	transition: all 100ms, border 0ms;
+
+	&--menu-is-open {
+	  background-color: white;
+	  border: 2px solid $purple-input;
+
+	  & .select__indicator {
+		color: $purple;
+	  }
+	}
+  }
+
+  &__value-container {
+	position: relative;
+	align-items: center;
+	display: grid;
+	flex: 1;
+	flex-wrap: wrap;
+	padding: 0;
+	overflow: hidden;
+  }
+
+  &__placeholder, &__single-value, &__option {
+	grid-area: 1/1/2/3;
+	@extend %base-text;
+	font-weight: 500;
+  }
+
+  &__single-value {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: $black;
+  }
+
+  &__placeholder {
+	color: $dark-gray;
+  }
+
+  &__indicator-separator {
+	display: none;
+  }
+
+  &__menu {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	margin-top: 10px;
+	background-color: hsl(0, 0%, 100%);
+	border-radius: 10px;
+	box-shadow: 0 0 40px rgba(135, 124, 202, 0.3);
+	z-index: 1;
+  }
+
+  &__option {
+	background-color: transparent;
+	color: $black;
+	cursor: pointer;
+	display: block;
+	padding: 10px 15px;
+	width: 100%;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	&--is-focused {
+	  background-color: $gray;
+	}
+  }
+
+  &__indicator {
+	display: flex;
+	padding: 8px 0;
+	color: hsl(0, 0%, 80%);
+	transition: color 150ms;
+  }
+}

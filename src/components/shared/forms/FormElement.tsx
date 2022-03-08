@@ -1,40 +1,40 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
-import { FieldErrors, Path, UseFormRegister } from 'react-hook-form';
-import { RegisterOptions } from 'react-hook-form/dist/types/validator';
+import { FieldErrors, Path } from 'react-hook-form';
 
-import { IFormData } from 'components/pages/contacts/form/ContactsForm';
-import { FormElementType, FormIconType } from 'app.constants';
+import { IFormData } from 'model/IFormData';
+import { FormElementLabelType, FormIconType } from 'app.constants';
 
-import styles from './FormElement.module.scss';
+import styles from './Form.module.scss';
 
 interface FormElementProps {
-  type: FormElementType;
   name: Path<IFormData>;
-  inputType?: string;
-  placeholder?: string;
   label?: string;
+  labelTypes?: FormElementLabelType[];
   icon?: FormIconType;
   errorText?: string;
-  register: UseFormRegister<IFormData>;
-  options?: RegisterOptions;
-  errors: FieldErrors<IFormData>;
+  errors?: FieldErrors<IFormData>;
+  children: React.ReactNode;
 }
 
 export const FormElement: FC<FormElementProps> = ({
-  type,
   name,
-  inputType,
   label,
+  labelTypes,
   icon,
   errorText,
-  placeholder,
-  register,
-  options,
   errors,
+  children,
 }) => {
   return (
-    <div className={styles.element}>
+    <div
+      className={clsx(
+        styles.element,
+        labelTypes
+          ? labelTypes.map<string>((type) => styles[type]).join(' ')
+          : styles[FormElementLabelType.BASE]
+      )}
+    >
       {label ? (
         <label className={styles.label} htmlFor={name}>
           {label}
@@ -44,26 +44,10 @@ export const FormElement: FC<FormElementProps> = ({
       )}
 
       <div className={styles.inputBox}>
-        {errors[name] && (
+        {errors && errors[name] && (
           <p className={styles.error}>{errorText ? errorText : ''}</p>
         )}
-        {type === FormElementType.INPUT && (
-          <input
-            className={styles.input}
-            type={inputType ? inputType : 'text'}
-            id={name}
-            placeholder={placeholder ? placeholder : ''}
-            {...register(name, options ? options : {})}
-          />
-        )}
-        {type === FormElementType.TEXTAREA && (
-          <textarea
-            className={clsx(styles.input, styles.textarea)}
-            id={name}
-            placeholder={placeholder ? placeholder : ''}
-            {...register(name, options ? options : {})}
-          />
-        )}
+        {children}
         {icon ? <i className={clsx(styles.icon, styles[icon])} /> : ''}
       </div>
     </div>
