@@ -9,6 +9,7 @@ export const REST_API = {
   news: '/news',
   contacts: '/contacts',
   apartFilter: '/filter/apartments',
+  photoSlider: '/photo/slider',
 };
 
 export const HOME = 'Главная';

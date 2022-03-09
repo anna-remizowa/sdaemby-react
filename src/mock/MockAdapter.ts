@@ -8,6 +8,7 @@ import { NEWS } from './data/news.data';
 import { NEWS_DETAIL } from './data/news-detail.data';
 import { CONTACTS } from './data/contacts.data';
 import { APARTMENTS_FILTER } from './data/apartments.filter.data';
+import { PHOTO_SLIDES_DATA } from './data/photo-slides.data';
 
 const mock = new MockAdapter(axios);
 
@@ -23,3 +24,5 @@ mock.onGet(new RegExp(`${API_URL + REST_API.news}/*`)).reply(200, NEWS_DETAIL);
 mock.onGet(API_URL + REST_API.contacts).reply(200, CONTACTS);
 
 mock.onGet(API_URL + REST_API.apartFilter).reply(200, APARTMENTS_FILTER);
+
+mock.onGet(API_URL + REST_API.photoSlider).reply(200, PHOTO_SLIDES_DATA);

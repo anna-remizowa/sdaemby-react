@@ -1,5 +1,11 @@
 @import '../../../styles/variables/variables';
 
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .background {
   display: flex;
   flex-direction: column;

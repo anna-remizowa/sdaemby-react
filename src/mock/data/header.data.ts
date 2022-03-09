@@ -70,6 +70,28 @@ export const HEADER = {
       id: 2,
       name: 'Коттеджи и усадьбы',
       href: 'cottages',
+      items: [
+        {
+          id: 1,
+          name: 'Агроусадьбы',
+          href: 'cottages1',
+        },
+        {
+          id: 3,
+          name: 'Коттеджи',
+          href: 'cottages3',
+        },
+        {
+          id: 5,
+          name: 'Загородный комплекс',
+          href: 'cottages5',
+        },
+        {
+          id: 2,
+          name: 'Базы отдыха',
+          href: 'cottages2',
+        },
+      ],
     },
     {
       id: 3,

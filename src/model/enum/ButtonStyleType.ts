@@ -4,4 +4,5 @@ export enum ButtonStyleType {
   YELLOW = 'yellow',
   PURPLE = 'purple',
   BIG = 'big',
+  SMALL = 'small',
 }

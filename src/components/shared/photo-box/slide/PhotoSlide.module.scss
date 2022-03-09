@@ -1,0 +1,57 @@
+@import '../../../../styles/variables/variables';
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  padding: 37px;
+  border-radius: 10px;
+}
+
+.opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  opacity: 0.4;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.wrapper {
+  z-index: 1;
+}
+
+.label {
+  color: $purple;
+  //background: linear-gradient(90deg, #9D94FF 0%, #6B50E9 94.5%);
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 25px;
+  line-height: 30px;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.label, .title {
+  margin-bottom: 21px;
+  font-weight: bold;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  & > button {
+	font-weight: 500;
+  }
+}

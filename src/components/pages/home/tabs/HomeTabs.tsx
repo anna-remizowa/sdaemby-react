@@ -4,6 +4,7 @@ import { Filter } from 'components/shared/filter/Filter';
 import { HomeContext } from 'components/pages/home/Home';
 
 /*todo: заголовки табов явно должны приходить с сервера, что тогда делать с контентом табов?*/
+/*todo: filter - доделать функционал + подменю "больше опций"*/
 export const HomeTabs: FC = () => {
   const dataHome = useContext(HomeContext);
   return (
