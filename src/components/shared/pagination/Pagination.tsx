@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+
+import { ROUTING } from 'app.constants';
 
 import styles from './Pagination.module.scss';
-import { Link } from 'react-router-dom';
-import { ROUTING } from '../../../app.constants';
 
 interface PaginationProps {
   countPages: number;

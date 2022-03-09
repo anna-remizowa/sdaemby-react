@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import styles from './Dropdown.module.scss';
-import { MenuItem } from '../../../model/Menu';
+import { MenuItem } from 'model/interfaces/Menu';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 

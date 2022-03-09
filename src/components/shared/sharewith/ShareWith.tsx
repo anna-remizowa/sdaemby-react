@@ -7,16 +7,16 @@ import {
   WhatsappShareButton,
 } from 'react-share';
 
-import { Icon } from 'components/shared/icon/Icon';
-
-import styles from './ShareWith.module.scss';
 import {
   FacebookV2SVG,
   TelegramSVG,
   ViberSVG,
   VkSVG,
   WhatsAppSVG,
-} from '../svg/components.svg';
+} from 'components/shared/svg/components.svg';
+import { Icon } from 'components/shared/icon/Icon';
+
+import styles from './ShareWith.module.scss';
 
 interface SocialInclude {
   isInclude?: boolean;

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { SearchSVG } from '../svg/components.svg';
+import { SearchSVG } from 'components/shared/svg/components.svg';
 
 import styles from './Search.module.scss';
 

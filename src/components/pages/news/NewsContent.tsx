@@ -7,7 +7,7 @@ import { Breadcrumbs } from 'components/shared/breadcrumbs/Breadcrumbs';
 import { Search } from 'components/shared/search/Search';
 import { NewsItem } from './NewsItem';
 import { Pagination } from 'components/shared/pagination/Pagination';
-import { NewsPage } from 'model/News';
+import { NewsPage } from 'model/interfaces/News';
 import { API_URL, REST_API } from 'app.constants';
 
 import styles from './NewsContent.module.scss';

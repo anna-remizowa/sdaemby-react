@@ -4,8 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import { HomeTabs } from './tabs/HomeTabs';
-import { IFilter } from 'model/IFilter';
-import { IHome } from 'model/IHome';
+import { IFilter } from 'model/interfaces/IFilter';
+import { IHome } from 'model/interfaces/IHome';
 import { API_URL, REST_API, ROUTING } from 'app.constants';
 
 import styles from './Home.module.scss';
