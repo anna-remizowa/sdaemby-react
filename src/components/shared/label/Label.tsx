@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { LabelType } from 'app.constants';
+import { LabelStyleType } from 'model/enum/LabelStyleType';
 
 import styles from './Label.module.scss';
 
 interface LabelProps {
   title: string;
-  type: LabelType;
+  type: LabelStyleType;
 }
 
 export const Label: FC<LabelProps> = ({ title, type }) => {

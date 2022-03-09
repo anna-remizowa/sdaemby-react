@@ -7,7 +7,7 @@ export const NEWS = {
   news: [
     {
       id: 1,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -16,7 +16,7 @@ export const NEWS = {
     },
     {
       id: 2,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -25,7 +25,7 @@ export const NEWS = {
     },
     {
       id: 3,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -34,7 +34,7 @@ export const NEWS = {
     },
     {
       id: 4,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -43,7 +43,7 @@ export const NEWS = {
     },
     {
       id: 5,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -52,7 +52,7 @@ export const NEWS = {
     },
     {
       id: 6,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -61,7 +61,7 @@ export const NEWS = {
     },
     {
       id: 7,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -70,7 +70,7 @@ export const NEWS = {
     },
     {
       id: 8,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -79,7 +79,7 @@ export const NEWS = {
     },
     {
       id: 9,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:

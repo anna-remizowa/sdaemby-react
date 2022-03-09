@@ -2,15 +2,16 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { FieldErrors, Path } from 'react-hook-form';
 
-import { IFormData } from 'model/IFormData';
-import { FormElementLabelType, FormIconType } from 'app.constants';
+import { IFormData } from 'model/interfaces/IFormData';
+import { FormLabelStyleType } from 'model/enum/FormLabelStyleType';
+import { FormIconType } from 'model/enum/FormIconType';
 
 import styles from './Form.module.scss';
 
 interface FormElementProps {
   name: Path<IFormData>;
   label?: string;
-  labelTypes?: FormElementLabelType[];
+  labelTypes?: FormLabelStyleType[];
   icon?: FormIconType;
   errorText?: string;
   errors?: FieldErrors<IFormData>;
@@ -32,7 +33,7 @@ export const FormElement: FC<FormElementProps> = ({
         styles.element,
         labelTypes
           ? labelTypes.map<string>((type) => styles[type]).join(' ')
-          : styles[FormElementLabelType.BASE]
+          : styles[FormLabelStyleType.BASE]
       )}
     >
       {label ? (
@@ -43,7 +44,7 @@ export const FormElement: FC<FormElementProps> = ({
         ''
       )}
 
-      <div className={styles.inputBox}>
+      <div className={clsx(styles.inputBox, { [styles.isIcon]: icon })}>
         {errors && errors[name] && (
           <p className={styles.error}>{errorText ? errorText : ''}</p>
         )}

@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { Path, Controller, Control } from 'react-hook-form';
 import Select from 'react-select';
 
-import { IOption } from 'model/IFilter';
+import { IOption } from 'model/interfaces/IFilter';
+import { IFormData } from 'model/interfaces/IFormData';
 
 import 'styles/libs/select.scss';
-import { IFormData } from '../../../model/IFormData';
 
 interface FormSelectProps {
   name: Path<IFormData>;

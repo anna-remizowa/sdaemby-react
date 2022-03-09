@@ -1,12 +1,13 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { HEADER } from 'data/header.data';
-import { FOOTER } from 'data/footer.data';
+
 import { API_URL, REST_API } from 'app.constants';
-import { NEWS } from 'data/news.data';
-import { NEWS_DETAIL } from 'data/news-detail.data';
-import { CONTACTS } from 'data/contacts.data';
-import { APARTMENTS_FILTER } from 'data/apartments.filter.data';
+import { HEADER } from './data/header.data';
+import { FOOTER } from './data/footer.data';
+import { NEWS } from './data/news.data';
+import { NEWS_DETAIL } from './data/news-detail.data';
+import { CONTACTS } from './data/contacts.data';
+import { APARTMENTS_FILTER } from './data/apartments.filter.data';
 
 const mock = new MockAdapter(axios);
 

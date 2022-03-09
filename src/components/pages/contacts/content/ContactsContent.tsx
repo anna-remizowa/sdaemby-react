@@ -10,7 +10,7 @@ import {
 } from 'components/shared/svg/components.svg';
 import { ContactsContext } from 'components/pages/contacts/Contacts';
 import { ShareWith } from 'components/shared/sharewith/ShareWith';
-import { COLORS } from 'app.constants';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './ContactsContent.module.scss';
 

@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { ButtonType, FormElementLabelType, FormIconType } from 'app.constants';
 import { Button } from 'components/shared/button/Button';
 import { FormElement } from 'components/shared/forms/FormElement';
 import { TextAreaForm } from 'components/shared/forms/TextAreaForm';
 import { InputForm } from 'components/shared/forms/InputForm';
+import { IFormData } from 'model/interfaces/IFormData';
+import { FormLabelStyleType } from 'model/enum/FormLabelStyleType';
+import { FormIconType } from 'model/enum/FormIconType';
+import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 
 import styles from './ContactsForm.module.scss';
-import { IFormData } from 'model/IFormData';
 
 /*todo: модалка после отправки формы*/
 export const ContactsForm: FC = () => {
@@ -27,7 +29,7 @@ export const ContactsForm: FC = () => {
           <FormElement
             name={'name'}
             label={'Ваше имя'}
-            labelTypes={[FormElementLabelType.COLUMN]}
+            labelTypes={[FormLabelStyleType.COLUMN]}
             icon={FormIconType.USER}
             errorText={'Введите корректное имя'}
             errors={errors}
@@ -45,7 +47,7 @@ export const ContactsForm: FC = () => {
           <FormElement
             name={'email'}
             label={'Ваша электронная почта'}
-            labelTypes={[FormElementLabelType.COLUMN]}
+            labelTypes={[FormLabelStyleType.COLUMN]}
             icon={FormIconType.MAIL}
             errorText={'Введите корректный email'}
             errors={errors}
@@ -67,7 +69,7 @@ export const ContactsForm: FC = () => {
           <FormElement
             name={'text'}
             label={'Ваше сообщение'}
-            labelTypes={[FormElementLabelType.COLUMN]}
+            labelTypes={[FormLabelStyleType.COLUMN]}
             errorText={'Это поле не может быть пустым'}
             errors={errors}
           >
@@ -83,7 +85,7 @@ export const ContactsForm: FC = () => {
         </div>
 
         <Button
-          types={[ButtonType.BIG, ButtonType.PURPLE]}
+          types={[ButtonStyleType.BIG, ButtonStyleType.PURPLE]}
           isSubmit
           width={200}
         >

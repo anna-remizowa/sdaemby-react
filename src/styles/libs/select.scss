@@ -5,8 +5,8 @@
   width: 150px;
 
   &:hover {
-	& .select__indicator {
-	  color: $purple;
+	& .select__control {
+	  background-color: $light-purple;
 	}
   }
 
@@ -27,10 +27,6 @@
 	&--menu-is-open {
 	  background-color: white;
 	  border: 2px solid $purple-input;
-
-	  & .select__indicator {
-		color: $purple;
-	  }
 	}
   }
 
@@ -95,7 +91,7 @@
   &__indicator {
 	display: flex;
 	padding: 8px 0;
-	color: hsl(0, 0%, 80%);
+	color: $purple;
 	transition: color 150ms;
   }
 }

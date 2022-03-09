@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 
 import { SocialItem } from './SocialItem';
-import { COLORS, SocialType } from 'app.constants';
+import { COLORS } from 'model/enum/Colors';
+import { SocialStyleType } from 'model/enum/SocialStyleType';
 
 import styles from './Socials.module.scss';
 
@@ -17,7 +18,7 @@ export interface SocialsSVG {
 interface SocialsProps {
   socials: SocialsSVG[];
   header?: string;
-  types: SocialType[];
+  types: SocialStyleType[];
   iconColor?: string;
 }
 

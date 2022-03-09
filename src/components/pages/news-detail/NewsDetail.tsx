@@ -5,11 +5,13 @@ import { useParams } from 'react-router-dom';
 
 import { Breadcrumbs } from 'components/shared/breadcrumbs/Breadcrumbs';
 import { Label } from 'components/shared/label/Label';
-import { API_URL, COLORS, LabelType, REST_API } from 'app.constants';
+import { API_URL, REST_API } from 'app.constants';
 import { ShareWith } from 'components/shared/sharewith/ShareWith';
 import { NewsItem } from 'components/pages/news/NewsItem';
-import { INewsDetail } from 'model/INewsDetail';
+import { INewsDetail } from 'model/interfaces/INewsDetail';
 import { getDateFromISO } from 'utils/getDateFromISO';
+import { LabelStyleType } from 'model/enum/LabelStyleType';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './NewsDetail.module.scss';
 
@@ -41,7 +43,7 @@ export const NewsDetail: FC = () => {
               <div className={styles.shared}>
                 <Label
                   title={getDateFromISO(appNewsDetail.news.date)}
-                  type={LabelType.PURPLE}
+                  type={LabelStyleType.PURPLE}
                 />
                 <ShareWith
                   title={'Поделиться'}

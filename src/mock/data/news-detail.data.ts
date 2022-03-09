@@ -1,10 +1,10 @@
-import { INewsDetail } from '../model/INewsDetail';
+import { INewsDetail } from 'model/interfaces/INewsDetail';
 import { BREADCRUMBS_NEWS_DETAIL } from './breadcrumbs.data';
 
 export const NEWS_DETAIL: INewsDetail = {
   news: {
     id: 1,
-    image: require('../assets/images/news_1_big.png'),
+    image: require('../../assets/images/news_1_big.png'),
     alt: 'Картинка для новости 1',
     header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
     content:
@@ -22,7 +22,7 @@ export const NEWS_DETAIL: INewsDetail = {
   otherNews: [
     {
       id: 2,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1_big.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -31,7 +31,7 @@ export const NEWS_DETAIL: INewsDetail = {
     },
     {
       id: 3,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1_big.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:
@@ -40,7 +40,7 @@ export const NEWS_DETAIL: INewsDetail = {
     },
     {
       id: 4,
-      image: require('../assets/images/news_1.png'),
+      image: require('../../assets/images/news_1_big.png'),
       alt: 'Картинка для новости 1',
       header: 'Линия Сталина: суровый отдых в усадьбах на сутки',
       content:

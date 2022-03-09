@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { Path, UseFormRegister } from 'react-hook-form';
 import { RegisterOptions } from 'react-hook-form/dist/types/validator';
 
-import { IFormData } from 'model/IFormData';
+import { IFormData } from 'model/interfaces/IFormData';
 
 import styles from './Form.module.scss';
 

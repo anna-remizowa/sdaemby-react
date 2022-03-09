@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import { Menu } from 'model/Menu';
-import { MenuType } from 'app.constants';
+import { Menu } from 'model/interfaces/Menu';
+import { MenuType } from 'model/enum/MenuType';
 
 import styles from './FooterMenu.module.scss';
 

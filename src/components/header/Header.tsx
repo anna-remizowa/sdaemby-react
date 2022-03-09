@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 import { HeaderMenu } from './menu/HeaderMenu';
 import { Button } from 'components/shared/button/Button';
 
-import { API_URL, ButtonType, REST_API, ROUTING } from 'app.constants';
-import { IHeader } from '../../model/IHeader';
+import { API_URL, REST_API, ROUTING } from 'app.constants';
+import { IHeader } from 'model/interfaces/IHeader';
+import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 
 import styles from './Header.module.scss';
 
@@ -52,7 +53,9 @@ export const Header: FC = () => {
           items={appHeader.bottom ? appHeader.bottom : []}
           headerTypeBold
         />
-        <Button types={[ButtonType.HIGHLIGHT]}>+ Разместить объявление</Button>
+        <Button types={[ButtonStyleType.HIGHLIGHT]}>
+          + Разместить объявление
+        </Button>
       </div>
     </header>
   );

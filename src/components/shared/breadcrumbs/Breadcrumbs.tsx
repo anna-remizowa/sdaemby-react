@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { COLORS, HOME } from 'app.constants';
+import { HOME } from 'app.constants';
+import { HomeSVG } from 'components/shared/svg/components.svg';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './Breadcrumbs.module.scss';
-import { HomeSVG } from '../svg/components.svg';
 
 export interface Breadcrumb {
   name: string;

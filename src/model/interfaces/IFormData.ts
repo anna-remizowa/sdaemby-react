@@ -7,7 +7,8 @@ export interface IContactsFormData {
 export interface IFilterFormData {
   location: string;
   room: string;
-  price: string;
+  priceFrom: string;
+  priceTo: string;
 }
 
 export interface IFormData extends IContactsFormData, IFilterFormData {}

@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { ButtonType } from 'app.constants';
+import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 
 import styles from './Button.module.scss';
 
 interface ButtonProps {
-  types: ButtonType[];
+  types: ButtonStyleType[];
   children: React.ReactNode;
   isSubmit?: true;
   width?: number;

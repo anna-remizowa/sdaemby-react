@@ -45,6 +45,10 @@
 	&:hover {
 	  background-color: $yellow-dark;
 	}
+
+	& > svg {
+	  margin-left: 10px;
+	}
   }
 
   &.big {

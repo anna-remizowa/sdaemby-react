@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { Menu } from 'model/Menu';
+import { Menu } from 'model/interfaces/Menu';
 import { HeaderLink } from 'components/header/link/HeaderLink';
 
 import styles from './HeaderMenu.module.scss';

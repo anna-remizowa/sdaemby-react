@@ -3,8 +3,10 @@ import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
 import { Button } from 'components/shared/button/Button';
-import { ButtonType, COLORS, ROUTING } from 'app.constants';
+import { ROUTING } from 'app.constants';
 import { HomeSVG, NotFoundSVG } from 'components/shared/svg/components.svg';
+import { ButtonStyleType } from 'model/enum/ButtonStyleType';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './NotFound.module.scss';
 
@@ -19,7 +21,7 @@ export const NotFound: FC = () => {
             существует
           </p>
           <Link to={`/${ROUTING.home}`}>
-            <Button types={[ButtonType.BIG, ButtonType.YELLOW]}>
+            <Button types={[ButtonStyleType.BIG, ButtonStyleType.YELLOW]}>
               <HomeSVG color={COLORS.BLACK} width={12} height={12} />
               Вернуться на главную
             </Button>

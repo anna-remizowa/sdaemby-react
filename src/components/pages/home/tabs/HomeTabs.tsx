@@ -12,7 +12,7 @@ export const HomeTabs: FC = () => {
         {
           title: 'Квартиры на сутки',
           content: dataHome.filters ? (
-            <Filter filter={dataHome.filters} />
+            <Filter filter={dataHome.filters} isMap />
           ) : (
             <></>
           ),

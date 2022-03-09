@@ -5,18 +5,13 @@ import { Link } from 'react-router-dom';
 
 import { FooterMenu } from './menu/FooterMenu';
 import { FooterPayments, ImageItem } from './payments/FooterPayments';
-import { IFooter } from 'model/IFooter';
+import { IFooter } from 'model/interfaces/IFooter';
 import { Socials, SocialsSVG } from 'components/shared/socials/Socials';
-
-import {
-  API_URL,
-  COLORS,
-  MenuType,
-  REST_API,
-  ROUTING,
-  ShareWithType,
-  SocialType,
-} from 'app.constants';
+import { API_URL, REST_API, ROUTING } from 'app.constants';
+import { ShareWithType } from 'model/enum/ShareWithType';
+import { MenuType } from 'model/enum/MenuType';
+import { SocialStyleType } from 'model/enum/SocialStyleType';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './Footer.module.scss';
 
@@ -134,7 +129,7 @@ export const Footer: FC = () => {
           <div className={styles.infoWrapper}>
             <Socials
               socials={socials}
-              types={[SocialType.BASE]}
+              types={[SocialStyleType.BASE]}
               header={'Мы в соцсетях'}
               iconColor={COLORS.BLACK}
             />

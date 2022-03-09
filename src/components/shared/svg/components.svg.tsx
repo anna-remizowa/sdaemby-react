@@ -229,9 +229,9 @@ export const ArrowSVG: FC<SVGProps> = ({ color, width, height }) => {
       <path
         d="M1.21448 10.75L5.96448 6L1.21448 1.25"
         stroke={color}
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </SVG>
   );

@@ -1,4 +1,4 @@
-import { Breadcrumb } from '../components/shared/breadcrumbs/Breadcrumbs';
+import { Breadcrumb } from 'components/shared/breadcrumbs/Breadcrumbs';
 
 export interface News {
   id: number;

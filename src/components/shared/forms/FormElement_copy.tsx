@@ -3,14 +3,12 @@ import clsx from 'clsx';
 import { FieldErrors, Path, UseFormRegister } from 'react-hook-form';
 import { RegisterOptions } from 'react-hook-form/dist/types/validator';
 
-import {
-  FormElementLabelType,
-  FormElementType,
-  FormIconType,
-} from 'app.constants';
+import { IContactsFormData } from 'model/interfaces/IFormData';
+import { FormElementType } from 'model/enum/FormElementType';
+import { FormLabelStyleType } from 'model/enum/FormLabelStyleType';
+import { FormIconType } from 'model/enum/FormIconType';
 
 import styles from './Form.module.scss';
-import { IContactsFormData } from '../../../model/IFormData';
 
 interface FormElementProps {
   type: FormElementType;
@@ -18,7 +16,7 @@ interface FormElementProps {
   inputType?: string;
   placeholder?: string;
   label?: string;
-  labelTypes?: FormElementLabelType[];
+  labelTypes?: FormLabelStyleType[];
   icon?: FormIconType;
   errorText?: string;
   register: UseFormRegister<IContactsFormData>;
@@ -45,7 +43,7 @@ export const FormElement: FC<FormElementProps> = ({
         styles.element,
         labelTypes
           ? labelTypes.map<string>((type) => styles[type]).join(' ')
-          : styles[FormElementLabelType.BASE]
+          : styles[FormLabelStyleType.BASE]
       )}
     >
       {label ? (
