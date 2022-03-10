@@ -9,6 +9,7 @@ import { NEWS_DETAIL } from './data/news-detail.data';
 import { CONTACTS } from './data/contacts.data';
 import { APARTMENTS_FILTER } from './data/apartments.filter.data';
 import { PHOTO_SLIDES_DATA } from './data/photo-slides.data';
+import { LIST_APART_DATA } from './data/list-apart.data';
 
 const mock = new MockAdapter(axios);
 
@@ -26,3 +27,5 @@ mock.onGet(API_URL + REST_API.contacts).reply(200, CONTACTS);
 mock.onGet(API_URL + REST_API.apartFilter).reply(200, APARTMENTS_FILTER);
 
 mock.onGet(API_URL + REST_API.photoSlider).reply(200, PHOTO_SLIDES_DATA);
+
+mock.onGet(API_URL + REST_API.listApart).reply(200, LIST_APART_DATA);

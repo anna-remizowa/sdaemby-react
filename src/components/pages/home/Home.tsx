@@ -8,7 +8,7 @@ import { HomeApartmentSection } from './apart-section/HomeApartmentSection';
 import { IFilter } from 'model/interfaces/IFilter';
 import { IHome } from 'model/interfaces/IHome';
 import { API_URL, REST_API, ROUTING } from 'app.constants';
-import { IPhotoItems } from 'model/interfaces/IPhotoItems';
+import { ILinkProps } from 'model/interfaces/ILinkProps';
 
 import styles from './Home.module.scss';
 
@@ -17,19 +17,25 @@ export const HomeContext = React.createContext<IHome>({});
 /*todo: возможно стоит все данные на главной странице запрашивать одним запросом*/
 export const Home: FC = () => {
   const [filter, setFilter] = useState<IFilter>({});
-  const [slider, setSlider] = useState<IPhotoItems>({});
+  const [slider, setSlider] = useState<ILinkProps>({});
+  const [list, setList] = useState<ILinkProps>({});
 
   useEffect(() => {
     axios.get<IFilter>(API_URL + REST_API.apartFilter).then((resp) => {
       setFilter(resp.data);
     });
-    axios.get<IPhotoItems>(API_URL + REST_API.photoSlider).then((resp) => {
+    axios.get<ILinkProps>(API_URL + REST_API.photoSlider).then((resp) => {
       setSlider(resp.data);
+    });
+    axios.get<ILinkProps>(API_URL + REST_API.listApart).then((resp) => {
+      setList(resp.data);
     });
   }, []);
 
   return (
-    <HomeContext.Provider value={{ filters: filter, sliders: slider }}>
+    <HomeContext.Provider
+      value={{ filters: filter, sliders: slider, list: list }}
+    >
       <div className={clsx('wrapper', styles.home)}>
         <div className={styles.background}>
           <h2 className={styles.headerBig}>

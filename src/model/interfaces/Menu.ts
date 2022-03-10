@@ -1,8 +1,7 @@
-export interface MenuItem {
-  id: number;
+import { ILink } from './ILink';
+
+export interface MenuItem extends ILink {
   header?: string;
-  name: string;
-  href: string;
   positionSVG?: string;
   items?: MenuItem[];
 }

@@ -1,18 +1,21 @@
 import { FC } from 'react';
-import { IPhotoSlide } from 'model/interfaces/IPhotoSlide';
+import { Link } from 'react-router-dom';
+
+import { ILinkItems } from 'model/interfaces/ILinkItems';
+import { Button } from 'components/shared/button/Button';
+import { ButtonStyleType } from 'model/enum/ButtonStyleType';
+import { ArrowSVG } from 'components/shared/svg/components.svg';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './PhotoSlide.module.scss';
-import { Button } from '../../button/Button';
-import { ButtonStyleType } from '../../../../model/enum/ButtonStyleType';
 
-export const PhotoSlide: FC<IPhotoSlide> = ({
+export const PhotoSlide: FC<ILinkItems> = ({
   img,
   label,
   title,
   items,
   href,
 }) => {
-  console.log(img);
   return (
     <div className={styles.slide} style={{ backgroundImage: `url(${img})` }}>
       <div className={styles.opacity} />
@@ -23,11 +26,21 @@ export const PhotoSlide: FC<IPhotoSlide> = ({
         {items ? (
           <div className={styles.items}>
             {items.map((item) => (
-              <Button types={[ButtonStyleType.SMALL, ButtonStyleType.PURPLE]}>
-                {item}
-              </Button>
+              <Link to={`/${item.href}`} key={item.id}>
+                <Button types={[ButtonStyleType.SMALL, ButtonStyleType.PURPLE]}>
+                  {item.name}
+                </Button>
+              </Link>
             ))}
           </div>
+        ) : (
+          ''
+        )}
+
+        {href ? (
+          <Link className={styles.link} to={`/${href}`}>
+            <ArrowSVG color={COLORS.WHITE} width={10} height={15} />
+          </Link>
         ) : (
           ''
         )}

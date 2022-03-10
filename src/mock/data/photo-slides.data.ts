@@ -4,7 +4,38 @@ export const PHOTO_SLIDES_DATA = {
       img: require('../../assets/images/photo-1.png'),
       label: 'снять квартиру',
       title: 'Квартиры на сутки',
-      items: ['Минск', 'Витебск', 'Гродно', 'Гомель', 'Брест', 'Могилев'],
+      items: [
+        {
+          id: '1',
+          name: 'Минск',
+          href: 'apart1',
+        },
+        {
+          id: '2',
+          name: 'Витебск',
+          href: 'apart2',
+        },
+        {
+          id: '3',
+          name: 'Гродно',
+          href: 'apart3',
+        },
+        {
+          id: '4',
+          name: 'Гомель',
+          href: 'apart4',
+        },
+        {
+          id: '5',
+          name: 'Брест',
+          href: 'apart5',
+        },
+        {
+          id: '6',
+          name: 'Могилев',
+          href: 'apart6',
+        },
+      ],
     },
     {
       img: require('../../assets/images/photo-2.png'),

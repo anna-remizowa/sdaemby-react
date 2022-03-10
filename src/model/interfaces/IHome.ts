@@ -1,7 +1,8 @@
 import { IFilter } from './IFilter';
-import { IPhotoItems } from './IPhotoItems';
+import { ILinkProps } from './ILinkProps';
 
 export interface IHome {
   filters?: IFilter;
-  sliders?: IPhotoItems;
+  sliders?: ILinkProps;
+  list?: ILinkProps;
 }
