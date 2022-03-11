@@ -2,7 +2,7 @@
 
 .top, .bottom {
   display: flex;
-  background-color: $gray;
+  background-color: $light-gray-100;
 }
 
 .top {
@@ -21,7 +21,7 @@
 .textBookmarks {
   position: relative;
   margin-right: 67px;
-  color: $blue-gray;
+  color: $light-gray-300;
 
   &:after {
 	position: absolute;
@@ -31,12 +31,12 @@
 	height: 18px;
 	mask-image: url('../../../public/assets/svg/favorite.svg');
 	mask-size: cover;
-	background-color: $blue-gray;
+	background-color: $light-gray-300;
   }
 }
 
 .textLogin {
-  color: $purple;
+  color: $purple-200;
 }
 
 .bottom {

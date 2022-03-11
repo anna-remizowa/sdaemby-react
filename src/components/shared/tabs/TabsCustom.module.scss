@@ -14,13 +14,13 @@
 	@extend %base-text;
 	font-weight: 600;
 	color: white;
-	background-color: $purple-opacity;
+	background-color: $deep-purple-opacity-100;
 	outline: none;
 	cursor: pointer;
 
 	&Selected {
 	  background-color: white;
-	  color: $purple;
+	  color: $purple-200;
 	  border-radius: 10px 10px 0 0;
 	}
 

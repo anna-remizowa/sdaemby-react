@@ -18,12 +18,12 @@ interface InputProps {
 }
 
 export const InputForm: FC<InputProps> = ({
-  inputType,
+  inputType = 'text',
   inputStyles,
   name,
-  placeholder,
+  placeholder = '',
   register,
-  options,
+  options = {},
 }) => {
   return (
     <input
@@ -31,10 +31,10 @@ export const InputForm: FC<InputProps> = ({
         styles.input,
         inputStyles?.map((inputStyle) => styles[inputStyle]).join(' ')
       )}
-      type={inputType ? inputType : 'text'}
+      type={inputType}
       id={name}
-      placeholder={placeholder ? placeholder : ''}
-      {...register(name, options ? options : {})}
+      placeholder={placeholder}
+      {...register(name, options)}
     />
   );
 };

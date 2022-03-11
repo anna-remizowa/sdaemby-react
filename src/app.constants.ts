@@ -7,10 +7,12 @@ export const REST_API = {
   header: '/header',
   footer: '/footer',
   news: '/news',
+  newsDetail: '/news/*',
   contacts: '/contacts',
   apartFilter: '/filter/apartments',
   photoSlider: '/photo/slider',
-  listApart: '/list',
+  listRent: '/rent',
+  listApartRent: '/rent/apartments',
 };
 
 export const HOME = 'Главная';

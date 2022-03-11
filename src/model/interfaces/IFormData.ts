@@ -6,6 +6,8 @@ export interface IContactsFormData {
 
 export interface IFilterFormData {
   location: string;
+  metro: string;
+  district: string;
   room: string;
   priceFrom: string;
   priceTo: string;

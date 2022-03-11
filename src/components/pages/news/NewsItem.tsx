@@ -26,7 +26,7 @@ export const NewsItem: FC<News> = ({
         <h3 className={styles.header}>{header}</h3>
         <p className={styles.text}>{content}</p>
         <div className={styles.buttons}>
-          <Label title={getDateFromISO(date)} type={LabelStyleType.BASE} />
+          <Label type={LabelStyleType.BASE}>{getDateFromISO(date)}</Label>
           <Link to={`/${ROUTING.news}/:${id}`}>
             <Button types={[ButtonStyleType.BASE]}>Читать</Button>
           </Link>

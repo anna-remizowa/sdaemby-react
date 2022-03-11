@@ -2,16 +2,17 @@ import React, { FC } from 'react';
 import { Path, Controller, Control } from 'react-hook-form';
 import Select from 'react-select';
 
-import { IOption } from 'model/interfaces/IFilter';
+import { IOption } from 'model/interfaces/IOption';
 import { IFormData } from 'model/interfaces/IFormData';
 
 import 'styles/libs/select.scss';
 
 interface FormSelectProps {
   name: Path<IFormData>;
-  options: IOption[];
+  options?: IOption[];
   placeholder?: string;
   control: Control<IFormData>;
+  classes?: string;
 }
 
 const colourStyles = {
@@ -27,9 +28,10 @@ const colourStyles = {
 
 export const SelectForm: FC<FormSelectProps> = ({
   name,
-  options,
-  placeholder,
+  options = [],
+  placeholder = 'Выберите',
   control,
+  classes = '',
 }) => {
   return (
     <Controller
@@ -37,10 +39,10 @@ export const SelectForm: FC<FormSelectProps> = ({
       control={control}
       render={({ field: { onChange, value } }) => (
         <Select
-          className={'select'}
+          className={'select ' + classes}
           classNamePrefix={'select'}
           styles={colourStyles}
-          placeholder={placeholder ? placeholder : 'Выберите'}
+          placeholder={placeholder}
           value={options.find((c) => c.value === value)}
           onChange={(val) => onChange(val?.value)}
           options={options}

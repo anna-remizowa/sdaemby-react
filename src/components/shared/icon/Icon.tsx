@@ -13,17 +13,17 @@ interface IconProps {
 
 export const Icon: FC<IconProps> = ({
   children,
-  backgroundColor,
-  size,
+  backgroundColor = 'black',
+  size = 34,
   round,
 }) => {
   return (
     <div
       className={styles.icon}
       style={{
-        width: size ? `${size}px` : '34px',
-        height: size ? `${size}px` : '34px',
-        backgroundColor: backgroundColor ? backgroundColor : 'black',
+        width: `${size}px`,
+        height: `${size}px`,
+        backgroundColor: backgroundColor,
         borderRadius: round ? '19px' : 'none',
       }}
     >

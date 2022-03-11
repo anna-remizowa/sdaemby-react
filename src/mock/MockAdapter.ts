@@ -9,23 +9,55 @@ import { NEWS_DETAIL } from './data/news-detail.data';
 import { CONTACTS } from './data/contacts.data';
 import { APARTMENTS_FILTER } from './data/apartments.filter.data';
 import { PHOTO_SLIDES_DATA } from './data/photo-slides.data';
-import { LIST_APART_DATA } from './data/list-apart.data';
+import { LIST_RENT_DATA } from './data/rent.data';
+import { APARTMENTS_RENT_DATA } from './data/apartments.rent.data';
 
 const mock = new MockAdapter(axios);
 
-mock.onGet(API_URL + REST_API.header).reply(200, HEADER);
-//mock.onGet(API_URL + REST_API.header).networkError();
+const REST_API_MOCK = [
+  {
+    api: REST_API.header,
+    data: HEADER,
+  },
+  {
+    api: REST_API.footer,
+    data: FOOTER,
+  },
+  {
+    api: REST_API.news,
+    data: NEWS,
+  },
+  {
+    api: `${REST_API.news}/*`,
+    data: NEWS_DETAIL,
+    regExp: true,
+  },
+  {
+    api: REST_API.contacts,
+    data: CONTACTS,
+  },
+  {
+    api: REST_API.apartFilter,
+    data: APARTMENTS_FILTER,
+  },
+  {
+    api: REST_API.photoSlider,
+    data: PHOTO_SLIDES_DATA,
+  },
+  {
+    api: REST_API.listRent,
+    data: LIST_RENT_DATA,
+  },
+  {
+    api: REST_API.listApartRent,
+    data: APARTMENTS_RENT_DATA,
+  },
+];
 
-mock.onGet(API_URL + REST_API.footer).reply(200, FOOTER);
+REST_API_MOCK.forEach(({ api, data, regExp }) => {
+  mock
+    .onGet(regExp ? new RegExp(API_URL + api) : API_URL + api)
+    .reply(200, data);
+});
 
-mock.onGet(API_URL + REST_API.news).reply(200, NEWS);
-
-mock.onGet(new RegExp(`${API_URL + REST_API.news}/*`)).reply(200, NEWS_DETAIL);
-
-mock.onGet(API_URL + REST_API.contacts).reply(200, CONTACTS);
-
-mock.onGet(API_URL + REST_API.apartFilter).reply(200, APARTMENTS_FILTER);
-
-mock.onGet(API_URL + REST_API.photoSlider).reply(200, PHOTO_SLIDES_DATA);
-
-mock.onGet(API_URL + REST_API.listApart).reply(200, LIST_APART_DATA);
+// mock.onGet(API_URL + REST_API.header).networkError();

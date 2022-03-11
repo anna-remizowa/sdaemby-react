@@ -19,9 +19,9 @@ export const FooterPayments: FC<PaymentsProps> = ({ images }) => {
       {images.map((card, index) => (
         <img
           className={clsx(card.clazz ? card.clazz : '')}
-          src={card.src}
-          alt={card.alt}
+          {...card}
           key={index}
+          alt={'Payment'}
         />
       ))}
     </div>

@@ -8,7 +8,7 @@ import { FooterPayments, ImageItem } from './payments/FooterPayments';
 import { IFooter } from 'model/interfaces/IFooter';
 import { Socials, SocialsSVG } from 'components/shared/socials/Socials';
 import { API_URL, REST_API, ROUTING } from 'app.constants';
-import { ShareWithType } from 'model/enum/ShareWithType';
+import { SocialType } from 'model/enum/SocialType';
 import { MenuType } from 'model/enum/MenuType';
 import { SocialStyleType } from 'model/enum/SocialStyleType';
 import { COLORS } from 'model/enum/Colors';
@@ -50,19 +50,19 @@ const cards: ImageItem[] = [
 
 const socials: SocialsSVG[] = [
   {
-    tag: ShareWithType.INSTAGRAM,
+    tag: SocialType.INSTAGRAM,
     width: 24,
     height: 25,
     href: 'https://www.instagram.com/',
   },
   {
-    tag: ShareWithType.VK,
+    tag: SocialType.VK,
     width: 25,
     height: 15,
     href: 'https://vk.com/',
   },
   {
-    tag: ShareWithType.FACEBOOK,
+    tag: SocialType.FACEBOOK,
     width: 21,
     height: 21,
     href: 'https://ru-ru.facebook.com/',
@@ -114,8 +114,7 @@ export const Footer: FC = () => {
                   appFooter.apartments.items ? appFooter.apartments.items : []
                 }
                 menuType={[MenuType.BASE, MenuType.COLUMN]}
-                header={appFooter.apartments.header}
-                href={appFooter.apartments.href}
+                {...appFooter.apartments}
               />
             ) : (
               ''

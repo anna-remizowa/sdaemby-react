@@ -26,9 +26,8 @@ export const Socials: FC<SocialsProps> = ({
   socials,
   header,
   types,
-  iconColor,
+  iconColor = COLORS.WHITE,
 }) => {
-  const color = iconColor ? iconColor : COLORS.WHITE;
   return (
     <div
       className={clsx(
@@ -45,12 +44,7 @@ export const Socials: FC<SocialsProps> = ({
             className={styles.icon}
             key={index}
           >
-            <SocialItem
-              tag={social.tag}
-              color={color}
-              width={social.width}
-              height={social.height}
-            />
+            <SocialItem {...social} color={iconColor} />
           </a>
         );
       })}

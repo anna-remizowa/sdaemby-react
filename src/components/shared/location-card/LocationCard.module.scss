@@ -1,0 +1,105 @@
+@import '../../../styles/variables/variables';
+
+.card {
+  width: 100%;
+  max-width: 406px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  filter: drop-shadow(0 20px 40px rgba(135, 124, 202, 0.15));
+  background-color: white;
+}
+
+.imgBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: $light-gray-150;
+  border-radius: 10px;
+}
+
+.img {
+  height: 226px;
+  object-fit: contain;
+}
+
+.wrapper {
+  padding: 16px 20px 13px;
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: $purple-200;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.priceText {
+  @extend %base-text;
+  color: $light-gray-200;
+}
+
+.labelBox {
+  display: flex;
+  gap: 7px;
+}
+
+.header {
+  padding-top: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  color: $black;
+}
+
+.locationBox {
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0 21px;
+  row-gap: 11px;
+  column-gap: 30px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+
+  & > svg {
+    margin-right: 6px;
+  }
+}
+
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: black;
+}
+
+.description {
+  padding-bottom: 13px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  line-height: 15px;
+  color: $light-gray-300;
+  border-bottom: 1px solid $light-gray-150;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

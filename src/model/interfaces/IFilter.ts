@@ -1,7 +1,4 @@
-export interface IOption {
-  value?: string;
-  label?: string;
-}
+import { IOption } from './IOption';
 
 export interface IFilter {
   locations?: IOption[];

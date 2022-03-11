@@ -28,8 +28,8 @@ export const HeaderLink: FC<HeaderLinkProps> = ({ link, headerTypeBold }) => {
         className={({ isActive }) =>
           clsx(
             styles.link,
-            headerTypeBold ? styles.primary : '',
-            isActive ? styles.active : ''
+            { [styles.primary]: headerTypeBold },
+            { [styles.active]: isActive }
           )
         }
       >

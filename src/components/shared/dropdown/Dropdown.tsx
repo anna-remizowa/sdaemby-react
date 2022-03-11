@@ -13,7 +13,7 @@ interface DropdownProps {
 }
 
 export const Dropdown: FC<DropdownProps> = ({
-  top,
+  top = 0,
   links,
   isShow,
   setHovered,
@@ -21,7 +21,7 @@ export const Dropdown: FC<DropdownProps> = ({
   return (
     <div
       className={clsx(styles.dropdown, isShow && styles.show)}
-      style={{ paddingTop: top ? `${top}px` : 0 }}
+      style={{ paddingTop: `${top}px` }}
     >
       <ul className={styles.dropdownWrapper}>
         {links.map((link) => {

@@ -5,4 +5,7 @@ export const enum COLORS {
   WHITE = 'white',
   YELLOW = '#FFD54F',
   GRAY_OPACITY = 'rgba(255, 255, 255, 0.1)',
+  GRAY = '#686868',
+  GRAY_LIGHT = '#BDBDBD',
+  RED = '#EB5757',
 }

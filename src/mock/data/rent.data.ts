@@ -1,4 +1,4 @@
-export const LIST_APART_DATA = {
+export const LIST_RENT_DATA = {
   items: [
     {
       title: 'Квартиры',
@@ -73,7 +73,7 @@ export const LIST_APART_DATA = {
       ],
     },
     {
-      label: 'Популярные направления',
+      title: 'Популярные направления',
       href: 'href3',
       items: [
         {

@@ -41,10 +41,9 @@ export const NewsDetail: FC = () => {
               />
               <h1 className={styles.header}>{appNewsDetail.news.header}</h1>
               <div className={styles.shared}>
-                <Label
-                  title={getDateFromISO(appNewsDetail.news.date)}
-                  type={LabelStyleType.PURPLE}
-                />
+                <Label type={LabelStyleType.PURPLE}>
+                  {getDateFromISO(appNewsDetail.news.date)}
+                </Label>
                 <ShareWith
                   title={'Поделиться'}
                   iconBackgroundColor={COLORS.PURPLE_BACKGROUND}
@@ -82,17 +81,7 @@ export const NewsDetail: FC = () => {
           <div className={styles.newsBox}>
             {appNewsDetail.otherNews
               ? appNewsDetail.otherNews.map((item) => {
-                  return (
-                    <NewsItem
-                      id={item.id}
-                      header={item.header}
-                      content={item.content}
-                      date={item.date}
-                      image={item.image}
-                      alt={item.alt}
-                      key={item.id}
-                    />
-                  );
+                  return <NewsItem {...item} key={item.id} />;
                 })
               : ''}
           </div>

@@ -1,6 +1,8 @@
 @import '../../../styles/variables/variables';
 
 .button {
+  display: flex;
+  justify-content: center;
   height: 37px;
   border: none;
   border-radius: 17px;
@@ -11,17 +13,17 @@
 
   &.base {
 	padding: 10px 18px;
-	background: rgba(102, 78, 249, 0.1);
-	color: $purple;
+	background-color: rgba(102, 78, 249, 0.1);
+	color: $purple-200;
   }
 
 
   &.purple {
-	background-color: $purple;
+	background-color: $purple-200;
 	color: white;
 
 	&:hover {
-	  background-color: $purple-dark;
+	  background-color: $purple-300;
 	}
   }
 
@@ -39,11 +41,11 @@
 
   &.yellow {
 	padding: 9px 18px 7px;
-	background-color: $yellow;
+	background-color: $yellow-100;
 	color: black;
 
 	&:hover {
-	  background-color: $yellow-dark;
+	  background-color: $yellow-200;
 	}
 
 	& > svg {
@@ -67,5 +69,32 @@
   &.small {
 	height: 33px;
 	padding: 8px 14px;
+  }
+
+  &.baseV2 {
+	padding: 10px 15px;
+	background-color: $light-gray-100;
+	color: $purple-200;
+
+	& > svg {
+	  margin-right: 13px;
+	}
+  }
+
+  &.yellowV2 {
+	padding: 10px 15px;
+	background-color: $yellow-opacity-100;
+	color: $yellow-200;
+
+	&:hover {
+	  background-color: $yellow-opacity-200;
+	}
+  }
+
+  &.circle {
+	height: 33px;
+	padding: 9px;
+	border-radius: 22px;
+	background-color: $red-opacity;
   }
 }

@@ -9,7 +9,7 @@ import { FormIconType } from 'model/enum/FormIconType';
 import styles from './Form.module.scss';
 
 interface FormElementProps {
-  name: Path<IFormData>;
+  name?: Path<IFormData>;
   label?: string;
   labelTypes?: FormLabelStyleType[];
   icon?: FormIconType;
@@ -23,7 +23,7 @@ export const FormElement: FC<FormElementProps> = ({
   label,
   labelTypes,
   icon,
-  errorText,
+  errorText = '',
   errors,
   children,
 }) => {
@@ -45,8 +45,8 @@ export const FormElement: FC<FormElementProps> = ({
       )}
 
       <div className={clsx(styles.inputBox, { [styles.isIcon]: icon })}>
-        {errors && errors[name] && (
-          <p className={styles.error}>{errorText ? errorText : ''}</p>
+        {errors && name && errors[name] && (
+          <p className={styles.error}>{errorText}</p>
         )}
         {children}
         {icon ? <i className={clsx(styles.icon, styles[icon])} /> : ''}

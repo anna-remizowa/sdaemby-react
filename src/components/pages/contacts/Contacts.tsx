@@ -7,7 +7,7 @@ import { IContacts } from 'model/interfaces/IContacts';
 import { ContactsForm } from './form/ContactsForm';
 import { Socials, SocialsSVG } from 'components/shared/socials/Socials';
 import { ContactsContent } from './content/ContactsContent';
-import { ShareWithType } from 'model/enum/ShareWithType';
+import { SocialType } from 'model/enum/SocialType';
 import { SocialStyleType } from 'model/enum/SocialStyleType';
 import { COLORS } from 'model/enum/Colors';
 
@@ -15,19 +15,19 @@ import styles from './Contacts.module.scss';
 
 const socials: SocialsSVG[] = [
   {
-    tag: ShareWithType.INSTAGRAM,
+    tag: SocialType.INSTAGRAM,
     width: 20,
     height: 20,
     href: 'https://www.instagram.com/',
   },
   {
-    tag: ShareWithType.VK,
+    tag: SocialType.VK,
     width: 20,
     height: 12,
     href: 'https://vk.com/',
   },
   {
-    tag: ShareWithType.FACEBOOK,
+    tag: SocialType.FACEBOOK,
     width: 20,
     height: 20,
     href: 'https://ru-ru.facebook.com/',

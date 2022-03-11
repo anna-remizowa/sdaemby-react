@@ -4,9 +4,32 @@
   position: relative;
   width: 150px;
 
+  &.rent {
+	min-width: 185px;
+
+	& .select__control {
+	  height: 40px;
+	  padding: 11px 15px 12px 17px;
+	  background-color: white;
+	  border-color: white;
+	  box-shadow: 0 10px 20px rgba(0, 96, 206, 0.1);
+
+	  &--is-focused {
+		background-color: white;
+		border-color: $purple-opacity-100;
+	  }
+	}
+  }
+
   &:hover {
 	& .select__control {
-	  background-color: $light-purple;
+	  background-color: $deep-purple-opacity-200;
+	  border-color: $deep-purple-opacity-200;
+	}
+
+	& .select__control--is-focused {
+	  background-color: white;
+	  border-color: $purple-opacity-100;
 	}
   }
 
@@ -17,17 +40,21 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: $gray;
-	border: 2px solid $gray;
+	background-color: $light-gray-100;
+	border: 2px solid $light-gray-100;
 	border-radius: 20px;
 	cursor: pointer;
 	outline: 0;
 	transition: all 100ms, border 0ms;
 
-	&--menu-is-open {
+	&--is-focused {
 	  background-color: white;
-	  border: 2px solid $purple-input;
+	  border-color: $purple-opacity-100;
 	}
+  }
+
+  &.icon &__control {
+	padding-left: 42px;
   }
 
   &__value-container {
@@ -55,7 +82,7 @@
   }
 
   &__placeholder {
-	color: $dark-gray;
+	color: $gray-100;
   }
 
   &__indicator-separator {
@@ -84,14 +111,15 @@
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	&--is-focused {
-	  background-color: $gray;
+	  background-color: $light-gray-100;
+	  border-color: $light-gray-100;
 	}
   }
 
   &__indicator {
 	display: flex;
 	padding: 8px 0;
-	color: $purple;
+	color: $purple-200;
 	transition: color 150ms;
   }
 }

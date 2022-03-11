@@ -12,7 +12,7 @@
   border-radius: 20px;
   border: none;
   @extend %base-text;
-  color: $dark-gray;
+  color: $gray-100;
 }
 
 .button{
@@ -21,7 +21,7 @@
   width: 53px;
   height: 37px;
   padding: 10px 18px;
-  background-color: $purple;
+  background-color: $purple-200;
   border-radius: 19px;
   border: none;
   cursor: pointer;

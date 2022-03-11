@@ -1,0 +1,33 @@
+@import '../../../../styles/variables/variables';
+
+.wrapper {
+  margin: 31px 0 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.box {
+  margin: 10px 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  @extend %h2;
+}
+
+.filters {
+  display: flex;
+  gap: 30px;
+}

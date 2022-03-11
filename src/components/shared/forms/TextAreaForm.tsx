@@ -16,16 +16,16 @@ interface TextAreaProps {
 
 export const TextAreaForm: FC<TextAreaProps> = ({
   name,
-  placeholder,
+  placeholder = '',
   register,
-  options,
+  options = {},
 }) => {
   return (
     <textarea
       className={clsx(styles.input, styles.textarea)}
       id={name}
-      placeholder={placeholder ? placeholder : ''}
-      {...register(name, options ? options : {})}
+      placeholder={placeholder}
+      {...register(name, options)}
     />
   );
 };

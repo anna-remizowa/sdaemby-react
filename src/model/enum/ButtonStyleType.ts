@@ -5,4 +5,7 @@ export enum ButtonStyleType {
   PURPLE = 'purple',
   BIG = 'big',
   SMALL = 'small',
+  BASE_V2 = 'baseV2',
+  YELLOW_V2 = 'yellowV2',
+  CIRCLE = 'circle',
 }
