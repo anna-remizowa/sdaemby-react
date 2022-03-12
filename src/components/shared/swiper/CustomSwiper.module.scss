@@ -1,0 +1,47 @@
+.slider {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  height: auto;
+}
+
+.navButtons {
+  display: flex;
+  gap: 13px;
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 29px;
+  height: 28px;
+  background-color: rgba(211, 211, 211, 0.4);
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 23px;
+  z-index: 10;
+  cursor: pointer;
+
+  & i {
+    width: 10px;
+    height: 16px;
+    mask-image: url("../../../../public/assets/svg/arrow.svg");
+    background-color: white;
+  }
+}
+
+.prev {
+  left: 4px;
+  transform: translate(0, -50%) rotate(180deg);
+}
+
+.next {
+  right: 4px;
+}

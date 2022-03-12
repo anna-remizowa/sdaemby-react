@@ -3,6 +3,7 @@
 .button {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 37px;
   border: none;
   border-radius: 17px;
@@ -36,6 +37,10 @@
 
 	&:hover {
 	  background: linear-gradient(90deg, #867cfc 0%, #6929f3 94.5%);
+	}
+
+	& > svg {
+	  margin-left: 12px;
 	}
   }
 

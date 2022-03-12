@@ -23,6 +23,8 @@ export const ROUTING = {
   rates: 'rates',
   ads: 'ads',
   contacts: 'contactus',
+  catalog: 'catalog',
+  location: 'location',
   apartmentsDay: 'apartments',
   cottages: 'cottages',
   baths: 'baths',

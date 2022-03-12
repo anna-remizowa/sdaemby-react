@@ -27,7 +27,7 @@ export const NewsItem: FC<News> = ({
         <p className={styles.text}>{content}</p>
         <div className={styles.buttons}>
           <Label type={LabelStyleType.BASE}>{getDateFromISO(date)}</Label>
-          <Link to={`/${ROUTING.news}/:${id}`}>
+          <Link to={`/${ROUTING.news}/${id}`}>
             <Button types={[ButtonStyleType.BASE]}>Читать</Button>
           </Link>
         </div>

@@ -1,4 +1,5 @@
 import React, { FC, useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import { HomeContext } from 'components/pages/home/Home';
 import { SelectForm } from 'components/shared/forms/SelectForm';
@@ -6,9 +7,15 @@ import { useForm } from 'react-hook-form';
 import { IFormData } from 'model/interfaces/IFormData';
 import { FormElement } from 'components/shared/forms/FormElement';
 import { FormIconType } from 'model/enum/FormIconType';
+import { LocationCard } from 'components/shared/location-card/LocationCard';
+import { CustomSwiper } from 'components/shared/swiper/CustomSwiper';
+import { Button } from 'components/shared/button/Button';
+import { ArrowSVG } from 'components/shared/svg/components.svg';
+import { COLORS } from 'model/enum/Colors';
+import { ButtonStyleType } from 'model/enum/ButtonStyleType';
+import { ROUTING } from 'app.constants';
 
 import styles from './HomeApartmentRentSection.module.scss';
-import { LocationCard } from '../../../shared/location-card/LocationCard';
 
 /*todo: при смене значения в селектах должен вызываться onSubmit для формы, как сделать?*/
 export const HomeApartmentRentSection: FC = () => {
@@ -43,11 +50,38 @@ export const HomeApartmentRentSection: FC = () => {
           </form>
         </div>
 
-        <div className={styles.slider}>
-          {dataHome.rent?.items?.map((apart) => {
-            return <LocationCard {...apart} />;
-          })}
-        </div>
+        {dataHome.rent?.items && (
+          <CustomSwiper
+            slidesPerView={3}
+            spaceBetween={30}
+            items={dataHome.rent?.items?.map((apart) => (
+              <LocationCard {...apart} key={apart.id} />
+            ))}
+            classNameSwiper={styles.slider}
+            navStyle={styles.navSlider}
+          />
+        )}
+
+        {dataHome.rent?.numberOffers && (
+          <div className={styles.offers}>
+            <div>
+              <p className={styles.bigText}>
+                {dataHome.rent?.numberOffers} <span>{' +'}</span>
+              </p>
+              <p className={styles.smallText}>{dataHome.rent?.titleOffers}</p>
+            </div>
+            <div className={styles.button}>
+              <Link to={`/${ROUTING.catalog}/${dataHome.rent?.id}`}>
+                <Button types={[ButtonStyleType.HIGHLIGHT]}>
+                  <>
+                    <span>Посмотреть все</span>
+                    <ArrowSVG color={COLORS.WHITE} width={10} height={11} />
+                  </>
+                </Button>
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

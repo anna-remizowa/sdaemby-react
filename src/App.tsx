@@ -9,6 +9,8 @@ import { NewsDetail } from './components/pages/news-detail/NewsDetail';
 import { Contacts } from './components/pages/contacts/Contacts';
 
 import { DEVELOPMENT_MODE, ROUTING } from './app.constants';
+import { LocationDetail } from './components/pages/location-detail/LocationDetail';
+import { Catalog } from './components/pages/catalog/Catalog';
 
 if (process.env.NODE_ENV === DEVELOPMENT_MODE) {
   require('mock/MockAdapter');
@@ -24,6 +26,11 @@ function App() {
           <Route path={ROUTING.news} element={<NewsContent />} />
           <Route path={`${ROUTING.news}/:newsId`} element={<NewsDetail />} />
           <Route path={ROUTING.contacts} element={<Contacts />} />
+          <Route path={`${ROUTING.catalog}/:catalogId`} element={<Catalog />} />
+          <Route
+            path={`${ROUTING.location}/:locationId`}
+            element={<LocationDetail />}
+          />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -2,18 +2,20 @@ import { ILink } from './ILink';
 import { IOwner } from './IOwner';
 
 export interface ILocation extends ILink {
-  img: string;
+  images: string[];
   price: string;
   priceForTime: string;
-  rooms: number;
-  roomsByPeople: number[];
-  area: string;
+  rooms?: string;
+  roomsByPeople?: string;
+  beds?: number;
+  area?: string;
   address: string;
-  metro: string;
-  district: string;
+  metro?: string;
+  district?: string;
+  location?: string;
+  others?: string[];
   description: string;
   owner: IOwner;
   label?: string;
-  isName: boolean;
   isFavorite: boolean;
 }

@@ -3,6 +3,7 @@
 .card {
   width: 100%;
   max-width: 406px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -11,6 +12,7 @@
 }
 
 .imgBox {
+  position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -18,12 +20,46 @@
   border-radius: 10px;
 }
 
-.img {
+.swiper, .img {
+  border-radius: 10px;
   height: 226px;
+}
+
+.swiper {
+  & .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+  }
+}
+
+.img {
+  width: 100%;
   object-fit: contain;
 }
 
+.label {
+  position: absolute;
+  right: 0;
+  padding: 7px 12px;
+  border-radius: 0 10px 10px 10px;
+  text-transform: capitalize;
+  text-shadow: 0 1px 0 rgba(147, 79, 0, 0.3);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  z-index: 10;
+
+  &.gold {
+	background: linear-gradient(106.06deg, #ffd54f 1.12%, #fec100 97.96%);
+	color: white;
+  }
+}
+
 .wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   padding: 16px 20px 13px;
 }
 
@@ -64,11 +100,11 @@
 }
 
 .locationBox {
-  max-width: 300px;
+  max-width: 350px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 0 21px;
+  padding: 20px 0 15px;
   row-gap: 11px;
   column-gap: 30px;
 }
@@ -78,7 +114,7 @@
   align-items: center;
 
   & > svg {
-    margin-right: 6px;
+	margin-right: 6px;
   }
 }
 
@@ -89,7 +125,22 @@
   color: black;
 }
 
+.othersBox {
+  padding-top: 2px;
+  display: flex;
+  gap: 19px;
+
+  & .text {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+	color: $black;
+	white-space: nowrap;
+  }
+}
+
 .description {
+  flex-grow: 1;
   padding-bottom: 13px;
   margin-bottom: 14px;
   font-size: 12px;
