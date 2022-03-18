@@ -28,6 +28,7 @@ interface FilterProps {
   inputLabelTypes?: string;
 }
 
+/*todo: раскрывающееся меню с доп фильтрами*/
 export const Filter: FC<FilterProps> = ({
   filter,
   isReset,

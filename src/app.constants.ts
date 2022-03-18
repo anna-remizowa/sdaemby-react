@@ -6,6 +6,7 @@ export const PRODUCTION_MODE = 'production';
 export const REST_API = {
   header: '/header',
   footer: '/footer',
+  newsPage: '/news-page',
   news: '/news',
   newsDetail: '/news/*',
   contacts: '/contacts',
@@ -32,3 +33,5 @@ export const ROUTING = {
   favorites: 'favorites',
   login: 'login',
 };
+
+export const LIMIT_PAGE_NEWS = 10;

@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter';
 import { API_URL, REST_API } from 'app.constants';
 import { HEADER } from './data/header.data';
 import { FOOTER } from './data/footer.data';
-import { NEWS } from './data/news.data';
+import { NEWS, NEWS_PAGE } from './data/news.data';
 import { NEWS_DETAIL } from './data/news-detail.data';
 import { CONTACTS } from './data/contacts.data';
 import { APARTMENTS_FILTER } from './data/apartments.filter.data';
@@ -14,7 +14,7 @@ import { APARTMENTS_RENT_DATA } from './data/apartments.rent.data';
 
 const mock = new MockAdapter(axios);
 
-const REST_API_MOCK = [
+const REST_API_MOCK_GET = [
   {
     api: REST_API.header,
     data: HEADER,
@@ -24,8 +24,8 @@ const REST_API_MOCK = [
     data: FOOTER,
   },
   {
-    api: REST_API.news,
-    data: NEWS,
+    api: REST_API.newsPage,
+    data: NEWS_PAGE,
   },
   {
     api: `${REST_API.news}/*`,
@@ -54,7 +54,14 @@ const REST_API_MOCK = [
   },
 ];
 
-REST_API_MOCK.forEach(({ api, data, regExp }) => {
+mock.onGet(API_URL + REST_API.news).reply(({ params }) => {
+  // if (Object.keys(params).includes('_filter')) {
+  //
+  // }
+  return [200, NEWS];
+});
+
+REST_API_MOCK_GET.forEach(({ api, data, regExp }) => {
   mock
     .onGet(regExp ? new RegExp(API_URL + api) : API_URL + api)
     .reply(200, data);

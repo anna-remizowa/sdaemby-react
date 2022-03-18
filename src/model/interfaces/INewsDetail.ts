@@ -1,8 +1,8 @@
-import { News } from './News';
+import { INews } from './INews';
 import { Breadcrumb } from 'components/shared/breadcrumbs/Breadcrumbs';
 
 export interface INewsDetail {
-  news?: News;
-  otherNews?: News[];
+  news?: INews;
+  otherNews?: INews[];
   breadcrumbs?: Breadcrumb[];
 }
