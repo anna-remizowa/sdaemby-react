@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 
-import { MenuItem } from 'model/interfaces/Menu';
+import { IMenuItem } from 'model/interfaces/IMenu';
 import { Dropdown } from 'components/shared/dropdown/Dropdown';
 import { LocationSVG } from 'components/shared/svg/components.svg';
 import { PositionSVG } from 'model/enum/PositionSVG';
@@ -11,7 +11,7 @@ import { COLORS } from 'model/enum/Colors';
 import styles from './HeaderLink.module.scss';
 
 interface HeaderLinkProps {
-  link: MenuItem;
+  link: IMenuItem;
   headerTypeBold?: boolean;
 }
 

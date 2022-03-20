@@ -3,8 +3,12 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { newsReducer } from './reducers/NewsReducer';
+import { rentReducer } from './reducers/RentReducer';
 
-export const rootReducer = combineReducers({ news: newsReducer });
+export const rootReducer = combineReducers({
+  news: newsReducer,
+  rent: rentReducer,
+});
 
 export const store = createStore(
   rootReducer,

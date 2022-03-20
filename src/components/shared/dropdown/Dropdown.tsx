@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 
 import styles from './Dropdown.module.scss';
-import { MenuItem } from 'model/interfaces/Menu';
+import { IMenuItem } from 'model/interfaces/IMenu';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 interface DropdownProps {
   top?: number;
-  links: MenuItem[];
+  links: IMenuItem[];
   isShow: boolean;
   setHovered(hover: boolean): void;
 }

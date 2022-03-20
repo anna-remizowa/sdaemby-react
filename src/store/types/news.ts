@@ -6,6 +6,7 @@ export interface NewsState {
   error: null | string;
   pageCount: number;
   page: number;
+  search: string;
 }
 
 export enum NewsActionTypes {
@@ -14,6 +15,7 @@ export enum NewsActionTypes {
   FETCH_NEWS_ERROR = 'FETCH_NEWS_ERROR',
   SET_NEWS_PAGE = 'SET_NEWS_PAGE',
   SET_NEWS_PAGE_COUNT = 'SET_NEWS_PAGE_COUNT',
+  SET_NEWS_SEARCH = 'SET_NEWS_SEARCH',
 }
 
 interface FetchNewsAction {
@@ -40,9 +42,15 @@ interface SetNewsPageCountAction {
   payload: number;
 }
 
+interface SetNewsSearch {
+  type: NewsActionTypes.SET_NEWS_SEARCH;
+  payload: string;
+}
+
 export type NewsAction =
   | FetchNewsAction
   | FetchNewsSuccessAction
   | FetchNewsErrorAction
   | SetNewsPageAction
-  | SetNewsPageCountAction;
+  | SetNewsPageCountAction
+  | SetNewsSearch;

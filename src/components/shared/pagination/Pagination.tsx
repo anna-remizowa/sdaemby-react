@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 import styles from './Pagination.module.scss';
 
@@ -7,7 +8,8 @@ interface PaginationProps {
   countPages: number;
   activePage: number;
   maxNumber: number;
-  onPageChange: (page: number) => void;
+  routing: string;
+  search?: string;
 }
 
 /*todo: доделать пагинацию, чтоб работала логика с точками*/
@@ -15,7 +17,8 @@ export const Pagination: FC<PaginationProps> = ({
   countPages,
   activePage,
   maxNumber,
-  onPageChange,
+  routing,
+  search,
 }) => {
   return (
     <div className={styles.pagination}>
@@ -23,15 +26,17 @@ export const Pagination: FC<PaginationProps> = ({
         return (
           <div key={number}>
             {number + 1 <= maxNumber || number + 1 === countPages ? (
-              <button
-                type="button"
+              <Link
+                to={{
+                  pathname: `/${routing}`,
+                  search: `page=${number + 1}${search ? `&${search}` : ''}`,
+                }}
                 className={clsx(styles.link, {
                   [styles.active]: number + 1 === activePage,
                 })}
-                onClick={() => onPageChange(number + 1)}
               >
                 {number + 1}
-              </button>
+              </Link>
             ) : number === maxNumber && number + 1 !== countPages ? (
               <a className={styles.link} href="#">
                 ...

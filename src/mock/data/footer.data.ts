@@ -43,7 +43,7 @@ export const FOOTER = {
     {
       id: 4,
       name: 'Контакты',
-      href: 'contacts',
+      href: 'contactus',
     },
   ],
 
@@ -54,32 +54,32 @@ export const FOOTER = {
       {
         id: 1,
         name: 'Квартиры в Минске',
-        href: 'appart1',
+        href: 'catalog/1',
       },
       {
         id: 2,
         name: 'Квартиры в Витебске',
-        href: 'appart2',
+        href: 'catalog/2',
       },
       {
         id: 3,
         name: 'Квартиры в Гомеле',
-        href: 'appart3',
+        href: 'catalog/3',
       },
       {
         id: 4,
         name: 'Квартиры в Гродно',
-        href: 'appart4',
+        href: 'catalog/4',
       },
       {
         id: 5,
         name: 'Квартиры в Бресте',
-        href: 'appart5',
+        href: 'catalog/5',
       },
       {
         id: 6,
         name: 'Квартиры в Могилеве',
-        href: 'appart6',
+        href: 'catalog/6',
       },
     ],
   },

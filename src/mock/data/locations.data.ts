@@ -1,4 +1,64 @@
-export const LIST_RENT_DATA = {
+export const LOCATIONS_DATA_1 = {
+  items: [
+    {
+      img: require('../../assets/images/photo-1.png'),
+      label: 'снять квартиру',
+      title: 'Квартиры на сутки',
+      items: [
+        {
+          id: '1',
+          name: 'Минск',
+          href: 'catalog/1',
+        },
+        {
+          id: '2',
+          name: 'Витебск',
+          href: 'catalog/2',
+        },
+        {
+          id: '3',
+          name: 'Гродно',
+          href: 'catalog/3',
+        },
+        {
+          id: '4',
+          name: 'Гомель',
+          href: 'catalog/4',
+        },
+        {
+          id: '5',
+          name: 'Брест',
+          href: 'catalog/5',
+        },
+        {
+          id: '6',
+          name: 'Могилев',
+          href: 'catalog/6',
+        },
+      ],
+    },
+    {
+      img: require('../../assets/images/photo-2.png'),
+      label: 'снять коттедж на праздники',
+      title: 'Коттеджи и усадьбы',
+      href: 'href1',
+    },
+    {
+      img: require('../../assets/images/photo-3.png'),
+      label: 'попариться в бане с друзьями',
+      title: 'Бани и сауны',
+      href: 'href2',
+    },
+    {
+      img: require('../../assets/images/photo-4.png'),
+      label: 'если срочно нужна машина',
+      title: 'Авто на прокат',
+      href: 'href3',
+    },
+  ],
+};
+
+export const LOCATIONS_DATA_2 = {
   items: [
     {
       title: 'Квартиры',
@@ -7,37 +67,37 @@ export const LIST_RENT_DATA = {
         {
           id: '1',
           name: 'Квартиры в Минске',
-          href: 'apart1',
+          href: 'catalog/1',
           count: '3567',
         },
         {
           id: '2',
           name: 'Квартиры в Витебске',
-          href: 'apart2',
+          href: 'catalog/2',
           count: '2032',
         },
         {
           id: '3',
           name: 'Квартиры в Гродно',
-          href: 'apart3',
+          href: 'catalog/3',
           count: '2302',
         },
         {
           id: '4',
           name: 'Квартиры в Гомеле',
-          href: 'apart4',
+          href: 'catalog/4',
           count: '110',
         },
         {
           id: '5',
           name: 'Квартиры в Бресте',
-          href: 'apart5',
+          href: 'catalog/5',
           count: '110',
         },
         {
           id: '6',
           name: 'Квартиры в Могилеве',
-          href: 'apart6',
+          href: 'catalog/6',
           count: '110',
         },
       ],
@@ -49,25 +109,25 @@ export const LIST_RENT_DATA = {
         {
           id: '1',
           name: 'Агроусадьбы',
-          href: 'apart1',
+          href: 'catalog/7',
           count: '110',
         },
         {
           id: '2',
           name: 'Коттеджи',
-          href: 'apart2',
+          href: 'catalog/8',
           count: '110',
         },
         {
           id: '3',
           name: 'Загородный комплекс',
-          href: 'apart3',
+          href: 'catalog/9',
           count: '110',
         },
         {
           id: '4',
           name: 'Базы отдыха',
-          href: 'apart4',
+          href: 'catalog/10',
           count: '110',
         },
       ],
@@ -79,17 +139,17 @@ export const LIST_RENT_DATA = {
         {
           id: '1',
           name: 'Коттеджи и усадьбы на о. Брасласких ',
-          href: 'apart1',
+          href: 'catalog/11',
         },
         {
           id: '2',
           name: 'Коттеджи и усадьбы (жилье) на Нарочи',
-          href: 'apart2',
+          href: 'catalog/12',
         },
         {
           id: '3',
           name: 'Коттеджи и усадьбы (жилье) у воды, на берегу, на озере',
-          href: 'apart3',
+          href: 'catalog/13',
         },
       ],
     },

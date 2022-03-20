@@ -6,6 +6,7 @@ const initialState: NewsState = {
   error: null,
   pageCount: 1,
   page: 1,
+  search: '',
 };
 
 export const newsReducer = (
@@ -30,6 +31,8 @@ export const newsReducer = (
       return { ...state, page: action.payload };
     case NewsActionTypes.SET_NEWS_PAGE_COUNT:
       return { ...state, pageCount: action.payload };
+    case NewsActionTypes.SET_NEWS_SEARCH:
+      return { ...state, search: action.payload };
     default:
       return state;
   }

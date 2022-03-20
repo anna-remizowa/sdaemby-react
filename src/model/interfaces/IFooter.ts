@@ -1,8 +1,8 @@
-import { MenuItem } from './Menu';
+import { IMenuItem } from './IMenu';
 
 export interface IFooter {
   company?: string[];
-  titlesOne?: MenuItem[];
-  titlesTwo?: MenuItem[];
-  apartments?: MenuItem;
+  titlesOne?: IMenuItem[];
+  titlesTwo?: IMenuItem[];
+  apartments?: IMenuItem;
 }

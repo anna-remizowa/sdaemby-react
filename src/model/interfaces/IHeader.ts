@@ -1,6 +1,6 @@
-import { MenuItem } from './Menu';
+import { IMenuItem } from './IMenu';
 
 export interface IHeader {
-  top?: MenuItem[];
-  bottom?: MenuItem[];
+  top?: IMenuItem[];
+  bottom?: IMenuItem[];
 }

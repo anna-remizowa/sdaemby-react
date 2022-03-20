@@ -26,16 +26,16 @@
 .text {
   margin-bottom: 20px;
   padding-bottom: 25px;
-  border-bottom: 2px solid #F8F8F8;
+  border-bottom: 2px solid #f8f8f8;
   @extend %base-text;
 }
 
-.buttons{
+.buttons {
   display: flex;
   justify-content: space-between;
 }
 
-.img{
+.img {
   width: 406px;
   height: 228px;
   border-radius: 10px;

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import { ILocation } from 'model/interfaces/ILocation';
+import { IRent } from 'model/interfaces/IRent';
 import { Label } from 'components/shared/label/Label';
 import { LabelStyleType } from 'model/enum/LabelStyleType';
 import {
@@ -26,7 +26,7 @@ import styles from './LocationCard.module.scss';
 
 /*todo: попап с контактами владельца*/
 /*todo: свайпер - пагинация*/
-export const LocationCard: FC<ILocation> = ({
+export const LocationCard: FC<IRent> = ({
   id,
   name,
   images,

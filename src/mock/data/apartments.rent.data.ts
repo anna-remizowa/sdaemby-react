@@ -110,7 +110,7 @@ const BATH_BASE = {
   label: 'gold',
 };
 
-export const APARTMENTS_RENT_DATA = {
+export const RENT_DATA = {
   id: 1,
   label: 'Квартиры на сутки',
   header: 'Аренда квартир в Минске',
@@ -158,7 +158,13 @@ export const APARTMENTS_RENT_DATA = {
       label: 'Метро 5',
     },
   ],
-  items: [APARTMENT_BASE, APARTMENT_BASE_2, COTTAGE_BASE, BATH_BASE],
   numberOffers: 341,
   titleOffers: 'Предложений по Минску',
 };
+
+export const APARTMENTS_RENT_DATA = [
+  APARTMENT_BASE,
+  APARTMENT_BASE_2,
+  COTTAGE_BASE,
+  BATH_BASE,
+];

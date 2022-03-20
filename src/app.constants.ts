@@ -8,12 +8,10 @@ export const REST_API = {
   footer: '/footer',
   newsPage: '/news-page',
   news: '/news',
-  newsDetail: '/news/*',
   contacts: '/contacts',
-  apartFilter: '/filter/apartments',
-  photoSlider: '/photo/slider',
-  listRent: '/rent',
-  listApartRent: '/rent/apartments',
+  filter: '/filter',
+  locations: '/locations',
+  rent: '/rent',
 };
 
 export const HOME = 'Главная';
@@ -35,3 +33,4 @@ export const ROUTING = {
 };
 
 export const LIMIT_PAGE_NEWS = 10;
+export const HOME_RENT_LOCATION_ID = 1;

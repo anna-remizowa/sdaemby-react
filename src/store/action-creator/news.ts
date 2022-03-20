@@ -1,16 +1,27 @@
-import { NewsAction, NewsActionTypes } from '../types/news';
 import { Dispatch } from 'redux';
 import axios from 'axios';
 
+import { NewsAction, NewsActionTypes } from 'store/types/news';
 import { INewsContent } from 'model/interfaces/INews';
 import { API_URL, REST_API } from 'app.constants';
+import { smoothScrollPromise } from 'utils/smoothScrollPromise';
 
-export const fetchNews = (page = 1, limit = 10, filter: any = null) => {
+interface FetchNewsParams {
+  page: number;
+  limit: number;
+  search?: string;
+}
+
+export const fetchNews = (params: FetchNewsParams) => {
   return async (dispatch: Dispatch<NewsAction>) => {
     try {
+      smoothScrollPromise().then(() => {
+        dispatch(setNewsPage(params.page));
+        dispatch(setNewsSearch(params.search ? params.search : ''));
+      });
       dispatch({ type: NewsActionTypes.FETCH_NEWS });
       const response = await axios.get<INewsContent>(API_URL + REST_API.news, {
-        params: { _page: page, _limit: limit, _filter: filter },
+        params: { ...params },
       });
       setTimeout(() => {
         if (response.data.news) {
@@ -38,4 +49,8 @@ export const setNewsPage = (page: number): NewsAction => {
 
 export const setNewsPageCount = (pageCount: number): NewsAction => {
   return { type: NewsActionTypes.SET_NEWS_PAGE_COUNT, payload: pageCount };
+};
+
+export const setNewsSearch = (search: string): NewsAction => {
+  return { type: NewsActionTypes.SET_NEWS_SEARCH, payload: search };
 };

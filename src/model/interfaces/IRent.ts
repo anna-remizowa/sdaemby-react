@@ -1,7 +1,7 @@
 import { ILink } from './ILink';
 import { IOwner } from './IOwner';
 
-export interface ILocation extends ILink {
+export interface IRent extends ILink {
   images: string[];
   price: string;
   priceForTime: string;

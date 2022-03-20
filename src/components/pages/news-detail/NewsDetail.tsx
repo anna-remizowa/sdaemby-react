@@ -12,6 +12,7 @@ import { INewsDetail } from 'model/interfaces/INewsDetail';
 import { getDateFromISO } from 'utils/getDateFromISO';
 import { LabelStyleType } from 'model/enum/LabelStyleType';
 import { COLORS } from 'model/enum/Colors';
+import { smoothScrollPromise } from 'utils/smoothScrollPromise';
 
 import styles from './NewsDetail.module.scss';
 
@@ -24,9 +25,11 @@ export const NewsDetail: FC = () => {
     axios
       .get<INewsDetail>(`${API_URL}${REST_API.news}/:${params.newsId}`)
       .then((resp) => {
-        setAppNewsDetail(resp.data);
+        smoothScrollPromise().then(() => {
+          setAppNewsDetail(resp.data);
+        });
       });
-  }, []);
+  }, [params.newsId]);
 
   return (
     <div className={styles.newsDetail}>
