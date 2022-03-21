@@ -16,7 +16,7 @@ import {
 import { ILinkProps } from 'model/interfaces/ILinkProps';
 import { IRentSection } from 'model/interfaces/IRentSection';
 import { HomeRentSection } from './rent-section/HomeRentSection';
-import { INews } from 'model/interfaces/INews';
+import { INews, INewsContent } from 'model/interfaces/INews';
 import { ISection } from 'model/interfaces/ISection';
 import { HomeNewsSection } from './news-section/HomeNewsSection';
 
@@ -67,6 +67,13 @@ export const Home: FC = () => {
       .then((resp) => {
         setLocationInfo(resp.data);
       });
+    axios
+      .get<INewsContent>(`${API_URL}${REST_API.news}`, {
+        params: { location: HOME_RENT_LOCATION_ID },
+      })
+      .then((resp) => {
+        setNews(resp.data?.news ? resp.data?.news : []);
+      });
   }, []);
 
   return (
@@ -77,6 +84,7 @@ export const Home: FC = () => {
         list: list,
         rent: rent,
         locationInfo: locationInfo,
+        news: news,
       }}
     >
       <div className={clsx('wrapper', styles.home)}>

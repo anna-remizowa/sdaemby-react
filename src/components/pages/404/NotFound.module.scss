@@ -39,10 +39,7 @@
 }
 
 .dots {
-  position: absolute;
-  width: 68px;
-  height: 61px;
-  background-image: url("../../../../public/assets/svg/dots.svg");
+  @extend %dots;
 }
 
 .dots1 {
