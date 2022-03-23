@@ -13,9 +13,9 @@ import { COLORS } from 'model/enum/Colors';
 import { useTypesSelector } from 'hooks/useTypesSelector';
 import { fetchNewsDetail } from 'store/action-creator/news-detail';
 import { NEWS_DETAIL_COUNT_NEWS_LIMIT } from 'app.constants';
+import { CONSTANTS } from 'constants/common';
 
 import styles from './NewsDetail.module.scss';
-import { CONSTANTS } from '../../../constants/common';
 
 export const NewsDetail: FC = () => {
   const params = useParams();
@@ -25,13 +25,6 @@ export const NewsDetail: FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // axios
-    //   .get<INewsDetail>(`${API_URL}${REST_API.news}/:${params.newsId}`)
-    //   .then((resp) => {
-    //     smoothScrollPromise().then(() => {
-    //       setAppNewsDetail(resp.data);
-    //     });
-    //   });
     dispatch(
       fetchNewsDetail({
         newsId: Number(params.newsId),

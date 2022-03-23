@@ -22,6 +22,7 @@ import { HomeNewsSection } from './news-section/HomeNewsSection';
 import { CONSTANTS } from 'constants/common';
 
 import styles from './Home.module.scss';
+import { HomeAdsSection } from './ads-section/HomeAdsSection';
 
 export const HomeContext = React.createContext<IHome>({});
 
@@ -101,6 +102,7 @@ export const Home: FC = () => {
 
         <HomeApartmentSection />
         <HomeRentSection />
+        <HomeAdsSection />
         <HomeNewsSection />
       </div>
     </HomeContext.Provider>

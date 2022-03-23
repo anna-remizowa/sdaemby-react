@@ -21,9 +21,9 @@ import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 import { CustomSwiper } from 'components/shared/swiper/CustomSwiper';
 import { LabelApartmentType } from 'model/enum/LabelApartmentType';
 import { ROUTING } from 'app.constants';
+import { FORM_CONSTANTS } from 'constants/forms';
 
 import styles from './LocationCard.module.scss';
-import { FORM_CONSTANTS } from '../../../constants/forms';
 
 /*todo: попап с контактами владельца*/
 /*todo: свайпер - пагинация*/

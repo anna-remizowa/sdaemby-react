@@ -6,14 +6,14 @@ import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 import styles from './Button.module.scss';
 
 interface ButtonProps {
-  types: ButtonStyleType[];
+  types?: ButtonStyleType[];
   children: React.ReactNode;
   isSubmit?: true;
   width?: number;
 }
 
 export const Button: FC<ButtonProps> = ({
-  types,
+  types = [],
   isSubmit,
   width,
   children,
