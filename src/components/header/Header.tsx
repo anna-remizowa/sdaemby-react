@@ -8,6 +8,7 @@ import { Button } from 'components/shared/button/Button';
 import { API_URL, REST_API, ROUTING } from 'app.constants';
 import { IHeader } from 'model/interfaces/IHeader';
 import { ButtonStyleType } from 'model/enum/ButtonStyleType';
+import { CONSTANTS } from 'constants/common';
 
 import styles from './Header.module.scss';
 
@@ -29,13 +30,13 @@ export const Header: FC = () => {
             to={`/${ROUTING.favorites}`}
             className={clsx('text', styles.textBookmarks)}
           >
-            Закладки
+            {CONSTANTS.favorites}
           </Link>
           <Link
             to={`/${ROUTING.login}`}
             className={clsx('text', styles.textLogin)}
           >
-            Вход и регистрация
+            {CONSTANTS.signIn}
           </Link>
         </div>
       </div>
@@ -44,7 +45,7 @@ export const Header: FC = () => {
           <img
             className={'logo'}
             src={require('../../assets/images/logo.png')}
-            alt={'Логотип'}
+            alt={CONSTANTS.logo}
           />
         </Link>
 
@@ -52,9 +53,7 @@ export const Header: FC = () => {
           items={appHeader.bottom ? appHeader.bottom : []}
           headerTypeBold
         />
-        <Button types={[ButtonStyleType.HIGHLIGHT]}>
-          + Разместить объявление
-        </Button>
+        <Button types={[ButtonStyleType.HIGHLIGHT]}>{CONSTANTS.addAds}</Button>
       </div>
     </header>
   );

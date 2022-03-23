@@ -18,6 +18,8 @@ import { ROUTING } from 'app.constants';
 import { IOption } from 'model/interfaces/IOption';
 import { setRentDistrict, setRentMetro } from 'store/action-creator/rent';
 import { HomeRentSlider } from './HomeRentSlider';
+import { CONSTANTS } from 'constants/common';
+import { FORM_CONSTANTS } from 'constants/forms';
 
 import styles from './HomeRentSection.module.scss';
 
@@ -29,9 +31,7 @@ export const HomeRentSection: FC = () => {
   return (
     <Section
       label={dataHome.rent?.label}
-      header={
-        dataHome.rent?.header ? dataHome.rent?.header : 'Квартиры на сутки'
-      }
+      header={dataHome.rent?.header ? dataHome.rent?.header : CONSTANTS.rents}
       className={styles.wrapper}
       headerChildren={
         <form className={styles.filters}>
@@ -39,7 +39,7 @@ export const HomeRentSection: FC = () => {
             <SelectForm
               control={control}
               name={'metro'}
-              placeholder={'Метро'}
+              placeholder={FORM_CONSTANTS.placeholders.metro}
               options={dataHome.rent?.metro}
               classes={'rent icon'}
               onChangeCustom={(value: SingleValue<IOption>) => {
@@ -50,7 +50,7 @@ export const HomeRentSection: FC = () => {
           <SelectForm
             control={control}
             name={'district'}
-            placeholder={'Район'}
+            placeholder={FORM_CONSTANTS.placeholders.district}
             options={dataHome.rent?.districts}
             classes={'rent'}
             onChangeCustom={(value: SingleValue<IOption>) => {
@@ -74,7 +74,7 @@ export const HomeRentSection: FC = () => {
             <Link to={`/${ROUTING.catalog}/${dataHome.rent?.id}`}>
               <Button types={[ButtonStyleType.HIGHLIGHT]}>
                 <>
-                  <span>Посмотреть все</span>
+                  <span>{CONSTANTS.seeAll}</span>
                   <ArrowSVG color={COLORS.WHITE} width={10} height={11} />
                 </>
               </Button>

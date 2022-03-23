@@ -9,7 +9,7 @@ import {
   TimeSVG,
 } from 'components/shared/svg/components.svg';
 import { ContactsContext } from 'components/pages/contacts/Contacts';
-import { ShareWith } from 'components/shared/sharewith/ShareWith';
+import { ShareWith } from 'components/shared/share-with/ShareWith';
 import { COLORS } from 'model/enum/Colors';
 
 import styles from './ContactsContent.module.scss';

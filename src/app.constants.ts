@@ -35,3 +35,4 @@ export const ROUTING = {
 export const LIMIT_PAGE_NEWS = 10;
 export const HOME_RENT_LOCATION_ID = 1;
 export const HOME_NEWS_LIMIT = 5;
+export const NEWS_DETAIL_COUNT_NEWS_LIMIT = 3;

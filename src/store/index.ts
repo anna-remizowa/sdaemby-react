@@ -4,10 +4,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { newsReducer } from './reducers/NewsReducer';
 import { rentReducer } from './reducers/RentReducer';
+import { newsDetailReducer } from './reducers/NewsDetailReducer';
 
 export const rootReducer = combineReducers({
   news: newsReducer,
   rent: rentReducer,
+  newsDetail: newsDetailReducer,
 });
 
 export const store = createStore(

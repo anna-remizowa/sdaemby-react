@@ -9,10 +9,12 @@ import { IFormData } from 'model/interfaces/IFormData';
 import { FormLabelStyleType } from 'model/enum/FormLabelStyleType';
 import { FormIconType } from 'model/enum/FormIconType';
 import { ButtonStyleType } from 'model/enum/ButtonStyleType';
+import { FORM_CONSTANTS } from 'constants/forms';
 
 import styles from './ContactsForm.module.scss';
 
 /*todo: модалка после отправки формы*/
+/*todo: очистка формы*/
 export const ContactsForm: FC = () => {
   const {
     register,
@@ -28,15 +30,15 @@ export const ContactsForm: FC = () => {
         <div className={styles.inputBox}>
           <FormElement
             name={'name'}
-            label={'Ваше имя'}
+            label={FORM_CONSTANTS.labels.name}
             labelTypes={[FormLabelStyleType.COLUMN]}
             icon={FormIconType.USER}
-            errorText={'Введите корректное имя'}
+            errorText={FORM_CONSTANTS.errors.name}
             errors={errors}
           >
             <InputForm
               name={'name'}
-              placeholder={'Введите имя'}
+              placeholder={FORM_CONSTANTS.placeholders.name}
               register={register}
               options={{
                 required: true,
@@ -46,20 +48,20 @@ export const ContactsForm: FC = () => {
 
           <FormElement
             name={'email'}
-            label={'Ваша электронная почта'}
+            label={FORM_CONSTANTS.labels.email}
             labelTypes={[FormLabelStyleType.COLUMN]}
             icon={FormIconType.MAIL}
-            errorText={'Введите корректный email'}
+            errorText={FORM_CONSTANTS.errors.email}
             errors={errors}
           >
             <InputForm
               name={'email'}
               inputType={'email'}
-              placeholder={'Введите email'}
+              placeholder={FORM_CONSTANTS.placeholders.email}
               register={register}
               options={{
                 required: true,
-                pattern: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+                pattern: FORM_CONSTANTS.regexp.email,
               }}
             />
           </FormElement>
@@ -68,14 +70,14 @@ export const ContactsForm: FC = () => {
         <div className={styles.inputBox}>
           <FormElement
             name={'text'}
-            label={'Ваше сообщение'}
+            label={FORM_CONSTANTS.labels.message}
             labelTypes={[FormLabelStyleType.COLUMN]}
-            errorText={'Это поле не может быть пустым'}
+            errorText={FORM_CONSTANTS.errors.notEmpty}
             errors={errors}
           >
             <TextAreaForm
               name={'text'}
-              placeholder={'Сообщение'}
+              placeholder={FORM_CONSTANTS.placeholders.message}
               register={register}
               options={{
                 required: true,
@@ -89,7 +91,7 @@ export const ContactsForm: FC = () => {
           isSubmit
           width={200}
         >
-          Отправить
+          {FORM_CONSTANTS.buttons.send}
         </Button>
       </form>
     </div>

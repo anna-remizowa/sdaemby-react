@@ -5,6 +5,7 @@ import { HomeContext } from 'components/pages/home/Home';
 import { ListBox } from 'components/shared/list-box/ListBox';
 import { HOME_NEWS_LIMIT, ROUTING } from 'app.constants';
 import { getDateFromISO } from 'utils/getDateFromISO';
+import { CONSTANTS } from 'constants/common';
 
 import styles from './HomeNewsSection.module.scss';
 
@@ -31,7 +32,7 @@ export const HomeNewsSection: FC = () => {
         header={
           dataHome.locationInfo?.header
             ? dataHome.locationInfo?.header
-            : 'Квартира на сутки'
+            : CONSTANTS.rent
         }
       >
         {dataHome.locationInfo?.content && (
@@ -67,10 +68,10 @@ export const HomeNewsSection: FC = () => {
       </Section>
       {news && (
         <ListBox
-          header={'Новости'}
+          header={CONSTANTS.news}
           items={news}
           className={styles.news}
-          linkAll={{ href: `/${ROUTING.news}`, name: 'Посмотреть все' }}
+          linkAll={{ href: `/${ROUTING.news}`, name: CONSTANTS.seeAll }}
         />
       )}
     </div>

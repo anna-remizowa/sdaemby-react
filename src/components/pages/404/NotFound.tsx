@@ -7,6 +7,7 @@ import { ROUTING } from 'app.constants';
 import { HomeSVG, NotFoundSVG } from 'components/shared/svg/components.svg';
 import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 import { COLORS } from 'model/enum/Colors';
+import { CONSTANTS } from 'constants/common';
 
 import styles from './NotFound.module.scss';
 
@@ -15,15 +16,12 @@ export const NotFound: FC = () => {
     <div className={styles.notFound}>
       <div className={clsx('wrapper', styles.wrapper)}>
         <div className={styles.content}>
-          <h1 className={styles.title}>Ошибка 404</h1>
-          <p className={styles.text}>
-            Возможно, у вас опечатка в адресе страницы, или её просто не
-            существует
-          </p>
+          <h1 className={styles.title}>{CONSTANTS.notFound.title}</h1>
+          <p className={styles.text}>{CONSTANTS.notFound.text}</p>
           <Link to={`/${ROUTING.home}`}>
             <Button types={[ButtonStyleType.BIG, ButtonStyleType.YELLOW]}>
               <HomeSVG color={COLORS.BLACK} width={12} height={12} />
-              Вернуться на главную
+              {CONSTANTS.backHome}
             </Button>
           </Link>
         </div>

@@ -23,6 +23,7 @@ import { LabelApartmentType } from 'model/enum/LabelApartmentType';
 import { ROUTING } from 'app.constants';
 
 import styles from './LocationCard.module.scss';
+import { FORM_CONSTANTS } from '../../../constants/forms';
 
 /*todo: попап с контактами владельца*/
 /*todo: свайпер - пагинация*/
@@ -156,10 +157,12 @@ export const LocationCard: FC<IRent> = ({
           )}
           <Button types={[ButtonStyleType.BASE_V2]}>
             <PhoneSVG height={15} width={9} color={COLORS.PURPLE} />
-            <span>{'Контакты'}</span>
+            <span>{FORM_CONSTANTS.buttons.contacts}</span>
           </Button>
           <Link to={`/${ROUTING.location}/${id}`}>
-            <Button types={[ButtonStyleType.YELLOW_V2]}>{'Подробнее'}</Button>
+            <Button types={[ButtonStyleType.YELLOW_V2]}>
+              {FORM_CONSTANTS.buttons.more}
+            </Button>
           </Link>
         </div>
       </div>

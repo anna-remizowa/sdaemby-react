@@ -16,6 +16,7 @@ import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 import { FormLabelStyleType } from 'model/enum/FormLabelStyleType';
 import { FormInputStyleType } from 'model/enum/FormInputStyleType';
 import { COLORS } from 'model/enum/Colors';
+import { FORM_CONSTANTS } from 'constants/forms';
 
 import styles from './Filter.module.scss';
 
@@ -46,7 +47,7 @@ export const Filter: FC<FilterProps> = ({
           <div className={styles.box}>
             <FormElement
               name={'location'}
-              label={'Город'}
+              label={FORM_CONSTANTS.labels.location}
               labelTypes={[FormLabelStyleType.COLUMN, FormLabelStyleType.LIGHT]}
             >
               <SelectForm
@@ -64,7 +65,7 @@ export const Filter: FC<FilterProps> = ({
           <div className={styles.box}>
             <FormElement
               name={'room'}
-              label={'Комнаты'}
+              label={FORM_CONSTANTS.labels.rooms}
               labelTypes={[FormLabelStyleType.COLUMN, FormLabelStyleType.LIGHT]}
             >
               <SelectForm
@@ -81,20 +82,20 @@ export const Filter: FC<FilterProps> = ({
         <div className={styles.box}>
           <FormElement
             name={'priceFrom'}
-            label={'Цена за сутки (BYN)'}
+            label={FORM_CONSTANTS.labels.priceDay}
             labelTypes={[FormLabelStyleType.COLUMN, FormLabelStyleType.LIGHT]}
           >
             <div className={styles.doubleInputBox}>
               <InputForm
                 name={'priceFrom'}
-                placeholder={'От'}
+                placeholder={FORM_CONSTANTS.labels.from}
                 register={register}
                 inputStyles={[FormInputStyleType.MIDDLE]}
               />
               <span className={styles.separator}>-</span>
               <InputForm
                 name={'priceTo'}
-                placeholder={'До'}
+                placeholder={FORM_CONSTANTS.labels.to}
                 register={register}
                 inputStyles={[FormInputStyleType.MIDDLE]}
               />
@@ -104,7 +105,7 @@ export const Filter: FC<FilterProps> = ({
 
         <div className={styles.optionsBox}>
           <button type="button" className={styles.optionsButton}>
-            <p className={styles.text}>Больше опций</p>
+            <p className={styles.text}>{FORM_CONSTANTS.filters.options}</p>
             <OptionsSVG color={COLORS.PURPLE} height={18} width={16} />
           </button>
         </div>
@@ -112,7 +113,7 @@ export const Filter: FC<FilterProps> = ({
         {isMap ? (
           <div className={styles.optionsBox}>
             <button type="button" className={styles.optionsButton}>
-              <p className={styles.text}>На карте</p>
+              <p className={styles.text}>{FORM_CONSTANTS.filters.map}</p>
               <LocationSVG color={COLORS.PURPLE} height={15} width={12} />
             </button>
           </div>
@@ -123,13 +124,15 @@ export const Filter: FC<FilterProps> = ({
 
       <div className={styles.buttons}>
         {isReset ? (
-          <Button types={[ButtonStyleType.BASE]}>Очистить</Button>
+          <Button types={[ButtonStyleType.BASE]}>
+            {FORM_CONSTANTS.buttons.reset}
+          </Button>
         ) : (
           ''
         )}
 
         <Button types={[ButtonStyleType.YELLOW]} isSubmit>
-          <span>Показать</span>
+          <span>{FORM_CONSTANTS.buttons.show}</span>
           <ArrowSVG color={COLORS.BLACK} width={10} height={11} />
         </Button>
       </div>

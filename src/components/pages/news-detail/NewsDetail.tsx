@@ -1,54 +1,73 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import clsx from 'clsx';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { Breadcrumbs } from 'components/shared/breadcrumbs/Breadcrumbs';
 import { Label } from 'components/shared/label/Label';
-import { API_URL, REST_API } from 'app.constants';
-import { ShareWith } from 'components/shared/sharewith/ShareWith';
+import { ShareWith } from 'components/shared/share-with/ShareWith';
 import { NewsItem } from 'components/pages/news/NewsItem';
-import { INewsDetail } from 'model/interfaces/INewsDetail';
 import { getDateFromISO } from 'utils/getDateFromISO';
 import { LabelStyleType } from 'model/enum/LabelStyleType';
 import { COLORS } from 'model/enum/Colors';
-import { smoothScrollPromise } from 'utils/smoothScrollPromise';
+import { useTypesSelector } from 'hooks/useTypesSelector';
+import { fetchNewsDetail } from 'store/action-creator/news-detail';
+import { NEWS_DETAIL_COUNT_NEWS_LIMIT } from 'app.constants';
 
 import styles from './NewsDetail.module.scss';
+import { CONSTANTS } from '../../../constants/common';
 
 export const NewsDetail: FC = () => {
   const params = useParams();
-  /*todo: хлебные крошки тоже должны приходить с сервера? в том же json, что и основные данные?*/
-  const [appNewsDetail, setAppNewsDetail] = useState<INewsDetail>({});
+  const { newsDetail, loading, error } = useTypesSelector(
+    (state) => state.newsDetail
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get<INewsDetail>(`${API_URL}${REST_API.news}/:${params.newsId}`)
-      .then((resp) => {
-        smoothScrollPromise().then(() => {
-          setAppNewsDetail(resp.data);
-        });
-      });
+    // axios
+    //   .get<INewsDetail>(`${API_URL}${REST_API.news}/:${params.newsId}`)
+    //   .then((resp) => {
+    //     smoothScrollPromise().then(() => {
+    //       setAppNewsDetail(resp.data);
+    //     });
+    //   });
+    dispatch(
+      fetchNewsDetail({
+        newsId: Number(params.newsId),
+        newsOtherCount: NEWS_DETAIL_COUNT_NEWS_LIMIT,
+      })
+    );
   }, [params.newsId]);
+
+  /*todo: обработка загрузки - отдельный компонент*/
+  if (loading) {
+    return <h1>Идет загрузка...</h1>;
+  }
+
+  /*todo: обработка ошибки - отдельный компонент*/
+  if (error) {
+    return <h1>{error}</h1>;
+  }
 
   return (
     <div className={styles.newsDetail}>
-      {appNewsDetail.news ? (
+      {newsDetail.news ? (
         <>
           <div className={styles.content}>
             <div className={clsx('wrapper-narrow', styles.wrapper)}>
               <Breadcrumbs
                 breadcrumbs={
-                  appNewsDetail.breadcrumbs ? appNewsDetail.breadcrumbs : []
+                  newsDetail.breadcrumbs ? newsDetail.breadcrumbs : []
                 }
               />
-              <h1 className={styles.header}>{appNewsDetail.news.header}</h1>
+              <h1 className={styles.header}>{newsDetail.news.header}</h1>
               <div className={styles.shared}>
                 <Label type={LabelStyleType.PURPLE}>
-                  {getDateFromISO(appNewsDetail.news.date)}
+                  {getDateFromISO(newsDetail.news.date)}
                 </Label>
                 <ShareWith
-                  title={'Поделиться'}
+                  title={CONSTANTS.share}
                   iconBackgroundColor={COLORS.PURPLE_BACKGROUND}
                   iconColor={COLORS.PURPLE}
                   url={window.location.href}
@@ -68,10 +87,10 @@ export const NewsDetail: FC = () => {
           <div className={'wrapper-narrow'}>
             <img
               className={styles.img}
-              src={appNewsDetail.news.image}
-              alt={appNewsDetail.news.alt}
+              src={newsDetail.news.image}
+              alt={newsDetail.news.alt}
             />
-            <p className={styles.text}>{appNewsDetail.news.content}</p>
+            <p className={styles.text}>{newsDetail.news.content}</p>
           </div>
         </>
       ) : (
@@ -80,10 +99,10 @@ export const NewsDetail: FC = () => {
 
       <div className={styles.content}>
         <div className={clsx('wrapper', styles.wrapperBottom)}>
-          <h1 className={styles.headerBottom}>{'Читайте также'}</h1>
+          <h1 className={styles.headerBottom}>{CONSTANTS.readAlso}</h1>
           <div className={styles.newsBox}>
-            {appNewsDetail.otherNews
-              ? appNewsDetail.otherNews.map((item) => {
+            {newsDetail.otherNews
+              ? newsDetail.otherNews.map((item) => {
                   return <NewsItem {...item} key={item.id} />;
                 })
               : ''}

@@ -12,6 +12,7 @@ import { SocialType } from 'model/enum/SocialType';
 import { MenuType } from 'model/enum/MenuType';
 import { SocialStyleType } from 'model/enum/SocialStyleType';
 import { COLORS } from 'model/enum/Colors';
+import { CONSTANTS } from 'constants/common';
 
 import styles from './Footer.module.scss';
 
@@ -86,7 +87,7 @@ export const Footer: FC = () => {
             <img
               className={'logo'}
               src={require('../../assets/images/logo.png')}
-              alt={'Логотип'}
+              alt={CONSTANTS.logo}
             />
           </Link>
           <p className={styles.textLogo}>Сдаём Бай</p>
@@ -129,7 +130,7 @@ export const Footer: FC = () => {
             <Socials
               socials={socials}
               types={[SocialStyleType.BASE]}
-              header={'Мы в соцсетях'}
+              header={CONSTANTS.socials}
               iconColor={COLORS.BLACK}
             />
             <FooterPayments images={cards} />

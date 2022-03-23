@@ -12,6 +12,7 @@ import { API_URL, REST_API, ROUTING } from 'app.constants';
 import { INewsPage } from 'model/interfaces/INews';
 import { useTypesSelector } from 'hooks/useTypesSelector';
 import { NewsContentItem } from './NewsContentItem';
+import { FORM_CONSTANTS } from 'constants/forms';
 
 import styles from './NewsPage.module.scss';
 
@@ -40,10 +41,9 @@ export const NewsPage: FC = () => {
       <div className={styles.headerBox}>
         <h1 className={styles.header}>{newsPageData.header}</h1>
         <Search
-          placeholder="Поиск по статьям"
+          placeholder={FORM_CONSTANTS.placeholders.search}
           defaultValue={search}
           onClick={(value: string) => {
-            // dispatch(setNewsSearch(value));
             navigate(`/${ROUTING.news}?page=${page}&search=${value}`);
           }}
         />

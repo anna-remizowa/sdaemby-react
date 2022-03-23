@@ -19,12 +19,13 @@ import { HomeRentSection } from './rent-section/HomeRentSection';
 import { INews, INewsContent } from 'model/interfaces/INews';
 import { ISection } from 'model/interfaces/ISection';
 import { HomeNewsSection } from './news-section/HomeNewsSection';
+import { CONSTANTS } from 'constants/common';
 
 import styles from './Home.module.scss';
 
 export const HomeContext = React.createContext<IHome>({});
 
-/*todo: возможно стоит все данные на главной странице запрашивать одним запросом*/
+/*todo: возможно стоит все данные на главной странице запрашивать одним запросом?*/
 export const Home: FC = () => {
   const [filter, setFilter] = useState<IFilter>({});
   const [slider, setSlider] = useState<ILinkProps>({});
@@ -90,9 +91,9 @@ export const Home: FC = () => {
       <div className={clsx('wrapper', styles.home)}>
         <div className={styles.background}>
           <h2 className={styles.headerBig}>
-            <span>Sdaem.by - у нас живут </span>
+            <span>{CONSTANTS.home.start}</span>
             <span>
-              <Link to={`/${ROUTING.ads}`}>ваши объявления</Link>
+              <Link to={`/${ROUTING.ads}`}>{CONSTANTS.home.end}</Link>
             </span>
           </h2>
           <HomeTabs />
