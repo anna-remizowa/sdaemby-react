@@ -23,6 +23,7 @@ import { FORM_CONSTANTS } from 'constants/forms';
 
 import styles from './HomeRentSection.module.scss';
 
+/*todo: изображение на бэкграунде*/
 export const HomeRentSection: FC = () => {
   const dataHome = useContext(HomeContext);
   const { control } = useForm<IFormData>({});

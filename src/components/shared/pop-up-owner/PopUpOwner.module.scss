@@ -1,0 +1,73 @@
+@import '../../../styles/variables/variables';
+
+.popUp {
+  position: absolute;
+  bottom: 0;
+  display: none;
+  padding-bottom: 62px;
+  z-index: 100;
+
+  &.show {
+	display: flex;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 274px;
+  padding: 26px 30px;
+  background-color: white;
+  box-shadow: 0 0 40px rgba(135, 124, 202, 0.3);
+  border-radius: 10px;
+  cursor: default;
+}
+
+.imgBox, .img {
+  border-radius: 50%;
+  width: 59px;
+  height: 59px;
+
+}
+
+.imgBox {
+  margin-bottom: 11px;
+  border: 4px solid $purple-200;
+  box-sizing: content-box;
+}
+
+.textType {
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: $light-gray-200;
+}
+
+.textBase {
+  margin-bottom: 18px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  color: $black;
+}
+
+.textBase + .textBase {
+  margin-bottom: 15px;
+}
+
+.textEmail {
+  margin-top: -3px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  text-decoration-line: underline;
+  color: $purple-200;
+}
+
+.socials {
+  margin-top: 27px;
+  display: flex;
+  gap: 20px;
+}

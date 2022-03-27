@@ -3,6 +3,7 @@ export interface ICard {
   svg?: string;
   content: string[];
   button: string;
+  href: string;
   isArrow?: boolean;
   isHighlight?: boolean;
 }

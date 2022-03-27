@@ -53,7 +53,11 @@ export const Header: FC = () => {
           items={appHeader.bottom ? appHeader.bottom : []}
           headerTypeBold
         />
-        <Button types={[ButtonStyleType.HIGHLIGHT]}>{CONSTANTS.addAds}</Button>
+        <Link to={`/${ROUTING.addAds}`}>
+          <Button types={[ButtonStyleType.HIGHLIGHT]}>
+            {CONSTANTS.addAds}
+          </Button>
+        </Link>
       </div>
     </header>
   );

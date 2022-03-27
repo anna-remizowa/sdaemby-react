@@ -30,6 +30,7 @@ export const ROUTING = {
   carRental: 'carRental',
   favorites: 'favorites',
   login: 'login',
+  addAds: 'add-ads',
 };
 
 export const LIMIT_PAGE_NEWS = 10;

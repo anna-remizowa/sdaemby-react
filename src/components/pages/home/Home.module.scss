@@ -29,9 +29,12 @@
 
   & a {
 	color: $yellow-100;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: .3s;
 
 	&:hover {
-	  text-decoration: underline;
+      text-decoration-color: $yellow-100;
 	}
   }
 }

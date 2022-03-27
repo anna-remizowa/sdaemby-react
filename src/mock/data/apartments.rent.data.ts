@@ -1,3 +1,16 @@
+const OWNER = {
+  photo: require('../../assets/images/owner.png'),
+  type: 'Владелец',
+  name: 'Dmitriy',
+  phone: '+375 (29) 291-14-44',
+  email: 'vladimir6234@tut.by',
+  links: [
+    { type: 'Viber', href: 'https://www.viber.com/ru/' },
+    { type: 'WhatsApp', href: 'https://www.whatsapp.com/?lang=ru' },
+    { type: 'Mail', href: 'mailto:vladimir6234@tut.by' },
+  ],
+};
+
 const APARTMENT_BASE = {
   id: '1',
   name: '4-комн. апартаменты на Грушевке ',
@@ -13,16 +26,7 @@ const APARTMENT_BASE = {
   district: 'Шабаны',
   description:
     'Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...',
-  owner: {
-    name: 'Dmitriy',
-    phone: '+375 (29) 291-14-44',
-    email: 'vladimir6234@tut.by',
-    links: [
-      { type: 'Viber', href: 'https://www.viber.com/ru/' },
-      { type: 'WhatsApp', href: 'https://www.whatsapp.com/?lang=ru' },
-      { type: 'Mail', href: 'https://www.google.com/intl/ru/gmail/about/' },
-    ],
-  },
+  owner: OWNER,
   label: 'gold',
 };
 
@@ -44,16 +48,7 @@ const APARTMENT_BASE_2 = {
   others: ['от Минска (км): 95', 'от Вилейка (км): 95 '],
   description:
     'Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...',
-  owner: {
-    name: 'Dmitriy',
-    phone: '+375 (29) 291-14-44',
-    email: 'vladimir6234@tut.by',
-    links: [
-      { type: 'Viber', href: 'https://www.viber.com/ru/' },
-      { type: 'WhatsApp', href: 'https://www.whatsapp.com/?lang=ru' },
-      { type: 'Mail', href: 'https://www.google.com/intl/ru/gmail/about/' },
-    ],
-  },
+  owner: OWNER,
   label: 'gold',
 };
 
@@ -73,16 +68,7 @@ const COTTAGE_BASE = {
   location: 'Минск',
   description:
     'Арендовать дом на сутки в Гомеле с баней и бассейном в 5 минутах на машине от ЗИПа в усадьбе "Дом у реки". В доме 2-комнаты, зал для гостей на 10 человек, кухня, ванная, 2 с/у на первом и втором этаже, сауна, бассейн с холодной...',
-  owner: {
-    name: 'Dmitriy',
-    phone: '+375 (29) 291-14-44',
-    email: 'vladimir6234@tut.by',
-    links: [
-      { type: 'Viber', href: 'https://www.viber.com/ru/' },
-      { type: 'WhatsApp', href: 'https://www.whatsapp.com/?lang=ru' },
-      { type: 'Mail', href: 'https://www.google.com/intl/ru/gmail/about/' },
-    ],
-  },
+  owner: OWNER,
   label: 'gold',
 };
 
@@ -97,16 +83,7 @@ const BATH_BASE = {
   priceForTime: 'за сутки',
   roomsByPeople: '6',
   address: 'Деревня Сёмково, Садовая улица, д. 150',
-  owner: {
-    name: 'Dmitriy',
-    phone: '+375 (29) 291-14-44',
-    email: 'vladimir6234@tut.by',
-    links: [
-      { type: 'Viber', href: 'https://www.viber.com/ru/' },
-      { type: 'WhatsApp', href: 'https://www.whatsapp.com/?lang=ru' },
-      { type: 'Mail', href: 'https://www.google.com/intl/ru/gmail/about/' },
-    ],
-  },
+  owner: OWNER,
   label: 'gold',
 };
 

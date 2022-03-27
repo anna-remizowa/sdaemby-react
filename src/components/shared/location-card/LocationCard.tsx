@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
@@ -22,10 +22,10 @@ import { CustomSwiper } from 'components/shared/swiper/CustomSwiper';
 import { LabelApartmentType } from 'model/enum/LabelApartmentType';
 import { ROUTING } from 'app.constants';
 import { FORM_CONSTANTS } from 'constants/forms';
+import { PopUpOwner } from 'components/shared/pop-up-owner/PopUpOwner';
 
 import styles from './LocationCard.module.scss';
 
-/*todo: попап с контактами владельца*/
 /*todo: свайпер - пагинация*/
 export const LocationCard: FC<IRent> = ({
   id,
@@ -47,6 +47,8 @@ export const LocationCard: FC<IRent> = ({
   label,
   isFavorite,
 }) => {
+  const [isButtonContactsHovered, setButtonContactsHovered] = useState(false);
+
   return (
     <div className={styles.card}>
       <div className={styles.imgBox}>
@@ -155,7 +157,12 @@ export const LocationCard: FC<IRent> = ({
               <HeartSVG color={COLORS.RED} width={15} height={13} />
             </Button>
           )}
-          <Button types={[ButtonStyleType.BASE_V2]}>
+          <Button
+            types={[ButtonStyleType.BASE_V2]}
+            onMouseEnter={() => setButtonContactsHovered(true)}
+            onMouseLeave={() => setButtonContactsHovered(false)}
+          >
+            <PopUpOwner owner={owner} isShow={isButtonContactsHovered} />
             <PhoneSVG height={15} width={9} color={COLORS.PURPLE} />
             <span>{FORM_CONSTANTS.buttons.contacts}</span>
           </Button>

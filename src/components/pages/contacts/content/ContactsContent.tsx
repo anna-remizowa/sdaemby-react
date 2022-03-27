@@ -14,6 +14,7 @@ import { COLORS } from 'model/enum/Colors';
 
 import styles from './ContactsContent.module.scss';
 
+/*todo: вместо ShareWith должны быть SocialMedia*/
 export const ContactsContent: FC = () => {
   const dataContacts = useContext(ContactsContext);
   return (

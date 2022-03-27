@@ -1,6 +1,7 @@
 @import '../../../styles/variables/variables';
 
 .button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +21,15 @@
     color: $purple-200;
   }
 
+  &.common {
+    & > svg {
+      margin-right: 11px;
+    }
+
+    &:hover {
+      color: $yellow-200;
+    }
+  }
 
   &.purple {
     background-color: $purple-200;
@@ -79,8 +89,13 @@
 
   &.baseV2 {
     padding: 10px 15px;
-    background-color: $light-gray-100;
+    background-color: white;
     color: $purple-200;
+    box-shadow: 0 5px 20px rgba(0, 96, 206, 0.1);
+
+    &:hover {
+      background-color: $light-gray-120;
+    }
 
     & > svg {
       margin-right: 13px;

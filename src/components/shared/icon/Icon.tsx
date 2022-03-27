@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './icon.module.scss';
 
@@ -6,14 +7,12 @@ interface IconProps {
   backgroundColor?: string;
   size?: number;
   round?: boolean | string;
-  iconWidth?: number;
-  iconHeight?: number;
   children: React.ReactNode;
 }
 
 export const Icon: FC<IconProps> = ({
   children,
-  backgroundColor = 'black',
+  backgroundColor = COLORS.BLACK,
   size = 34,
   round,
 }) => {

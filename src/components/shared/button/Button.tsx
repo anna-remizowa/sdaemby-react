@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 import clsx from 'clsx';
 
 import { ButtonStyleType } from 'model/enum/ButtonStyleType';
@@ -10,6 +10,8 @@ interface ButtonProps {
   children: React.ReactNode;
   isSubmit?: true;
   width?: number;
+  onMouseEnter?: MouseEventHandler<HTMLButtonElement>;
+  onMouseLeave?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -17,6 +19,8 @@ export const Button: FC<ButtonProps> = ({
   isSubmit,
   width,
   children,
+  onMouseEnter,
+  onMouseLeave,
 }) => {
   return (
     <button
@@ -26,6 +30,8 @@ export const Button: FC<ButtonProps> = ({
         styles.button,
         types.map<string>((type) => styles[type]).join(' ')
       )}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </button>

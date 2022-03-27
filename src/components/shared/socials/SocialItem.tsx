@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import {
+  EmailSVG,
   FacebookSVG,
   InstagramSvg,
   SVGProps,
@@ -20,6 +21,7 @@ export const ComponentsSVG: IComponentsSVG = {
   Viber: ViberSVG,
   WhatsApp: WhatsAppSVG,
   Instagram: InstagramSvg,
+  Mail: EmailSVG,
 };
 
 interface SocialItemProps {
@@ -36,5 +38,8 @@ export const SocialItem: FC<SocialItemProps> = ({
   height,
 }) => {
   const CustomTag = ComponentsSVG[tag];
+  if (!CustomTag) {
+    return <></>;
+  }
   return <CustomTag color={color} width={width} height={height} />;
 };
