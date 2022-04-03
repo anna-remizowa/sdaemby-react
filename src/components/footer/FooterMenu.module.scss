@@ -1,0 +1,67 @@
+@import '../../styles/variables/variables';
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  &.baseBold {
+	margin-right: 69px;
+  }
+
+  &.base {
+	margin-right: 102px;
+  }
+
+  &.column {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px 53px;
+
+	.item:not(:last-of-type) {
+	  margin-bottom: 0;
+	}
+  }
+
+  &:last-of-type {
+	margin-right: 60px;
+  }
+}
+
+.item {
+  &.base {
+	&:not(:last-of-type) {
+	  margin-bottom: 8px;
+	}
+  }
+
+  &.baseBold {
+	font-weight: bold;
+	color: $black;
+
+	&:not(:last-of-type) {
+	  margin-bottom: 21px;
+	}
+  }
+}
+
+.link {
+  @extend %base-text;
+  cursor: pointer;
+
+  &.base {
+	color: $blue-gray;
+  }
+
+  &.baseBold {
+	font-weight: bold;
+	color: $black;
+  }
+}
+
+.header {
+  margin-bottom: 12px;
+  @extend %base-text;
+  font-weight: bold;
+  color: $black;
+  cursor: pointer;
+}

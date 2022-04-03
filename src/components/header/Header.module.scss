@@ -1,0 +1,48 @@
+@import '../../styles/variables/variables';
+
+.top, .bottom {
+  display: flex;
+  padding-top: 11px;
+  padding-bottom: 12px;
+  background-color: $gray;
+}
+
+.top {
+  justify-content: space-between;
+}
+
+.login {
+  display: flex;
+}
+
+.textBookmarks {
+  position: relative;
+  margin-right: 67px;
+  color: $blue-gray;
+
+  &:after {
+	position: absolute;
+	right: -30px;
+	content: '';
+	width: 18px;
+	height: 18px;
+	mask-image: url('../../assets/svg/favorite.svg');
+	mask-size: cover;
+	background-color: $blue-gray;
+  }
+}
+
+.textLogin {
+  color: $purple;
+}
+
+.bottom {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+
+  & > *:last-child {
+	margin-left: auto
+  }
+}
+

@@ -1,0 +1,96 @@
+@import-normalize;
+@import '../variables/variables';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+body,
+input,
+button,
+textarea {
+  font-family: Montserrat, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+header,
+footer {
+  flex: 0 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 100%;
+}
+
+.wrapper-full, .wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.wrapper-full {
+  max-width: 1920px;
+}
+
+.wrapper {
+  max-width: 1440px;
+}
+
+.text {
+  @extend %base-text;
+}

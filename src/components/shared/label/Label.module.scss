@@ -1,0 +1,18 @@
+@import '../../../styles/variables/variables';
+
+.label {
+  border-radius: 18px;
+  @extend %base-text;
+
+  &.base {
+	padding: 10px 8px;
+	color: $blue-gray;
+	background-color: $gray;
+  }
+
+  &.purple {
+	padding: 10px 16px;
+	color: $purple;
+	background-color: $light-purple;
+  }
+}
