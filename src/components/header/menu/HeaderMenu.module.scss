@@ -1,0 +1,15 @@
+@import '../../../styles/variables/variables';
+
+.list {
+  display: flex;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-right: 56px;
+
+  &.primary {
+	margin-right: 80px;
+  }
+}

@@ -1,0 +1,23 @@
+@import '../../../styles/variables/variables';
+
+.socials{
+  display: flex;
+  align-items: center;
+
+  & > * {
+    margin-right: 15px;
+
+    &:not(:first-child, :last-child){
+      margin-right: 20px;
+    }
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+.text{
+  @extend %base-text;
+  color: $black;
+}

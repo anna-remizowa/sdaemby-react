@@ -2,16 +2,15 @@ import React, { FC } from 'react';
 
 import { Header } from '../components/header/Header';
 import { Footer } from '../components/footer/Footer';
+import { Outlet } from 'react-router-dom';
 
-interface BaseLayoutProps {
-  children: React.ReactNode;
-}
-
-export const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
+export const BaseLayout: FC = () => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

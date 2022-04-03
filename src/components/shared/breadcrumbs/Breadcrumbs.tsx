@@ -6,6 +6,7 @@ import { HOME } from 'app.constants';
 import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
 
 import styles from './Breadcrumbs.module.scss';
+import { Link } from 'react-router-dom';
 
 export interface Breadcrumb {
   name: string;
@@ -20,19 +21,19 @@ export const Breadcrumbs: FC<BreadcrumbProps> = ({ breadcrumbs }) => {
   return (
     <div className={styles.breadcrumbs}>
       {breadcrumbs.map((breadcrumb, index) => {
-        return (
-          <a
-            className={styles.link}
-            href={breadcrumb.href ? breadcrumb.href : ''}
-            key={index}
-          >
+        return breadcrumb.href !== undefined ? (
+          <Link className={styles.link} to={`/${breadcrumb.href}`} key={index}>
             {breadcrumb.name === HOME ? (
-              <SVG svg={SVG_DATA_SET.Home} width={12} height={12}>
+              <SVG viewBox={SVG_DATA_SET.Home.viewBox} width={12} height={12}>
                 <path d={SVG_DATA_SET.Home.path} fill={'#664EF9'} />
               </SVG>
             ) : (
               breadcrumb.name
             )}
+          </Link>
+        ) : (
+          <a className={styles.link} key={index}>
+            {breadcrumb.name}
           </a>
         );
       })}

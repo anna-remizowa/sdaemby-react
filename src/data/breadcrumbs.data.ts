@@ -1,12 +1,25 @@
-import { HOME } from '../app.constants';
+import { Breadcrumb } from '../components/shared/breadcrumbs/Breadcrumbs';
 
-export const BREADCRUMBS_NEWS_PAGE = [
+export const BREADCRUMBS_NEWS_PAGE: Breadcrumb[] = [
   {
-    name: HOME,
-    href: '#',
+    name: 'Главная',
+    href: '',
   },
   {
     name: 'Новости',
+  },
+];
+
+export const BREADCRUMBS_NEWS_DETAIL: Breadcrumb[] = [
+  {
+    name: 'Главная',
     href: '',
+  },
+  {
+    name: 'Новости',
+    href: 'news',
+  },
+  {
+    name: 'Линия Сталина: суровый отдых в усадьбах на сутки ',
   },
 ];

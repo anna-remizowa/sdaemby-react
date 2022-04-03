@@ -18,17 +18,11 @@
 .button{
   position: absolute;
   right: 0;
+  width: 53px;
+  height: 37px;
   padding: 10px 18px;
   background-color: $purple;
   border-radius: 19px;
   border: none;
   cursor: pointer;
-}
-
-.iconZoom{
-  height: 17px;
-  width: 17px;
-  mask-image: url('../../../assets/svg/zoom.svg');
-  mask-size: cover;
-  background-color: white;
 }

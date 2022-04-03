@@ -28,10 +28,15 @@
   padding-bottom: 25px;
   border-bottom: 2px solid #F8F8F8;
   @extend %base-text;
-  color: $dark-gray;
 }
 
 .buttons{
   display: flex;
   justify-content: space-between;
+}
+
+.img{
+  width: 406px;
+  height: 228px;
+  border-radius: 10px;
 }

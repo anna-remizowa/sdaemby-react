@@ -3,6 +3,7 @@
 .label {
   border-radius: 18px;
   @extend %base-text;
+  font-weight: 500;
 
   &.base {
 	padding: 10px 8px;

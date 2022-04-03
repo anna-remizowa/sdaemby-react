@@ -11,74 +11,75 @@ export const FOOTER = {
     {
       id: 1,
       name: 'Коттеджи и усадьбы',
-      href: '#',
+      href: 'cottages',
     },
     {
       id: 2,
       name: 'Бани и сауны',
-      href: '#',
+      href: 'baths',
     },
     {
       id: 3,
       name: 'Авто на прокат',
-      href: '#',
+      href: 'carRental',
     },
   ],
   titlesTwo: [
     {
       id: 1,
       name: 'Новости',
-      href: '#',
+      href: 'news',
     },
     {
       id: 2,
       name: 'Размещение и тарифы',
-      href: '#',
+      href: 'rates',
     },
     {
       id: 3,
       name: 'Объявления на карте',
-      href: '#',
+      href: 'ads',
     },
     {
       id: 4,
       name: 'Контакты',
-      href: '#',
+      href: 'contacts',
     },
   ],
 
   apartments: {
     header: 'Квартиры',
+    href: 'apartments',
     items: [
       {
         id: 1,
         name: 'Квартиры в Минске',
-        href: '#',
+        href: 'appart1',
       },
       {
         id: 2,
         name: 'Квартиры в Витебске',
-        href: '#',
+        href: 'appart2',
       },
       {
         id: 3,
         name: 'Квартиры в Гомеле',
-        href: '#',
+        href: 'appart3',
       },
       {
         id: 4,
         name: 'Квартиры в Гродно',
-        href: '#',
+        href: 'appart4',
       },
       {
         id: 5,
         name: 'Квартиры в Бресте',
-        href: '#',
+        href: 'appart5',
       },
       {
         id: 6,
         name: 'Квартиры в Могилеве',
-        href: '#',
+        href: 'appart6',
       },
     ],
   },
