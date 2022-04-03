@@ -7,7 +7,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -77,24 +78,6 @@ main {
   flex-direction: column;
   flex-grow: 1;
   min-height: 100%;
-}
-
-.wrapper-full, .wrapper, .wrapper-narrow {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 80px;
-}
-
-.wrapper-full {
-  max-width: 1920px;
-}
-
-.wrapper {
-  max-width: 1440px;
-}
-
-.wrapper-narrow {
-  max-width: 1004px;
 }
 
 .text {

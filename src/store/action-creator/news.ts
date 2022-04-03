@@ -23,17 +23,16 @@ export const fetchNews = (params: FetchNewsParams) => {
       const response = await axios.get<INewsContent>(API_URL + REST_API.news, {
         params: { ...params },
       });
-      setTimeout(() => {
-        if (response.data.news) {
-          dispatch({
-            type: NewsActionTypes.FETCH_NEWS_SUCCESS,
-            payload: response.data.news,
-          });
-        }
-        if (response.data.pageCount) {
-          dispatch(setNewsPageCount(response.data.pageCount));
-        }
-      }, 1000);
+      console.log(response);
+      if (response.data.news) {
+        dispatch({
+          type: NewsActionTypes.FETCH_NEWS_SUCCESS,
+          payload: response.data.news,
+        });
+      }
+      if (response.data.pageCount) {
+        dispatch(setNewsPageCount(response.data.pageCount));
+      }
     } catch (e) {
       dispatch({
         type: NewsActionTypes.FETCH_NEWS_ERROR,

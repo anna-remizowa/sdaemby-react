@@ -25,14 +25,12 @@ export const fetchNewsDetail = (params: FetchNewsDetailParams) => {
           params: { ...params },
         }
       );
-      setTimeout(() => {
-        if (response.data) {
-          dispatch({
-            type: NewsDetailActionTypes.FETCH_NEWS_DETAIL_SUCCESS,
-            payload: response.data,
-          });
-        }
-      }, 1000);
+      if (response.data) {
+        dispatch({
+          type: NewsDetailActionTypes.FETCH_NEWS_DETAIL_SUCCESS,
+          payload: response.data,
+        });
+      }
     } catch (e) {
       dispatch({
         type: NewsDetailActionTypes.FETCH_NEWS_DETAIL_ERROR,

@@ -6,6 +6,7 @@ export const PRODUCTION_MODE = 'production';
 export const REST_API = {
   header: '/header',
   footer: '/footer',
+  start: '/start',
   newsPage: '/news-page',
   news: '/news',
   contacts: '/contacts',

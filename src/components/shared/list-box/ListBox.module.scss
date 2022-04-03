@@ -18,7 +18,7 @@
   padding: 10px 0;
 
   &:not(:last-of-type) {
-	border-bottom: 1px solid $deep-purple-opacity-200;
+    border-bottom: 1px solid $deep-purple-opacity-200;
   }
 }
 
@@ -26,23 +26,24 @@
   @extend %base-text;
   font-weight: 600;
   color: $black;
-  transition: color .3s;
+  transition: color 0.3s;
 
-  &:hover, &All {
-	color: $purple-200;
+  &:hover,
+  &All {
+    color: $purple-200;
   }
 
   &All {
-	position: relative;
-	left: 0;
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	transition: left .3s;
+    position: relative;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: left 0.3s;
 
-	&:hover {
+    &:hover {
       left: 10px;
-	}
+    }
   }
 }
 

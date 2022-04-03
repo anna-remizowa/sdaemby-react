@@ -1,3 +1,24 @@
+import { APARTMENTS_FILTER } from './filter.data';
+
+export const HOME_START_DATA = {
+  header: 'Sdaem.by - у нас живут <a href="/ads">ваши объявления</a>',
+  tabs: [
+    {
+      header: 'Квартиры на сутки',
+      content: APARTMENTS_FILTER,
+    },
+    {
+      header: 'Коттеджи и усадьбы',
+    },
+    {
+      header: 'Бани и сауны',
+    },
+    {
+      header: 'Авто напрокат',
+    },
+  ],
+};
+
 export const HOME_NEWS_DATA = {
   id: 1,
   label: 'ЧТО ТАКОЕ SDAEM.BY',

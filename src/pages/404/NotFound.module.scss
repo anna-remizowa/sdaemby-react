@@ -1,0 +1,53 @@
+@import '../../styles/variables/variables';
+
+.notFound {
+  flex: 1;
+  background-image: url('../../assets/images/background.png');
+  background-color: $purple-200;
+  background-size: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.content {
+  max-width: 427px;
+  width: 100%;
+  margin: 100px 0;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 73px;
+  color: white;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.text {
+  margin: 20px 0 50px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+}
+
+.dots {
+  @extend %dots;
+}
+
+.dots1 {
+  left: 5%;
+  top: 10%;
+}
+
+.dots2 {
+  right: 5%;
+  bottom: 10%;
+}

@@ -1,6 +1,7 @@
 @import '../../styles/variables/variables';
 
-.top, .bottom {
+.top,
+.bottom {
   display: flex;
   background-color: $light-gray-100;
 }
@@ -13,7 +14,8 @@
   display: flex;
 }
 
-.textBookmarks, .textLogin{
+.textBookmarks,
+.textLogin {
   font-weight: 500;
   padding: 11px 0;
 }
@@ -24,14 +26,14 @@
   color: $light-gray-300;
 
   &:after {
-	position: absolute;
-	right: -30px;
-	content: '';
-	width: 18px;
-	height: 18px;
-	mask-image: url('../../../public/assets/svg/favorite.svg');
-	mask-size: cover;
-	background-color: $light-gray-300;
+    position: absolute;
+    right: -30px;
+    content: '';
+    width: 18px;
+    height: 18px;
+    mask-image: url('../../../public/assets/svg/favorite.svg');
+    mask-size: cover;
+    background-color: $light-gray-300;
   }
 }
 
@@ -45,7 +47,6 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 
   & > *:last-child {
-	margin-left: auto
+    margin-left: auto;
   }
 }
-

@@ -5,121 +5,123 @@
   width: 150px;
 
   &.rent {
-	min-width: 185px;
+    min-width: 185px;
 
-	& .select__control {
-	  height: 40px;
-	  padding: 11px 15px 12px 17px;
-	  background-color: white;
-	  border-color: white;
-	  box-shadow: 0 10px 20px rgba(0, 96, 206, 0.1);
+    & .select__control {
+      height: 40px;
+      padding: 11px 15px 12px 17px;
+      background-color: white;
+      border-color: white;
+      box-shadow: 0 10px 20px rgba(0, 96, 206, 0.1);
 
-	  &--is-focused {
-		background-color: white;
-		border-color: $purple-opacity-100;
-	  }
-	}
+      &--is-focused {
+        background-color: white;
+        border-color: $purple-opacity-100;
+      }
+    }
   }
 
   &:hover {
-	& .select__control {
-	  background-color: $deep-purple-opacity-200;
-	  border-color: $deep-purple-opacity-200;
-	}
+    & .select__control {
+      background-color: $deep-purple-opacity-200;
+      border-color: $deep-purple-opacity-200;
+    }
 
-	& .select__control--is-focused {
-	  background-color: white;
-	  border-color: $purple-opacity-100;
-	}
+    & .select__control--is-focused {
+      background-color: white;
+      border-color: $purple-opacity-100;
+    }
   }
 
   &__control {
-	position: relative;
-	height: 37px;
-	padding: 9px 12px 11px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: $light-gray-100;
-	border: 2px solid $light-gray-100;
-	border-radius: 20px;
-	cursor: pointer;
-	outline: 0;
-	transition: all 100ms, border 0ms;
+    position: relative;
+    height: 37px;
+    padding: 9px 12px 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $light-gray-100;
+    border: 2px solid $light-gray-100;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: 0;
+    transition: all 100ms, border 0ms;
 
-	&--is-focused {
-	  background-color: white;
-	  border-color: $purple-opacity-100;
-	}
+    &--is-focused {
+      background-color: white;
+      border-color: $purple-opacity-100;
+    }
   }
 
   &.icon &__control {
-	padding-left: 42px;
+    padding-left: 42px;
   }
 
   &__value-container {
-	position: relative;
-	align-items: center;
-	display: grid;
-	flex: 1;
-	flex-wrap: wrap;
-	padding: 0;
-	overflow: hidden;
+    position: relative;
+    align-items: center;
+    display: grid;
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 0;
+    overflow: hidden;
   }
 
-  &__placeholder, &__single-value, &__option {
-	grid-area: 1/1/2/3;
-	@extend %base-text;
-	font-weight: 500;
+  &__placeholder,
+  &__single-value,
+  &__option {
+    grid-area: 1/1/2/3;
+    @extend %base-text;
+    font-weight: 500;
   }
 
   &__single-value {
-	max-width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	color: $black;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $black;
   }
 
   &__placeholder {
-	color: $gray-100;
+    color: $gray-100;
   }
 
   &__indicator-separator {
-	display: none;
+    display: none;
   }
 
   &__menu {
-	position: absolute;
-	top: 100%;
-	width: 100%;
-	margin-top: 10px;
-	background-color: hsl(0, 0%, 100%);
-	border-radius: 10px;
-	box-shadow: 0 0 40px rgba(135, 124, 202, 0.3);
-	z-index: 10;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    margin-top: 10px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(135, 124, 202, 0.3);
+    z-index: 10;
   }
 
   &__option {
-	background-color: transparent;
-	color: $black;
-	cursor: pointer;
-	display: block;
-	padding: 10px 15px;
-	width: 100%;
-	user-select: none;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
+    color: $black;
+    cursor: pointer;
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-	&--is-focused {
-	  background-color: $light-gray-100;
-	  border-color: $light-gray-100;
-	}
+    &--is-focused {
+      background-color: $light-gray-100;
+      border-color: $light-gray-100;
+    }
   }
 
   &__indicator {
-	display: flex;
-	padding: 8px 0;
-	color: $purple-200;
-	transition: color 150ms;
+    display: flex;
+    padding: 8px 0;
+    color: $purple-200;
+    transition: color 150ms;
   }
 }

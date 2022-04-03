@@ -5,7 +5,6 @@ import { ILinkProps } from 'model/interfaces/ILinkProps';
 
 import styles from './List.module.scss';
 
-/*todo: непонятно что делать с "Еще" в списке*/
 export const List: FC<ILinkProps> = ({ items }) => {
   return (
     <div className={styles.list}>

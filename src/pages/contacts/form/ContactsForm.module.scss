@@ -1,0 +1,30 @@
+@import '../../../styles/variables/variables';
+
+.form {
+  max-width: 625px;
+  width: 100%;
+  margin: 0 31px;
+  padding: 40px 38px 44px 38px;
+  background-color: white;
+  box-shadow: 0 20px 40px rgba(39, 95, 158, 0.2);
+  border-radius: 10px;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & button {
+    align-self: center;
+  }
+}
+
+.inputBox {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 30px;
+
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+}

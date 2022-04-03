@@ -4,49 +4,48 @@
   -webkit-tap-highlight-color: transparent;
 
   & .list {
-	padding: 0;
+    padding: 0;
   }
 
   & .tab {
-	display: inline-block;
-	list-style: none;
-	padding: 13px 20px;
-	@extend %base-text;
-	font-weight: 600;
-	color: white;
-	background-color: $deep-purple-opacity-100;
-	outline: none;
-	cursor: pointer;
+    display: inline-block;
+    list-style: none;
+    padding: 13px 20px;
+    @extend %base-text;
+    font-weight: 600;
+    color: white;
+    background-color: $deep-purple-opacity-100;
+    outline: none;
+    cursor: pointer;
 
-	&Selected {
-	  background-color: white;
-	  color: $purple-200;
-	  border-radius: 10px 10px 0 0;
-	}
+    &Selected {
+      background-color: white;
+      color: $purple-200;
+      border-radius: 10px 10px 0 0;
+    }
 
-	&Disabled {
-	  color: GrayText;
-	  cursor: default;
-	}
+    &Disabled {
+      color: GrayText;
+      cursor: default;
+    }
 
-	&:first-of-type {
-	  border-top-left-radius: 10px;
-	}
+    &:first-of-type {
+      border-top-left-radius: 10px;
+    }
 
-	&:last-of-type {
-	  border-top-right-radius: 10px;
-	}
-
+    &:last-of-type {
+      border-top-right-radius: 10px;
+    }
   }
 
   & .panel {
-	display: none;
-	padding: 15px 20px;
-	background-color: white;
-	border-radius: 0 10px 10px 10px;
+    display: none;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 0 10px 10px 10px;
 
-	&Selected {
-	  display: flex;
-	}
+    &Selected {
+      display: flex;
+    }
   }
 }

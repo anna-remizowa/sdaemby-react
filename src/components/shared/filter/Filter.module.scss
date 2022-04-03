@@ -10,18 +10,19 @@
   height: 100%;
 }
 
-.box, .optionsBox {
+.box,
+.optionsBox {
   display: flex;
   align-items: center;
   height: 100%;
   padding-right: 20px;
 
   &:not(:first-of-type) {
-	padding-left: 20px;
+    padding-left: 20px;
   }
 
   &:not(:last-of-type) {
-	border-right: 1px solid rgba(102, 78, 249, 0.1);
+    border-right: 1px solid rgba(102, 78, 249, 0.1);
   }
 }
 
@@ -40,7 +41,7 @@
   display: flex;
 
   & input {
-	width: 80px;
+    width: 80px;
   }
 }
 

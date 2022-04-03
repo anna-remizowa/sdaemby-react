@@ -18,13 +18,13 @@
   color: black;
 
   &:after {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);
-	bottom: -1px;
-	content: '';
-	height: 2px;
-	width: 22px;
-	background-color: $yellow-100;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: -1px;
+    content: '';
+    height: 2px;
+    width: 22px;
+    background-color: $yellow-100;
   }
 }

@@ -45,7 +45,8 @@
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.label, .title {
+.label,
+.title {
   margin-bottom: 21px;
   font-weight: bold;
 }
@@ -56,7 +57,7 @@
   gap: 16px;
 
   & > button {
-	font-weight: 500;
+    font-weight: 500;
   }
 }
 
@@ -69,9 +70,9 @@
   margin: auto 0 0 auto;
   border: 1px solid white;
   border-radius: 50px;
-  transition: .3s;
+  transition: 0.3s;
 
   &:hover {
-	transform: scale(1.2);
+    transform: scale(1.2);
   }
 }

@@ -26,7 +26,8 @@
   }
 }
 
-.link, .count {
+.link,
+.count {
   @extend %base-text;
 }
 
@@ -34,7 +35,7 @@
   position: relative;
   left: 0;
   color: $yellow-300;
-  transition: left .3s ease-out;
+  transition: left 0.3s ease-out;
 
   &:hover {
     left: 10px;

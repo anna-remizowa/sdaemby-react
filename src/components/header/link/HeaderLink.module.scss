@@ -11,33 +11,34 @@
   transition: color 0.3s ease-out;
 
   &.primary {
-	display: flex;
-	align-items: center;
-	padding: 21px 0;
-	font-weight: 600;
-	color: $black;
+    display: flex;
+    align-items: center;
+    padding: 21px 0;
+    font-weight: 600;
+    color: $black;
   }
 
-  &.active, &:hover {
-	position: relative;
-	color: $black;
+  &.active,
+  &:hover {
+    position: relative;
+    color: $black;
 
-	&:after {
-	  position: absolute;
-	  left: 0;
-	  bottom: 0;
-	  content: '';
-	  width: 100%;
-	  height: 3px;
-	  background-color: $yellow-100;
-	}
+    &:after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: '';
+      width: 100%;
+      height: 3px;
+      background-color: $yellow-100;
+    }
   }
 
   & > svg {
-	margin-right: 5px;
+    margin-right: 5px;
   }
 
   & span ~ svg {
-	margin: 0 0 0 15px;
+    margin: 0 0 0 15px;
   }
 }

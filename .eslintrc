@@ -1,8 +1,10 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": ["./tsconfig.json"] },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier"
   ],
   "extends": [
     "eslint:recommended",
@@ -10,6 +12,9 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "settings": {
+    "import/parsers" : {
+      " @typescript-eslint/parser" : [ ".ts" ,  ".tsx" ]
+    },
     "import/resolver": {
       "node": {
         "paths": [
@@ -17,5 +22,8 @@
         ]
       }
     }
+  },
+  "rules": {
+    "prettier/prettier": "error"
   }
 }

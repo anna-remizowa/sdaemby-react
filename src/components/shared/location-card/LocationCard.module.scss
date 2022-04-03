@@ -20,16 +20,17 @@
   border-radius: 10px;
 }
 
-.swiper, .img {
+.swiper,
+.img {
   border-radius: 10px;
   height: 226px;
 }
 
 .swiper {
   & .swiper-button-prev {
-	width: 30px;
-	height: 30px;
-	background-color: white;
+    width: 30px;
+    height: 30px;
+    background-color: white;
   }
 }
 
@@ -51,8 +52,8 @@
   z-index: 10;
 
   &.gold {
-	background: linear-gradient(106.06deg, #ffd54f 1.12%, #fec100 97.96%);
-	color: white;
+    background: linear-gradient(106.06deg, #ffd54f 1.12%, #fec100 97.96%);
+    color: white;
   }
 }
 
@@ -114,7 +115,7 @@
   align-items: center;
 
   & > svg {
-	margin-right: 6px;
+    margin-right: 6px;
   }
 }
 
@@ -131,11 +132,11 @@
   gap: 19px;
 
   & .text {
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 150%;
-	color: $black;
-	white-space: nowrap;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $black;
+    white-space: nowrap;
   }
 }
 

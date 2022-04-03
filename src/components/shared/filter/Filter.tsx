@@ -16,7 +16,7 @@ import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 import { FormLabelStyleType } from 'model/enum/FormLabelStyleType';
 import { FormInputStyleType } from 'model/enum/FormInputStyleType';
 import { COLORS } from 'model/enum/Colors';
-import { FORM_CONSTANTS } from 'constants/forms';
+import { FORM_CONSTANTS } from 'constants/forms.constants';
 
 import styles from './Filter.module.scss';
 
@@ -30,6 +30,7 @@ interface FilterProps {
 }
 
 /*todo: раскрывающееся меню с доп фильтрами*/
+/*todo: filter - доделать функционал + подменю "больше опций"*/
 export const Filter: FC<FilterProps> = ({
   filter,
   isReset,

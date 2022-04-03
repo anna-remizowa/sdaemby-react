@@ -21,12 +21,10 @@ export const fetchRent = (params: FetchRentParams) => {
           params: { ...params },
         }
       );
-      setTimeout(() => {
-        dispatch({
-          type: RentActionTypes.FETCH_RENT_SUCCESS,
-          payload: response.data,
-        });
-      }, 1000);
+      dispatch({
+        type: RentActionTypes.FETCH_RENT_SUCCESS,
+        payload: response.data,
+      });
     } catch (e) {
       dispatch({
         type: RentActionTypes.FETCH_RENT_ERROR,

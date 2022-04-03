@@ -1,8 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
-import clsx from 'clsx';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import { ContainerType } from 'model/enum/ContainerType';
+import { Container } from 'layouts/container/Container';
 import { FooterMenu } from './menu/FooterMenu';
 import { FooterPayments, ImageItem } from './payments/FooterPayments';
 import { IFooter } from 'model/interfaces/IFooter';
@@ -12,7 +13,7 @@ import { SocialType } from 'model/enum/SocialType';
 import { MenuType } from 'model/enum/MenuType';
 import { SocialStyleType } from 'model/enum/SocialStyleType';
 import { COLORS } from 'model/enum/Colors';
-import { CONSTANTS } from 'constants/common';
+import { CONSTANTS } from 'constants/common.constants';
 
 import styles from './Footer.module.scss';
 
@@ -81,7 +82,7 @@ export const Footer: FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={clsx('wrapper-full', styles.wrapper)}>
+      <Container type={ContainerType.FULL} className={styles.wrapper}>
         <div className={styles.info}>
           <Link to={`/${ROUTING.home}`}>
             <img
@@ -136,7 +137,7 @@ export const Footer: FC = () => {
             <FooterPayments images={cards} />
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

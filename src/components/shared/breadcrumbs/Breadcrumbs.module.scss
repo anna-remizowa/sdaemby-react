@@ -2,7 +2,6 @@
 
 .breadcrumbs {
   margin-bottom: 25px;
-
 }
 
 .link {
@@ -13,21 +12,21 @@
   color: $gray-100;
 
   &:not(:last-of-type) {
-	color: $purple-100;
+    color: $purple-100;
   }
 
   &:not(:last-of-type):after {
-	position: absolute;
-	top: 6px;
-	right: -10px;
-	content: '';
-	height: 3px;
-	width: 3px;
-	background-color: $purple-200;
-	border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    right: -10px;
+    content: '';
+    height: 3px;
+    width: 3px;
+    background-color: $purple-200;
+    border-radius: 50%;
   }
 
   &:last-of-type {
-	pointer-events: none;
+    pointer-events: none;
   }
 }

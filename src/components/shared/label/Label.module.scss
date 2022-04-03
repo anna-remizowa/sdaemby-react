@@ -9,24 +9,24 @@
   height: max-content;
 
   &.base {
-	padding: 10px 8px;
-	color: $light-gray-300;
-	background-color: $light-gray-100;
+    padding: 10px 8px;
+    color: $light-gray-300;
+    background-color: $light-gray-100;
   }
 
   &.purple {
-	padding: 10px 16px;
-	color: $purple-200;
-	background-color: $deep-purple-opacity-200;
+    padding: 10px 16px;
+    color: $purple-200;
+    background-color: $deep-purple-opacity-200;
   }
 
   &.small {
-	padding: 9px 8px;
-	color: $gray-100;
-	background-color: $light-gray-100;
+    padding: 9px 8px;
+    color: $gray-100;
+    background-color: $light-gray-100;
   }
 
   & > svg {
-	margin-right: 6px;
+    margin-right: 6px;
   }
 }

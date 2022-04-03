@@ -7,10 +7,10 @@ import { FOOTER } from './data/footer.data';
 import { NEWS, NEWS_PAGE } from './data/news.data';
 import { NEWS_DETAIL } from './data/news-detail.data';
 import { CONTACTS } from './data/contacts.data';
-import { APARTMENTS_FILTER } from './data/apartments.filter.data';
-import { APARTMENTS_RENT_DATA, RENT_DATA } from './data/apartments.rent.data';
+import { APARTMENTS_FILTER } from './data/filter.data';
+import { APARTMENTS_RENT_DATA, RENT_DATA } from './data/rent.data';
 import { LOCATIONS_DATA_1, LOCATIONS_DATA_2 } from './data/locations.data';
-import { HOME_NEWS_DATA } from './data/home.data';
+import { HOME_NEWS_DATA, HOME_START_DATA } from './data/home.data';
 
 const mock = new MockAdapter(axios);
 
@@ -28,21 +28,16 @@ const REST_API_MOCK_GET = [
     data: NEWS_PAGE,
   },
   {
-    api: REST_API.news,
-    data: NEWS,
-  },
-  {
-    api: `${REST_API.news}/*`,
-    data: NEWS_DETAIL,
-    regExp: true,
-  },
-  {
     api: `${REST_API.locations}/info`,
     data: HOME_NEWS_DATA,
   },
   {
     api: REST_API.contacts,
     data: CONTACTS,
+  },
+  {
+    api: `${REST_API.start}`,
+    data: HOME_START_DATA,
   },
   {
     api: `${REST_API.filter}/*`,
@@ -52,6 +47,18 @@ const REST_API_MOCK_GET = [
   {
     api: REST_API.rent,
     data: RENT_DATA,
+  },
+];
+
+const REST_API_MOCK_GET_DELAY = [
+  {
+    api: REST_API.news,
+    data: NEWS,
+  },
+  {
+    api: `${REST_API.news}/*`,
+    data: NEWS_DETAIL,
+    regExp: true,
   },
   {
     api: `${REST_API.rent}/*`,
@@ -76,6 +83,18 @@ REST_API_MOCK_GET.forEach(({ api, data, regExp }) => {
   mock
     .onGet(regExp ? new RegExp(API_URL + api) : API_URL + api)
     .reply(200, data);
+});
+
+REST_API_MOCK_GET_DELAY.forEach(({ api, data, regExp }) => {
+  mock
+    .onGet(regExp ? new RegExp(API_URL + api) : API_URL + api)
+    .reply(function () {
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          resolve([200, data]);
+        }, 1000);
+      });
+    });
 });
 
 // mock.onGet(API_URL + REST_API.header).networkError();

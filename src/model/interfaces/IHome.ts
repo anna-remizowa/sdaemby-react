@@ -1,11 +1,11 @@
-import { IFilter } from './IFilter';
 import { ILinkProps } from './ILinkProps';
 import { IRentSection } from './IRentSection';
 import { ISection } from './ISection';
 import { INews } from './INews';
+import { IStartSection } from './IStartSection';
 
 export interface IHome {
-  filters?: IFilter;
+  start?: IStartSection;
   sliders?: ILinkProps;
   list?: ILinkProps;
   rent?: IRentSection;

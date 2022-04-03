@@ -3,13 +3,13 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 import styles from './TabsCustom.module.scss';
 
-interface ITab {
+interface ITabProps {
   title: string;
   content: React.ReactNode;
 }
 
 interface TabsCustomProps {
-  tabs: ITab[];
+  tabs: ITabProps[];
 }
 
 export const TabsCustom: FC<TabsCustomProps> = ({ tabs }) => {
