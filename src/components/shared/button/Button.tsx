@@ -8,8 +8,8 @@ import styles from './Button.module.scss';
 interface ButtonProps {
   types?: ButtonStyleType[];
   children: React.ReactNode;
-  isSubmit?: true;
-  width?: number;
+  isSubmit?: boolean;
+  width?: string;
   onMouseEnter?: MouseEventHandler<HTMLButtonElement>;
   onMouseLeave?: MouseEventHandler<HTMLButtonElement>;
 }
@@ -17,7 +17,7 @@ interface ButtonProps {
 export const Button: FC<ButtonProps> = ({
   types = [],
   isSubmit,
-  width,
+  width = 'auto',
   children,
   onMouseEnter,
   onMouseLeave,
@@ -25,7 +25,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       type={isSubmit ? 'submit' : 'button'}
-      style={{ width: width ? `${width}px` : 'auto' }}
+      style={{ width: width }}
       className={clsx(
         styles.button,
         types.map<string>((type) => styles[type]).join(' ')

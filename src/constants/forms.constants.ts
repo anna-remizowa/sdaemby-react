@@ -1,8 +1,21 @@
 export const FORM_CONSTANTS = {
+  auth: {
+    header: 'Авторизация',
+    text: 'Авторизируйтесь, чтобы начать публиковать свои объявления',
+    rememberMe: 'Запомнить меня',
+    forgotPassword: 'Забыли пароль?',
+    hint: 'Еще нет аккаунта?',
+    hintLink: 'Создайте акканут',
+  },
+  reg: {
+    header: 'Регистрация',
+  },
   errors: {
     notEmpty: 'Это поле не может быть пустым',
     email: 'Введите корректный email',
     name: 'Введите корректное имя',
+    login: 'Введите корректный логин',
+    password: 'Введите корректный пароль',
   },
   regexp: {
     email: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
@@ -24,6 +37,8 @@ export const FORM_CONSTANTS = {
     metro: 'Метро',
     district: 'Район',
     search: 'Поиск по статьям',
+    login: 'Логин',
+    password: 'Пароль',
   },
   filters: {
     options: 'Больше опций',
@@ -35,5 +50,6 @@ export const FORM_CONSTANTS = {
     show: 'Показать',
     more: 'Подробнее',
     contacts: 'Контакты',
+    login: 'Войти',
   },
 };

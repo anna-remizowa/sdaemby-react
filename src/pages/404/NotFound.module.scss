@@ -1,13 +1,5 @@
 @import '../../styles/variables/variables';
 
-.notFound {
-  flex: 1;
-  background-image: url('../../assets/images/background.png');
-  background-color: $purple-200;
-  background-size: 100%;
-  width: 100%;
-}
-
 .wrapper {
   position: relative;
   display: flex;

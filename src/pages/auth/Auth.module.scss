@@ -1,0 +1,58 @@
+@import '../../styles/variables/variables';
+
+.auth,
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth {
+  width: max-content;
+  align-self: center;
+  margin: 100px auto;
+  padding: 50px;
+  background-color: white;
+  box-shadow: 0 20px 40px rgba(39, 95, 158, 0.2);
+  border-radius: 10px;
+}
+
+.header {
+  @extend %h2;
+  margin-bottom: 15px;
+}
+
+.text {
+  max-width: 306px;
+  width: 100%;
+  text-align: center;
+  @extend %base-text;
+  color: $gray-100;
+}
+
+a.text {
+  color: $purple-200;
+  transition: color 0.3s;
+  text-align: end;
+
+  &:hover {
+    color: $yellow-300;
+  }
+}
+
+.form {
+  margin: 35px 0 50px;
+  max-width: 306px;
+  width: 100%;
+  gap: 20px;
+
+  & button {
+    margin-top: 18px;
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

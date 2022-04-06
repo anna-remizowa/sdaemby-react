@@ -12,6 +12,8 @@ import { Contacts } from './pages/contacts/Contacts';
 import { DEVELOPMENT_MODE, ROUTING } from './app.constants';
 import { LocationDetail } from './pages/location-detail/LocationDetail';
 import { Catalog } from './pages/catalog/Catalog';
+import { Authorization } from './pages/auth/Authorization';
+import { Registration } from './pages/auth/Registration';
 
 if (process.env.NODE_ENV === DEVELOPMENT_MODE) {
   require('mock/MockAdapter');
@@ -35,6 +37,8 @@ function App() {
               path={`${ROUTING.location}/:locationId`}
               element={<LocationDetail />}
             />
+            <Route path={ROUTING.auth} element={<Authorization />} />
+            <Route path={ROUTING.reg} element={<Registration />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

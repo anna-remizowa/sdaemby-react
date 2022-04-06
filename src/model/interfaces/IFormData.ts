@@ -13,4 +13,12 @@ export interface IFilterFormData {
   priceTo: string;
 }
 
-export interface IFormData extends IContactsFormData, IFilterFormData {}
+export interface IAuthFormData {
+  login: string;
+  password: string;
+}
+
+export interface IFormData
+  extends IContactsFormData,
+    IFilterFormData,
+    IAuthFormData {}

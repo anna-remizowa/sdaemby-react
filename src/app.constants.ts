@@ -30,7 +30,9 @@ export const ROUTING = {
   baths: 'baths',
   carRental: 'carRental',
   favorites: 'favorites',
-  login: 'login',
+  auth: 'auth',
+  reg: 'reg',
+  pass: 'pass',
   addAds: 'add-ads',
 };
 

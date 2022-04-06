@@ -35,7 +35,7 @@ export const Header: FC = () => {
             {CONSTANTS.favorites}
           </Link>
           <Link
-            to={`/${ROUTING.login}`}
+            to={`/${ROUTING.auth}`}
             className={clsx('text', styles.textLogin)}
           >
             {CONSTANTS.signIn}

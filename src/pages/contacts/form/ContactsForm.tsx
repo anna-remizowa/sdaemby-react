@@ -89,7 +89,7 @@ export const ContactsForm: FC = () => {
         <Button
           types={[ButtonStyleType.BIG, ButtonStyleType.PURPLE]}
           isSubmit
-          width={200}
+          width={'200px'}
         >
           {FORM_CONSTANTS.buttons.send}
         </Button>

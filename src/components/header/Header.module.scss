@@ -39,6 +39,11 @@
 
 .textLogin {
   color: $purple-200;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $yellow-300;
+  }
 }
 
 .bottom {

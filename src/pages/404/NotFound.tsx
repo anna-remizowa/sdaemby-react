@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
+import { BackgroundLayout } from 'layouts/background/BackgroundLayout';
 import { Container } from 'layouts/container/Container';
 import { Button } from 'components/shared/button/Button';
 import { ROUTING } from 'app.constants';
@@ -14,7 +15,7 @@ import styles from './NotFound.module.scss';
 
 export const NotFound: FC = () => {
   return (
-    <div className={styles.notFound}>
+    <BackgroundLayout>
       <Container className={styles.wrapper}>
         <div className={styles.content}>
           <h1 className={styles.title}>{CONSTANTS.notFound.title}</h1>
@@ -30,6 +31,6 @@ export const NotFound: FC = () => {
         <div className={clsx(styles.dots, styles.dots1)} />
         <div className={clsx(styles.dots, styles.dots2)} />
       </Container>
-    </div>
+    </BackgroundLayout>
   );
 };
