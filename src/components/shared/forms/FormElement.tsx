@@ -13,6 +13,7 @@ interface FormElementProps {
   label?: string;
   labelTypes?: FormLabelStyleType[];
   icon?: FormIconType;
+  iconError?: boolean;
   errorText?: string;
   errors?: FieldErrors<IFormData>;
   children: React.ReactNode;
@@ -23,6 +24,7 @@ export const FormElement: FC<FormElementProps> = ({
   label,
   labelTypes,
   icon,
+  iconError = false,
   errorText = '',
   errors,
   children,
@@ -46,7 +48,10 @@ export const FormElement: FC<FormElementProps> = ({
 
       <div className={clsx(styles.inputBox, { [styles.isIcon]: icon })}>
         {errors && name && errors[name] && (
-          <p className={styles.error}>{errorText}</p>
+          <>
+            <p className={styles.error}>{errorText}</p>
+            {iconError && <i className={styles.iconError} />}
+          </>
         )}
         {children}
         {icon ? <i className={clsx(styles.icon, styles[icon])} /> : ''}

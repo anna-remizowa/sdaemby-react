@@ -27,17 +27,35 @@
   width: 100%;
   text-align: center;
   @extend %base-text;
+  font-weight: 400;
   color: $gray-100;
 }
 
 a.text {
   color: $purple-200;
+  font-weight: 500;
   transition: color 0.3s;
   text-align: end;
 
   &:hover {
     color: $yellow-300;
   }
+}
+
+.regBox {
+  max-width: 388px;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.baseText {
+  font-size: 14px;
+  line-height: 150%;
+  color: $gray-100;
+}
+
+.wrapper {
+  display: flex;
 }
 
 .form {
@@ -55,4 +73,36 @@ a.text {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.reg {
+  .header {
+    align-self: flex-start;
+    margin: 0 0 30px 72px;
+  }
+
+  .form {
+    margin-top: 0;
+  }
+
+  .text {
+    text-align: left;
+  }
+
+  button {
+    margin-top: 0;
+  }
+}
+
+.textItems {
+  margin-bottom: 70px;
+
+  li {
+    list-style: disc inside none;
+
+    .baseText {
+      position: relative;
+      margin-left: -12px;
+    }
+  }
 }

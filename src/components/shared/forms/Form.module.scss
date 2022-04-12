@@ -43,7 +43,7 @@
   left: 21px;
   width: 20px;
   mask-size: cover;
-  background-color: $gray-100;
+  background-color: $light-gray-200;
 
   &.user {
     height: 20px;
@@ -60,7 +60,12 @@
     left: 14px;
     height: 12px;
     mask-image: url('../../../../public/assets/svg/metro.svg');
-    background-color: $light-gray-200;
+  }
+
+  &.password {
+    width: 15px;
+    height: 20px;
+    mask-image: url('../../../../public/assets/svg/password.svg');
   }
 }
 
@@ -107,16 +112,26 @@
 .error {
   position: absolute;
   bottom: -20px;
-  color: $red;
+  color: $red-100;
   font-size: 12px;
   line-height: 17px;
 
   & ~ input,
   & ~ textarea {
-    border: 2px solid $red;
+    border: 2px solid $red-100;
   }
 
   & ~ .icon {
-    background-color: $red;
+    background-color: $red-100;
   }
+}
+
+.iconError {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  mask-image: url('../../../../public/assets/svg/error.svg');
+  background-color: $red-100;
 }

@@ -15,7 +15,9 @@ export interface IFilterFormData {
 
 export interface IAuthFormData {
   login: string;
+  email: string;
   password: string;
+  repeatPassword: string;
 }
 
 export interface IFormData

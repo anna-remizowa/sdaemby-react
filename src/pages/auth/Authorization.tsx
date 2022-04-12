@@ -15,8 +15,7 @@ import styles from './Auth.module.scss';
 
 import { ROUTING } from 'app.constants';
 
-/*todo: доработать вывод ошибок при валидации формы (как на макете с регистрацией)*/
-/*todo: иконка для пароля*/
+/*todo: добавить кнопку "ошибка ввода"*/
 /*todo: свитч для rememberMe*/
 export const Authorization: FC = () => {
   const {
@@ -36,7 +35,7 @@ export const Authorization: FC = () => {
           <FormElement
             name={'login'}
             icon={FormIconType.USER}
-            errorText={FORM_CONSTANTS.errors.login}
+            iconError
             errors={errors}
           >
             <InputForm
@@ -50,8 +49,8 @@ export const Authorization: FC = () => {
           </FormElement>
           <FormElement
             name={'password'}
-            icon={FormIconType.USER}
-            errorText={FORM_CONSTANTS.errors.password}
+            icon={FormIconType.PASSWORD}
+            iconError
             errors={errors}
           >
             <InputForm
