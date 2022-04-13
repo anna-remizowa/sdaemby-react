@@ -32,6 +32,7 @@ export const ROUTING = {
   favorites: 'favorites',
   auth: 'auth',
   reg: 'reg',
+  confirm: 'confirm',
   pass: 'pass',
   addAds: 'add-ads',
 };

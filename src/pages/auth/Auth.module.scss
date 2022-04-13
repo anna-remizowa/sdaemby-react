@@ -106,3 +106,17 @@ a.text {
     }
   }
 }
+
+.confirm {
+  max-width: 406px;
+  width: 100%;
+
+  .header {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 22px;
+  }
+}

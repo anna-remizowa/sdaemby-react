@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
+import clsx from 'clsx';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 import { BackgroundLayout } from 'layouts/background/BackgroundLayout';
@@ -14,21 +15,22 @@ import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 import { IFormData } from 'model/interfaces/IFormData';
 
 import styles from './Auth.module.scss';
-import clsx from 'clsx';
 
-/*todo: добавить кнопку "ошибка ввода"*/
 export const Registration: FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    getValues,
   } = useForm<IFormData>();
 
   const recaptchaRef = React.createRef<ReCAPTCHA>();
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
+    console.log(JSON.stringify(data));
     console.log(recaptchaRef?.current?.getValue());
-    console.log(data);
+    navigate(`/${ROUTING.confirm}`);
   });
 
   return (
@@ -65,6 +67,7 @@ export const Registration: FC = () => {
                 register={register}
                 options={{
                   required: true,
+                  pattern: FORM_CONSTANTS.regexp.email,
                 }}
               />
             </FormElement>
@@ -97,6 +100,7 @@ export const Registration: FC = () => {
                 register={register}
                 options={{
                   required: true,
+                  validate: (value) => value === getValues('password'),
                 }}
               />
             </FormElement>

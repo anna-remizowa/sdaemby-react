@@ -10,12 +10,10 @@ import { FormElement } from 'components/shared/forms/FormElement';
 import { IFormData } from 'model/interfaces/IFormData';
 import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 import { Button } from 'components/shared/button/Button';
+import { ROUTING } from 'app.constants';
 
 import styles from './Auth.module.scss';
 
-import { ROUTING } from 'app.constants';
-
-/*todo: добавить кнопку "ошибка ввода"*/
 /*todo: свитч для rememberMe*/
 export const Authorization: FC = () => {
   const {
