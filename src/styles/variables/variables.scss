@@ -47,3 +47,10 @@ $red-opacity: rgba(235, 87, 87, 0.1);
   height: 68px;
   background-image: url('../../../public/assets/svg/dots.svg');
 }
+
+%background {
+  position: absolute;
+  background: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
+  opacity: 0.1;
+  border-radius: 40px 0 0 0;
+}

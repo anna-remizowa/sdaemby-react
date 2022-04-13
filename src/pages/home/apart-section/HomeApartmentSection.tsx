@@ -10,10 +10,10 @@ export const HomeApartmentSection: FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.sliders}>
-        {dataHome.sliders ? <PhotoBox items={dataHome.sliders.items} /> : ''}
+        {dataHome.sliders && <PhotoBox items={dataHome.sliders.items} />}
       </div>
       <div className={styles.lists}>
-        {dataHome.list ? <List items={dataHome.list.items} /> : ''}
+        {dataHome.list && <List items={dataHome.list.items} />}
       </div>
     </div>
   );

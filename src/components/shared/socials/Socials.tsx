@@ -35,7 +35,7 @@ export const Socials: FC<SocialsProps> = ({
         types.map<string>((type) => styles[type]).join(' ')
       )}
     >
-      {header ? <p className={styles.text}>{header}</p> : ''}
+      {header && <p className={styles.text}>{header}</p>}
       {socials.map((social, index) => {
         return (
           <a

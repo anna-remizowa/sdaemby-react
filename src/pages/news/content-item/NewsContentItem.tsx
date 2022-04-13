@@ -8,6 +8,7 @@ import { fetchNews } from 'store/action-creator/news';
 import { LIMIT_PAGE_NEWS } from 'app.constants';
 import { Loader } from 'components/shared/loader/Loader';
 import { Error } from 'components/shared/error/Error';
+import { LoaderType } from 'model/enum/LoaderType';
 
 export const NewsContentItem: FC = () => {
   const { news, loading, error } = useTypesSelector((state) => state.news);
@@ -25,7 +26,7 @@ export const NewsContentItem: FC = () => {
   }, [params.page, params.search]);
 
   if (loading) {
-    return <Loader />;
+    return <Loader type={LoaderType.NEWS} />;
   }
 
   if (error) {

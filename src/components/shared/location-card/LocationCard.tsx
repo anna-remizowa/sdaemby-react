@@ -26,7 +26,6 @@ import { PopUpOwner } from 'components/shared/pop-up-owner/PopUpOwner';
 
 import styles from './LocationCard.module.scss';
 
-/*todo: свайпер - пагинация*/
 export const LocationCard: FC<IRent> = ({
   id,
   name,
@@ -59,6 +58,7 @@ export const LocationCard: FC<IRent> = ({
             ))}
             classNameSwiper={styles.swiper}
             loop
+            pagination
           />
         ) : (
           <img src={images[0]} alt="Photo location" className={styles.img} />

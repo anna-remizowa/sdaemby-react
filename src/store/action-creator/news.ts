@@ -15,15 +15,13 @@ interface FetchNewsParams {
 export const fetchNews = (params: FetchNewsParams) => {
   return async (dispatch: Dispatch<NewsAction>) => {
     try {
-      smoothScrollPromise().then(() => {
-        dispatch(setNewsPage(params.page));
-        dispatch(setNewsSearch(params.search ? params.search : ''));
-      });
+      dispatch(setNewsPage(params.page));
+      await smoothScrollPromise();
+      dispatch(setNewsSearch(params.search ? params.search : ''));
       dispatch({ type: NewsActionTypes.FETCH_NEWS });
       const response = await axios.get<INewsContent>(API_URL + REST_API.news, {
         params: { ...params },
       });
-      console.log(response);
       if (response.data.news) {
         dispatch({
           type: NewsActionTypes.FETCH_NEWS_SUCCESS,

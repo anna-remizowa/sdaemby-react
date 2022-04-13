@@ -73,6 +73,11 @@ a.text {
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  p.text {
+    margin-left: 8px;
+    white-space: nowrap;
+  }
 }
 
 .reg {

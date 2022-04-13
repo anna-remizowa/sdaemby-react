@@ -93,15 +93,14 @@ export const Footer: FC = () => {
           </Link>
           <p className={styles.textLogo}>Сдаём Бай</p>
           <div className={styles.textWrapper}>
-            {appFooter.company
-              ? appFooter.company.map((pInfo, index) => {
-                  return (
-                    <p key={index} className={styles.textSmall}>
-                      {pInfo}
-                    </p>
-                  );
-                })
-              : ''}
+            {appFooter.company &&
+              appFooter.company.map((pInfo, index) => {
+                return (
+                  <p key={index} className={styles.textSmall}>
+                    {pInfo}
+                  </p>
+                );
+              })}
           </div>
         </div>
         <div className={styles.info}>

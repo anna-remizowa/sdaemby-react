@@ -19,6 +19,10 @@
     & .link {
       font-weight: inherit;
       color: inherit;
+
+      &:hover {
+        color: $yellow-300;
+      }
     }
   }
 
@@ -33,6 +37,10 @@
 
     & .link {
       color: $light-gray-300;
+
+      &:hover {
+        color: $yellow-300;
+      }
     }
   }
 
@@ -53,6 +61,7 @@
 
 .link {
   @extend %base-text;
+  transition: 0.3s;
 }
 
 .header {
@@ -60,4 +69,9 @@
   @extend %base-text;
   font-weight: bold;
   color: $black;
+  transition: 0.3s;
+
+  &:hover {
+    color: $yellow-300;
+  }
 }

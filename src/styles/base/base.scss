@@ -83,3 +83,13 @@ main {
 .text {
   @extend %base-text;
 }
+
+/*Swiper*/
+.swiper-pagination-bullet {
+  background: #c5c5c5 !important;
+  opacity: 0.5;
+
+  &.swiper-pagination-bullet-active {
+    background: white !important;
+  }
+}

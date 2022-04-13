@@ -25,9 +25,8 @@
 }
 
 .background {
-  position: absolute;
+  @extend %background;
   right: -50px;
-  background-image: url('../../../public/assets/svg/rectangle.svg');
   width: 848px;
   height: 1000px;
 }

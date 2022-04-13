@@ -20,7 +20,17 @@ interface SocialMediaProps {
 const WIDTH_DEFAULT = 20;
 const HEIGHT_DEFAULT = 20;
 
-/*todo: добавить дефолтные цвета для соц сетей*/
+interface IconsSignature {
+  [key: string]: string;
+}
+
+const ICONS_COLOR: IconsSignature = {
+  Viber: COLORS.VIOLET,
+  WhatsApp: COLORS.GREEN,
+  Mail: COLORS.PURPLE,
+};
+
+/*fixme: SocialMedia очень похож на компонент Socials, нужно объединить в один*/
 export const SocialMedia: FC<SocialMediaProps> = ({
   iconBackgroundColor,
   iconColor = COLORS.WHITE,
@@ -31,7 +41,13 @@ export const SocialMedia: FC<SocialMediaProps> = ({
 }) => {
   return (
     <a href={href} target={'_blank'}>
-      <Icon backgroundColor={iconBackgroundColor} size={size} round={round}>
+      <Icon
+        backgroundColor={
+          iconBackgroundColor ? iconBackgroundColor : ICONS_COLOR[tag.value]
+        }
+        size={size}
+        round={round}
+      >
         <SocialItem
           color={iconColor}
           tag={tag.value}

@@ -1,4 +1,6 @@
 export const enum COLORS {
+  VIOLET = '#7B519D',
+  GREEN = '#0DBB41',
   PURPLE = '#664EF9',
   PURPLE_BACKGROUND = 'rgba(102, 78, 249, 0.1)',
   BLACK = '#1E2123',

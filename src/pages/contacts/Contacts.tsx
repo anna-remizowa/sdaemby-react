@@ -54,7 +54,7 @@ export const Contacts: FC = () => {
           <div className={styles.socials}>
             <Socials
               socials={socials}
-              types={[SocialStyleType.PURPLE, SocialStyleType.VERTICAL]}
+              types={[SocialStyleType.CIRCLE, SocialStyleType.VERTICAL]}
               iconColor={COLORS.WHITE}
             />
           </div>

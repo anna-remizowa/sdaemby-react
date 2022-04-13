@@ -15,10 +15,11 @@ import { useTypesSelector } from 'hooks/useTypesSelector';
 import { fetchNewsDetail } from 'store/action-creator/news-detail';
 import { NEWS_DETAIL_COUNT_NEWS_LIMIT } from 'app.constants';
 import { CONSTANTS } from 'constants/common.constants';
-
-import styles from './NewsDetail.module.scss';
 import { Loader } from 'components/shared/loader/Loader';
 import { Error } from 'components/shared/error/Error';
+import { LoaderType } from 'model/enum/LoaderType';
+
+import styles from './NewsDetail.module.scss';
 
 export const NewsDetail: FC = () => {
   const params = useParams();
@@ -37,7 +38,7 @@ export const NewsDetail: FC = () => {
   }, [params.newsId]);
 
   if (loading) {
-    return <Loader />;
+    return <Loader type={LoaderType.NEWS_DETAIL} />;
   }
 
   if (error) {

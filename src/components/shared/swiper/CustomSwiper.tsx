@@ -1,9 +1,10 @@
 import React, { FC, useState } from 'react';
 import clsx from 'clsx';
-import { Navigation } from 'swiper';
+import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
+import 'swiper/css/pagination';
 import styles from './CustomSwiper.module.scss';
 
 interface SwiperProps {
@@ -13,6 +14,7 @@ interface SwiperProps {
   classNameSwiper?: string;
   classNameSwiperSlide?: string;
   navigation?: boolean;
+  pagination?: boolean;
   navStyle?: string;
   loop?: boolean;
 }
@@ -24,6 +26,7 @@ export const CustomSwiper: FC<SwiperProps> = ({
   classNameSwiper = '',
   classNameSwiperSlide = '',
   navigation = true,
+  pagination = false,
   navStyle = '',
   loop,
 }) => {
@@ -33,11 +36,12 @@ export const CustomSwiper: FC<SwiperProps> = ({
   return (
     <div className={styles.slider}>
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Pagination]}
         spaceBetween={spaceBetween}
         slidesPerView={slidesPerView}
         className={classNameSwiper}
-        navigation={{ prevEl, nextEl }}
+        navigation={navigation && { prevEl, nextEl }}
+        pagination={pagination && { clickable: true }}
         loop={loop}
       >
         {items.map((item, index) => (

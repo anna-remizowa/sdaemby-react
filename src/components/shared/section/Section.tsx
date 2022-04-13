@@ -9,6 +9,7 @@ interface SectionProps {
   className?: string;
   headerChildren?: React.ReactNode;
   children: React.ReactNode;
+  background?: boolean;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -17,9 +18,11 @@ export const Section: FC<SectionProps> = ({
   className = '',
   headerChildren = '',
   children,
+  background = false,
 }) => {
   return (
     <div className={clsx(styles.wrapper, className)}>
+      {background && <div className={styles.background} />}
       {label && <p className={styles.label}>{label}</p>}
 
       <div className={styles.box}>

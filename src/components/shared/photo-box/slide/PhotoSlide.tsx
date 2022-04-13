@@ -20,10 +20,10 @@ export const PhotoSlide: FC<ILinkItems> = ({
     <div className={styles.slide} style={{ backgroundImage: `url(${img})` }}>
       <div className={styles.opacity} />
       <div className={styles.wrapper}>
-        {label ? <p className={styles.label}>{label}</p> : ''}
-        {title ? <p className={styles.title}>{title}</p> : ''}
+        {label && <p className={styles.label}>{label}</p>}
+        {title && <p className={styles.title}>{title}</p>}
 
-        {items ? (
+        {items && (
           <div className={styles.items}>
             {items.map((item) => (
               <Link to={`/${item.href}`} key={item.id}>
@@ -33,16 +33,12 @@ export const PhotoSlide: FC<ILinkItems> = ({
               </Link>
             ))}
           </div>
-        ) : (
-          ''
         )}
 
-        {href ? (
+        {href && (
           <Link className={styles.link} to={`/${href}`}>
             <ArrowSVG color={COLORS.WHITE} width={10} height={15} />
           </Link>
-        ) : (
-          ''
         )}
       </div>
     </div>

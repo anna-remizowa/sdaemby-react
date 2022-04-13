@@ -1,8 +1,17 @@
 @import '../../../styles/variables/variables';
 
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.background {
+  @extend %background;
+  top: 0;
+  right: -80px;
+  width: 800px;
+  height: 100%;
 }
 
 .label {
@@ -16,7 +25,7 @@
 }
 
 .box {
-  margin-top: 10px;
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;

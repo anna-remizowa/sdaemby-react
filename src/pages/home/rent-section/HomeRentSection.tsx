@@ -23,7 +23,6 @@ import { FORM_CONSTANTS } from 'constants/forms.constants';
 
 import styles from './HomeRentSection.module.scss';
 
-/*todo: изображение на бэкграунде*/
 export const HomeRentSection: FC = () => {
   const dataHome = useContext(HomeContext);
   const { control } = useForm<IFormData>({});
@@ -31,6 +30,7 @@ export const HomeRentSection: FC = () => {
 
   return (
     <Section
+      background
       label={dataHome.rent?.label}
       header={dataHome.rent?.header ? dataHome.rent?.header : CONSTANTS.rents}
       className={styles.wrapper}

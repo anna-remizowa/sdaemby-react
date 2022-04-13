@@ -1,5 +1,5 @@
 export enum SocialStyleType {
   BASE = 'base',
-  PURPLE = 'purple',
+  CIRCLE = 'circle',
   VERTICAL = 'vertical',
 }

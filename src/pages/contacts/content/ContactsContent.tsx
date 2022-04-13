@@ -9,12 +9,17 @@ import {
   TimeSVG,
 } from 'components/shared/svg/components.svg';
 import { ContactsContext } from 'pages/contacts/Contacts';
-import { ShareWith } from 'components/shared/share-with/ShareWith';
 import { COLORS } from 'model/enum/Colors';
+import { SocialMedia } from 'components/shared/social-media/SocialMedia';
 
 import styles from './ContactsContent.module.scss';
 
-/*todo: вместо ShareWith должны быть SocialMedia*/
+const SOCIAL_MEDIA = [
+  { type: 'Viber', href: 'https://www.viber.com/ru/' },
+  { type: 'Telegram', href: 'https://www.viber.com/ru/' },
+  { type: 'WhatsApp', href: 'https://www.whatsapp.com/?lang=ru' },
+];
+
 export const ContactsContent: FC = () => {
   const dataContacts = useContext(ContactsContext);
   return (
@@ -34,18 +39,15 @@ export const ContactsContent: FC = () => {
             <PhoneSVG color={COLORS.WHITE} width={12} height={15} />
           </Icon>
           <p className={styles.baseText}>{dataContacts.contact}</p>
-          <ShareWith
-            iconBackgroundColor={COLORS.GRAY_OPACITY}
-            iconColor={COLORS.WHITE}
-            url={window.location.href}
-            round={true}
-            size={30}
-            shares={{
-              Viber: { isInclude: true, width: 17, height: 17 },
-              Telegram: { isInclude: true, width: 17, height: 17 },
-              Whatsapp: { isInclude: true, width: 17, height: 17 },
-            }}
-          />
+          {SOCIAL_MEDIA.map((link, index) => (
+            <SocialMedia
+              key={index}
+              iconBackgroundColor={COLORS.GRAY_OPACITY}
+              tag={{ value: link.type, width: 17, height: 17 }}
+              href={link.href}
+              size={30}
+            />
+          ))}
         </div>
         <div className={styles.infoBoxWrapper}>
           <Icon backgroundColor={COLORS.GRAY_OPACITY} round={true} size={30}>

@@ -54,7 +54,7 @@ export const FormElement: FC<FormElementProps> = ({
           </>
         )}
         {children}
-        {icon ? <i className={clsx(styles.icon, styles[icon])} /> : ''}
+        {icon && <i className={clsx(styles.icon, styles[icon])} />}
       </div>
     </div>
   );

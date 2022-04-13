@@ -18,6 +18,7 @@ export interface IAuthFormData {
   email: string;
   password: string;
   repeatPassword: string;
+  switch: boolean;
 }
 
 export interface IFormData

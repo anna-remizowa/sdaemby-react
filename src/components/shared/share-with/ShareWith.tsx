@@ -59,9 +59,9 @@ export const ShareWith: FC<ShareWithProps> = ({
   };
   return (
     <div className={styles.socials}>
-      {title ? <p className={styles.text}>{title}</p> : ''}
+      {title && <p className={styles.text}>{title}</p>}
 
-      {shares.VK && shares.VK.isInclude ? (
+      {shares.VK && shares.VK.isInclude && (
         <VKShareButton url={url}>
           <Icon {...props}>
             <VkSVG
@@ -71,11 +71,9 @@ export const ShareWith: FC<ShareWithProps> = ({
             />
           </Icon>
         </VKShareButton>
-      ) : (
-        ''
       )}
 
-      {shares.Facebook && shares.Facebook.isInclude ? (
+      {shares.Facebook && shares.Facebook.isInclude && (
         <FacebookShareButton url={url}>
           <Icon {...props}>
             <FacebookV2SVG
@@ -89,11 +87,9 @@ export const ShareWith: FC<ShareWithProps> = ({
             />
           </Icon>
         </FacebookShareButton>
-      ) : (
-        ''
       )}
 
-      {shares.Viber && shares.Viber.isInclude ? (
+      {shares.Viber && shares.Viber.isInclude && (
         <ViberShareButton url={url}>
           <Icon {...props}>
             <ViberSVG
@@ -105,11 +101,9 @@ export const ShareWith: FC<ShareWithProps> = ({
             />
           </Icon>
         </ViberShareButton>
-      ) : (
-        ''
       )}
 
-      {shares.Telegram && shares.Telegram.isInclude ? (
+      {shares.Telegram && shares.Telegram.isInclude && (
         <TelegramShareButton url={url}>
           <Icon {...props}>
             <TelegramSVG
@@ -123,11 +117,9 @@ export const ShareWith: FC<ShareWithProps> = ({
             />
           </Icon>
         </TelegramShareButton>
-      ) : (
-        ''
       )}
 
-      {shares.Whatsapp && shares.Whatsapp.isInclude ? (
+      {shares.Whatsapp && shares.Whatsapp.isInclude && (
         <WhatsappShareButton url={url}>
           <Icon {...props}>
             <WhatsAppSVG
@@ -141,8 +133,6 @@ export const ShareWith: FC<ShareWithProps> = ({
             />
           </Icon>
         </WhatsappShareButton>
-      ) : (
-        ''
       )}
     </div>
   );

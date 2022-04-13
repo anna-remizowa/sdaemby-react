@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
@@ -11,10 +11,11 @@ import { IFormData } from 'model/interfaces/IFormData';
 import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 import { Button } from 'components/shared/button/Button';
 import { ROUTING } from 'app.constants';
+import { Switch } from 'components/shared/switch/Switch';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './Auth.module.scss';
 
-/*todo: свитч для rememberMe*/
 export const Authorization: FC = () => {
   const {
     register,
@@ -22,7 +23,11 @@ export const Authorization: FC = () => {
     formState: { errors },
   } = useForm<IFormData>();
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const [switchValue, setSwitchValue] = useState(false);
+  const onSubmit = handleSubmit((data) => {
+    data.switch = switchValue;
+    console.log(JSON.stringify(data));
+  });
 
   return (
     <BackgroundLayout>
@@ -62,7 +67,15 @@ export const Authorization: FC = () => {
           </FormElement>
 
           <div className={styles.box}>
-            <p className={styles.text}>{FORM_CONSTANTS.auth.rememberMe}</p>
+            <div className={styles.box}>
+              <Switch
+                isOn={switchValue}
+                handleToggle={() => setSwitchValue(!switchValue)}
+                onColor={COLORS.YELLOW}
+              />
+              <p className={styles.text}>{FORM_CONSTANTS.auth.rememberMe}</p>
+            </div>
+
             <Link to={`/${ROUTING.pass}`} className={styles.text}>
               {FORM_CONSTANTS.auth.forgotPassword}
             </Link>
