@@ -4,16 +4,12 @@ import { Link } from 'react-router-dom';
 import { HOME } from 'app.constants';
 import { HomeSVG } from 'components/shared/svg/components.svg';
 import { COLORS } from 'model/enum/Colors';
+import { IBreadcrumb } from 'model/interfaces/IBreadcrumb';
 
 import styles from './Breadcrumbs.module.scss';
 
-export interface Breadcrumb {
-  name: string;
-  href?: string;
-}
-
 interface BreadcrumbProps {
-  breadcrumbs: Breadcrumb[];
+  breadcrumbs: IBreadcrumb[];
 }
 
 export const Breadcrumbs: FC<BreadcrumbProps> = ({ breadcrumbs }) => {

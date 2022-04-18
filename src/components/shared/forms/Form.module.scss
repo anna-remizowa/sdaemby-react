@@ -18,6 +18,15 @@
     flex-direction: column;
   }
 
+  &.row {
+    align-items: center;
+
+    .label {
+      margin: 0 20px 0 0;
+      white-space: nowrap;
+    }
+  }
+
   &.base .label {
     margin-bottom: 15px;
     color: $gray-100;

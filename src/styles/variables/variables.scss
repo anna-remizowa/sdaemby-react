@@ -54,3 +54,19 @@ $red-opacity: rgba(235, 87, 87, 0.1);
   opacity: 0.1;
   border-radius: 40px 0 0 0;
 }
+
+%backgroundBefore {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
+    opacity: 0.1;
+  }
+}

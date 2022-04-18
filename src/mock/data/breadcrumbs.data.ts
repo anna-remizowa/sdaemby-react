@@ -1,6 +1,6 @@
-import { Breadcrumb } from 'components/shared/breadcrumbs/Breadcrumbs';
+import { IBreadcrumb } from 'model/interfaces/IBreadcrumb';
 
-export const BREADCRUMBS_NEWS_PAGE: Breadcrumb[] = [
+export const BREADCRUMBS_NEWS_PAGE: IBreadcrumb[] = [
   {
     name: 'Главная',
     href: '',
@@ -10,7 +10,7 @@ export const BREADCRUMBS_NEWS_PAGE: Breadcrumb[] = [
   },
 ];
 
-export const BREADCRUMBS_NEWS_DETAIL: Breadcrumb[] = [
+export const BREADCRUMBS_NEWS_DETAIL: IBreadcrumb[] = [
   {
     name: 'Главная',
     href: '',
@@ -21,5 +21,15 @@ export const BREADCRUMBS_NEWS_DETAIL: Breadcrumb[] = [
   },
   {
     name: 'Линия Сталина: суровый отдых в усадьбах на сутки ',
+  },
+];
+
+export const BREADCRUMBS_CATALOG: IBreadcrumb[] = [
+  {
+    name: 'Главная',
+    href: '',
+  },
+  {
+    name: 'Квартиры в Минске',
   },
 ];

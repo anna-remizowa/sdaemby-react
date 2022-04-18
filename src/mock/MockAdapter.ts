@@ -11,6 +11,7 @@ import { APARTMENTS_FILTER } from './data/filter.data';
 import { APARTMENTS_RENT_DATA, RENT_DATA } from './data/rent.data';
 import { LOCATIONS_DATA_1, LOCATIONS_DATA_2 } from './data/locations.data';
 import { HOME_NEWS_DATA, HOME_START_DATA } from './data/home.data';
+import { CATALOG } from './data/catalog.data';
 
 const mock = new MockAdapter(axios);
 
@@ -47,6 +48,11 @@ const REST_API_MOCK_GET = [
   {
     api: REST_API.rent,
     data: RENT_DATA,
+  },
+  {
+    api: `${REST_API.catalog}/*`,
+    data: CATALOG,
+    regExp: true,
   },
 ];
 

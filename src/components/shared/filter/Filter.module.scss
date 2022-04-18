@@ -67,3 +67,27 @@
   display: flex;
   gap: 30px;
 }
+
+.full {
+  & .box {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .box,
+  .optionsBox {
+    padding-right: 25px;
+
+    &:not(:first-of-type) {
+      padding-left: 25px;
+    }
+
+    &:last-of-type {
+      border-right: 1px solid rgba(102, 78, 249, 0.1);
+    }
+  }
+
+  .buttons {
+    margin-left: 50px;
+  }
+}

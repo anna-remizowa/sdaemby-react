@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
+import clsx from 'clsx';
 
 import { IFilter } from 'model/interfaces/IFilter';
 import { IFormData } from 'model/interfaces/IFormData';
@@ -17,6 +18,7 @@ import { FormLabelStyleType } from 'model/enum/FormLabelStyleType';
 import { FormInputStyleType } from 'model/enum/FormInputStyleType';
 import { COLORS } from 'model/enum/Colors';
 import { FORM_CONSTANTS } from 'constants/forms.constants';
+import { FilterStyleType } from 'model/enum/FilterStyleType';
 
 import styles from './Filter.module.scss';
 
@@ -24,9 +26,12 @@ interface FilterProps {
   filter: IFilter;
   isReset?: boolean;
   isMap?: boolean;
-  filterType?: string;
-  buttonTypes?: ButtonStyleType;
-  inputLabelTypes?: string;
+  filterType?: FilterStyleType;
+  buttonTypesShow?: ButtonStyleType;
+  buttonTypesReset?: ButtonStyleType;
+  inputLabelTypes?: FormLabelStyleType[];
+  arrowColor?: string;
+  buttonHeaderShow?: string;
 }
 
 /*todo: filter - доделать функционал + подменю "больше опций"*/
@@ -35,20 +40,26 @@ export const Filter: FC<FilterProps> = ({
   isReset,
   isMap,
   filterType,
-  buttonTypes,
-  inputLabelTypes,
+  buttonTypesShow = ButtonStyleType.YELLOW,
+  buttonTypesReset = ButtonStyleType.BASE,
+  inputLabelTypes = [FormLabelStyleType.COLUMN, FormLabelStyleType.LIGHT],
+  arrowColor = COLORS.BLACK,
+  buttonHeaderShow = FORM_CONSTANTS.buttons.show,
 }) => {
   const { handleSubmit, control, register } = useForm<IFormData>({});
   const onSubmit = handleSubmit((data) => console.log(data));
   return (
-    <form className={styles.filter} onSubmit={onSubmit}>
+    <form
+      className={clsx(styles.filter, filterType && styles[filterType])}
+      onSubmit={onSubmit}
+    >
       <div className={styles.options}>
         {filter.locations ? (
           <div className={styles.box}>
             <FormElement
               name={'location'}
               label={FORM_CONSTANTS.labels.location}
-              labelTypes={[FormLabelStyleType.COLUMN, FormLabelStyleType.LIGHT]}
+              labelTypes={inputLabelTypes}
             >
               <SelectForm
                 control={control}
@@ -66,7 +77,7 @@ export const Filter: FC<FilterProps> = ({
             <FormElement
               name={'room'}
               label={FORM_CONSTANTS.labels.rooms}
-              labelTypes={[FormLabelStyleType.COLUMN, FormLabelStyleType.LIGHT]}
+              labelTypes={inputLabelTypes}
             >
               <SelectForm
                 control={control}
@@ -83,7 +94,7 @@ export const Filter: FC<FilterProps> = ({
           <FormElement
             name={'priceFrom'}
             label={FORM_CONSTANTS.labels.priceDay}
-            labelTypes={[FormLabelStyleType.COLUMN, FormLabelStyleType.LIGHT]}
+            labelTypes={inputLabelTypes}
           >
             <div className={styles.doubleInputBox}>
               <InputForm
@@ -124,16 +135,16 @@ export const Filter: FC<FilterProps> = ({
 
       <div className={styles.buttons}>
         {isReset ? (
-          <Button types={[ButtonStyleType.BASE]}>
+          <Button types={[buttonTypesReset]}>
             {FORM_CONSTANTS.buttons.reset}
           </Button>
         ) : (
           ''
         )}
 
-        <Button types={[ButtonStyleType.YELLOW]} isSubmit>
-          <span>{FORM_CONSTANTS.buttons.show}</span>
-          <ArrowSVG color={COLORS.BLACK} width={10} height={11} />
+        <Button types={[buttonTypesShow]} isSubmit>
+          <span>{buttonHeaderShow}</span>
+          <ArrowSVG color={arrowColor} width={10} height={11} />
         </Button>
       </div>
     </form>

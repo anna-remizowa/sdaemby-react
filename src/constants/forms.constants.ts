@@ -63,6 +63,7 @@ export const FORM_CONSTANTS = {
     send: 'Отправить',
     reset: 'Очистить',
     show: 'Показать',
+    showFull: 'Показать объекты',
     more: 'Подробнее',
     contacts: 'Контакты',
     login: 'Войти',

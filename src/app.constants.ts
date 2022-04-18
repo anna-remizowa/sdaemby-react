@@ -13,6 +13,7 @@ export const REST_API = {
   filter: '/filter',
   locations: '/locations',
   rent: '/rent',
+  catalog: '/catalog',
 };
 
 export const HOME = 'Главная';

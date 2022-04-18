@@ -1,0 +1,49 @@
+@import '../../styles/variables/variables';
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content {
+  @extend %backgroundBefore;
+}
+
+.wrapper {
+  padding-top: 42px;
+  padding-bottom: 57px;
+  z-index: 10;
+}
+
+.header {
+  @extend %h1;
+  margin: 5px 0 40px;
+}
+
+.headerRecommend {
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: $black;
+}
+
+.recommend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px 25px;
+}
+
+.filter {
+  box-shadow: 0 20px 40px rgba(39, 95, 158, 0.08);
+}
+
+.filterWrapper {
+  display: flex;
+}
+
+.itemsWrapper {
+  padding-top: 25px;
+  padding-bottom: 59px;
+}

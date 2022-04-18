@@ -1,4 +1,4 @@
-import { Breadcrumb } from 'components/shared/breadcrumbs/Breadcrumbs';
+import { IBreadcrumb } from './IBreadcrumb';
 
 export interface INews {
   id: number;
@@ -12,7 +12,7 @@ export interface INews {
 export interface INewsPage {
   header?: string;
   pageCount?: number;
-  breadcrumbs?: Breadcrumb[];
+  breadcrumbs?: IBreadcrumb[];
 }
 
 export interface INewsContent {

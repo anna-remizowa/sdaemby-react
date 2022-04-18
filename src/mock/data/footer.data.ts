@@ -11,7 +11,7 @@ export const FOOTER = {
     {
       id: 1,
       name: 'Коттеджи и усадьбы',
-      href: 'cottages',
+      href: 'catalog/7',
     },
     {
       id: 2,
@@ -49,7 +49,7 @@ export const FOOTER = {
 
   apartments: {
     header: 'Квартиры',
-    href: 'apartments',
+    href: 'catalog/1',
     items: [
       {
         id: 1,

@@ -31,7 +31,7 @@ export const HEADER = {
     {
       id: 1,
       name: 'Квартиры на сутки',
-      href: 'apartments',
+      href: 'catalog/1',
       positionSVG: 'RIGHT',
       items: [
         {
@@ -69,7 +69,7 @@ export const HEADER = {
     {
       id: 2,
       name: 'Коттеджи и усадьбы',
-      href: 'cottages',
+      href: 'catalog/7',
       items: [
         {
           id: 1,
