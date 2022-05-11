@@ -26,3 +26,10 @@ export const CATALOG = {
   },
   filter: APARTMENTS_FILTER2,
 };
+
+export const CATALOG_ADS_DATA = {
+  header: 'Показать найденные квартиры на карте',
+  content: 'Ищите новостройки рядом с работой,\nпарком или родственниками',
+  button: 'Открыть карту',
+  href: '/ads',
+};

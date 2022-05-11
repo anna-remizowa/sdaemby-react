@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { Icon } from 'components/shared/icon/Icon';
-import { SocialItem } from 'components/shared/socials/SocialItem';
+import { SocialItem } from 'components/shared/social-media/SocialItem';
 import { COLORS } from 'model/enum/Colors';
 
 interface SocialMediaProps {
@@ -9,6 +9,7 @@ interface SocialMediaProps {
   iconColor?: string;
   href: string;
   round?: boolean;
+  borderRadius?: number;
   size?: number;
   tag: {
     value: string;
@@ -30,13 +31,13 @@ const ICONS_COLOR: IconsSignature = {
   Mail: COLORS.PURPLE,
 };
 
-/*fixme: SocialMedia очень похож на компонент Socials, нужно объединить в один*/
 export const SocialMedia: FC<SocialMediaProps> = ({
   iconBackgroundColor,
   iconColor = COLORS.WHITE,
   href,
   round = true,
   size,
+  borderRadius,
   tag,
 }) => {
   return (
@@ -47,6 +48,7 @@ export const SocialMedia: FC<SocialMediaProps> = ({
         }
         size={size}
         round={round}
+        borderRadius={borderRadius}
       >
         <SocialItem
           color={iconColor}

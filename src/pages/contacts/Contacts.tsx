@@ -5,15 +5,15 @@ import { Container } from 'layouts/container/Container';
 import { API_URL, REST_API } from 'app.constants';
 import { IContacts } from 'model/interfaces/IContacts';
 import { ContactsForm } from './form/ContactsForm';
-import { Socials, SocialsSVG } from 'components/shared/socials/Socials';
 import { ContactsContent } from './content/ContactsContent';
 import { SocialType } from 'model/enum/SocialType';
-import { SocialStyleType } from 'model/enum/SocialStyleType';
 import { COLORS } from 'model/enum/Colors';
+import { SocialMedia } from 'components/shared/social-media/SocialMedia';
+import { ISocialsSVG } from 'model/interfaces/ISocialsSVG';
 
 import styles from './Contacts.module.scss';
 
-const socials: SocialsSVG[] = [
+const socials: ISocialsSVG[] = [
   {
     tag: SocialType.INSTAGRAM,
     width: 20,
@@ -52,11 +52,23 @@ export const Contacts: FC = () => {
           <ContactsContent />
           <ContactsForm />
           <div className={styles.socials}>
-            <Socials
-              socials={socials}
-              types={[SocialStyleType.CIRCLE, SocialStyleType.VERTICAL]}
-              iconColor={COLORS.WHITE}
-            />
+            {socials.map((social, index) => {
+              return (
+                <SocialMedia
+                  key={index}
+                  tag={{
+                    value: social.tag,
+                    width: social.width,
+                    height: social.height,
+                  }}
+                  href={social.href}
+                  iconColor={COLORS.WHITE}
+                  iconBackgroundColor={COLORS.GRAY_OPACITY}
+                  size={45}
+                  borderRadius={25}
+                />
+              );
+            })}
           </div>
         </Container>
       </div>

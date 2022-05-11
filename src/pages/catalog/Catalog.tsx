@@ -11,9 +11,11 @@ import { Filter } from 'components/shared/filter/Filter';
 import { FilterStyleType } from 'model/enum/FilterStyleType';
 import { COLORS } from 'model/enum/Colors';
 import { FormLabelStyleType } from 'model/enum/FormLabelStyleType';
+import { FORM_CONSTANTS } from 'constants/forms.constants';
+import { CATALOG_ADS_DATA as dataAds } from 'mock/data/catalog.data';
+import { Ads } from 'components/shared/ads/Ads';
 
 import styles from './Catalog.module.scss';
-import { FORM_CONSTANTS } from '../../constants/forms.constants';
 
 export const Catalog: FC = () => {
   const [catalogData, setCatalogData] = useState<ICatalog>({});
@@ -74,6 +76,13 @@ export const Catalog: FC = () => {
       </div>
 
       <Container className={styles.itemsWrapper}>Items</Container>
+
+      <Ads
+        header={dataAds.header}
+        text={dataAds.content}
+        buttonText={dataAds.button}
+        buttonHref={dataAds.href}
+      />
     </div>
   );
 };

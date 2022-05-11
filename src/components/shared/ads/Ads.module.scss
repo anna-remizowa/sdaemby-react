@@ -1,18 +1,13 @@
-@import '../../../styles/variables/variables';
+@import 'src/styles/variables/variables';
 
 .wrapper {
   position: relative;
   display: flex;
-  min-height: 440px;
+  min-height: auto;
 }
 
 .background {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 1440px;
-  height: 440px;
-  background-image: url('../../../assets/images/background_rect.png');
+  @extend %backgroundImage;
 }
 
 .content {
@@ -28,7 +23,6 @@
   flex-direction: column;
   align-items: center;
   margin: 75px 0 95px;
-  max-width: 390px;
   width: 100%;
 }
 
@@ -48,6 +42,7 @@
   font-size: 16px;
   line-height: 19px;
   text-align: center;
+  white-space: break-spaces;
 }
 
 .cardBox {

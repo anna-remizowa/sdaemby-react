@@ -41,7 +41,7 @@ export const Filter: FC<FilterProps> = ({
   isMap,
   filterType,
   buttonTypesShow = ButtonStyleType.YELLOW,
-  buttonTypesReset = ButtonStyleType.BASE,
+  buttonTypesReset = ButtonStyleType.BASE_V4,
   inputLabelTypes = [FormLabelStyleType.COLUMN, FormLabelStyleType.LIGHT],
   arrowColor = COLORS.BLACK,
   buttonHeaderShow = FORM_CONSTANTS.buttons.show,

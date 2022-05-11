@@ -7,13 +7,13 @@ import { Container } from 'layouts/container/Container';
 import { FooterMenu } from './menu/FooterMenu';
 import { FooterPayments, ImageItem } from './payments/FooterPayments';
 import { IFooter } from 'model/interfaces/IFooter';
-import { Socials, SocialsSVG } from 'components/shared/socials/Socials';
 import { API_URL, REST_API, ROUTING } from 'app.constants';
 import { SocialType } from 'model/enum/SocialType';
 import { MenuType } from 'model/enum/MenuType';
-import { SocialStyleType } from 'model/enum/SocialStyleType';
+import { SocialMedia } from 'components/shared/social-media/SocialMedia';
 import { COLORS } from 'model/enum/Colors';
 import { CONSTANTS } from 'constants/common.constants';
+import { ISocialsSVG } from 'model/interfaces/ISocialsSVG';
 
 import styles from './Footer.module.scss';
 
@@ -50,7 +50,7 @@ const cards: ImageItem[] = [
   },
 ];
 
-const socials: SocialsSVG[] = [
+const socials: ISocialsSVG[] = [
   {
     tag: SocialType.INSTAGRAM,
     width: 24,
@@ -109,7 +109,7 @@ export const Footer: FC = () => {
               items={appFooter.titlesOne ? appFooter.titlesOne : []}
               menuType={[MenuType.BOLD]}
             />
-            {appFooter.apartments ? (
+            {appFooter.apartments && (
               <FooterMenu
                 items={
                   appFooter.apartments.items ? appFooter.apartments.items : []
@@ -117,8 +117,6 @@ export const Footer: FC = () => {
                 menuType={[MenuType.BASE, MenuType.COLUMN]}
                 {...appFooter.apartments}
               />
-            ) : (
-              ''
             )}
 
             <FooterMenu
@@ -127,12 +125,24 @@ export const Footer: FC = () => {
             />
           </div>
           <div className={styles.infoWrapper}>
-            <Socials
-              socials={socials}
-              types={[SocialStyleType.BASE]}
-              header={CONSTANTS.socials}
-              iconColor={COLORS.BLACK}
-            />
+            <div className={styles.socials}>
+              <p className={styles.text}>{CONSTANTS.socials}</p>
+              {socials.map((social, index) => {
+                return (
+                  <SocialMedia
+                    key={index}
+                    tag={{
+                      value: social.tag,
+                      width: social.width,
+                      height: social.height,
+                    }}
+                    href={social.href}
+                    iconBackgroundColor={COLORS.WHITE}
+                    iconColor={COLORS.BLACK}
+                  />
+                );
+              })}
+            </div>
             <FooterPayments images={cards} />
           </div>
         </div>

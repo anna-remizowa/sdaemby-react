@@ -12,8 +12,10 @@ import { HomeRentSection } from './rent-section/HomeRentSection';
 import { INews, INewsContent } from 'model/interfaces/INews';
 import { ISection } from 'model/interfaces/ISection';
 import { HomeNewsSection } from './news-section/HomeNewsSection';
-import { HomeAdsSection } from './ads-section/HomeAdsSection';
+import { Ads } from 'components/shared/ads/Ads';
 import { IStartSection } from 'model/interfaces/IStartSection';
+
+import { HOME_ADS_DATA as dataAds } from 'mock/data/home.data';
 
 import styles from './Home.module.scss';
 
@@ -84,7 +86,14 @@ export const Home: FC = () => {
         <HomeStartSection />
         <HomeApartmentSection />
         <HomeRentSection />
-        <HomeAdsSection />
+        <Ads
+          header={dataAds.header}
+          text={dataAds.content}
+          buttonText={dataAds.button}
+          buttonHref={dataAds.href}
+          cardsItems={dataAds.items}
+          height={'440px'}
+        />
         <HomeNewsSection />
       </Container>
     </HomeContext.Provider>

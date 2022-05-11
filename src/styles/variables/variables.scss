@@ -1,5 +1,6 @@
 $light-gray-100: #f8f8f8;
 $light-gray-120: #f5f3ff;
+$light-gray-130: #f1f1f1;
 $light-gray-150: #e4e2e2;
 $light-gray-200: #bdbdbd;
 $light-gray-300: #8291a3;
@@ -69,4 +70,12 @@ $red-opacity: rgba(235, 87, 87, 0.1);
     background: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
     opacity: 0.1;
   }
+}
+
+%backgroundImage {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 1440px;
+  background-image: url('../../assets/images/background_rect.png');
 }

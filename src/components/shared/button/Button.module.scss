@@ -114,11 +114,20 @@
   }
 
   &.baseV3 {
-    background: rgba(102, 78, 249, 0.1);
+    background-color: rgba(102, 78, 249, 0.1);
     color: $purple-200;
 
     &:hover {
-      background: rgba(102, 78, 249, 0.2);
+      background-color: rgba(102, 78, 249, 0.2);
+    }
+  }
+
+  &.baseV4 {
+    background-color: $light-gray-100;
+    color: $black;
+
+    &:hover {
+      background-color: $light-gray-130;
     }
   }
 
