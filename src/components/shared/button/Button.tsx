@@ -1,26 +1,37 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 import clsx from 'clsx';
 
-import { ButtonType } from 'app.constants';
+import { ButtonStyleType } from 'model/enum/ButtonStyleType';
 
 import styles from './Button.module.scss';
 
 interface ButtonProps {
-  types: ButtonType[];
+  types?: ButtonStyleType[];
   children: React.ReactNode;
+  isSubmit?: boolean;
+  width?: string;
+  onMouseEnter?: MouseEventHandler<HTMLButtonElement>;
+  onMouseLeave?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const Button: FC<ButtonProps> = ({ types, children }) => {
+export const Button: FC<ButtonProps> = ({
+  types = [],
+  isSubmit,
+  width = 'auto',
+  children,
+  onMouseEnter,
+  onMouseLeave,
+}) => {
   return (
     <button
-      type="button"
+      type={isSubmit ? 'submit' : 'button'}
+      style={{ width: width }}
       className={clsx(
         styles.button,
-        types.includes(ButtonType.BASE) && styles.base,
-        types.includes(ButtonType.HIGHLIGHT) && styles.highlight,
-        types.includes(ButtonType.YELLOW) && styles.yellow,
-        types.includes(ButtonType.BIG) && styles.big
+        types.map<string>((type) => styles[type]).join(' ')
       )}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </button>

@@ -1,0 +1,78 @@
+@import 'src/styles/variables/variables';
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  padding: 37px 21px 19px 37px;
+  border-radius: 10px;
+}
+
+.opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  opacity: 0.4;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.label {
+  background: -webkit-linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 25px;
+  line-height: 30px;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.label,
+.title {
+  margin-bottom: 21px;
+  font-weight: bold;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  & > button {
+    font-weight: 500;
+  }
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: auto 0 0 auto;
+  border: 1px solid white;
+  border-radius: 50px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

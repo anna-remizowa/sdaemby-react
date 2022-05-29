@@ -1,16 +1,16 @@
-@import '../../../styles/variables/variables';
+@import 'src/styles/variables/variables';
 
 .dropdown {
   position: absolute;
   display: none;
   z-index: 20;
 
-  &.show{
+  &.show {
     display: flex;
   }
 }
 
-.dropdownWrapper{
+.dropdownWrapper {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(135, 124, 202, 0.3);
@@ -19,10 +19,10 @@
 .item {
   padding: 10px 15px;
   border-radius: 10px;
-  transition: background-color .3s ease-out;
+  transition: background-color 0.3s ease-out;
 
   &:hover {
-    background-color: $gray;
+    background-color: $light-gray-100;
   }
 }
 

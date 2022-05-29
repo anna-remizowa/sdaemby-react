@@ -1,0 +1,60 @@
+@import 'src/styles/variables/variables';
+
+.list {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 33px 23px 32px;
+  background-color: white;
+  box-shadow: 0 20px 40px rgba(135, 124, 202, 0.15);
+  border-radius: 10px;
+}
+
+.header {
+  @extend %h2;
+  margin-bottom: 16px;
+}
+
+.item {
+  padding: 10px 0;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $deep-purple-opacity-200;
+  }
+}
+
+.link {
+  @extend %base-text;
+  font-weight: 600;
+  color: $black;
+  transition: color 0.3s;
+
+  &:hover,
+  &All {
+    color: $purple-200;
+  }
+
+  &All {
+    position: relative;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: left 0.3s;
+
+    &:hover {
+      left: 10px;
+    }
+  }
+}
+
+.all {
+  margin-top: 22px;
+}
+
+.text {
+  margin-top: 6px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: $light-gray-300;
+}

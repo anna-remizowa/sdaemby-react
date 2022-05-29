@@ -1,8 +1,7 @@
-@import '../../../styles/variables/variables';
+@import 'src/styles/variables/variables';
 
 .breadcrumbs {
   margin-bottom: 25px;
-
 }
 
 .link {
@@ -10,24 +9,24 @@
   margin-right: 17px;
   font-size: 14px;
   line-height: 100%;
-  color: $dark-gray;
+  color: $gray-100;
 
   &:not(:last-of-type) {
-	color: $purple-light;
+    color: $purple-100;
   }
 
   &:not(:last-of-type):after {
-	position: absolute;
-	top: 6px;
-	right: -10px;
-	content: '';
-	height: 3px;
-	width: 3px;
-	background-color: $purple;
-	border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    right: -10px;
+    content: '';
+    height: 3px;
+    width: 3px;
+    background-color: $purple-200;
+    border-radius: 50%;
   }
 
   &:last-of-type {
-	pointer-events: none;
+    pointer-events: none;
   }
 }

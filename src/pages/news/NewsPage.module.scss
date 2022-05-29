@@ -1,0 +1,32 @@
+@import 'src/styles/variables/variables';
+
+.news {
+  position: relative;
+  overflow: hidden;
+  margin: 45px auto 100px;
+}
+
+.newsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 30px;
+  margin-bottom: 80px;
+}
+
+.headerBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 33px;
+}
+
+.header {
+  @extend %h1;
+}
+
+.background {
+  @extend %background;
+  right: -50px;
+  width: 848px;
+  height: 1000px;
+}

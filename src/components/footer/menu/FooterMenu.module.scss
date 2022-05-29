@@ -1,58 +1,67 @@
-@import '../../../styles/variables/variables';
+@import 'src/styles/variables/variables';
 
 .list {
   display: flex;
   flex-direction: column;
 
   &.baseBold {
-	margin-right: 69px;
+    margin-right: 69px;
 
-	& .item{
-	  font-weight: bold;
-	  color: $black;
+    & .item {
+      font-weight: bold;
+      color: $black;
 
-	  &:not(:last-of-type) {
-		margin-bottom: 21px;
-	  }
-	}
+      &:not(:last-of-type) {
+        margin-bottom: 21px;
+      }
+    }
 
-	& .link {
-	  font-weight: inherit;
-	  color: inherit;
-	}
+    & .link {
+      font-weight: inherit;
+      color: inherit;
+
+      &:hover {
+        color: $yellow-300;
+      }
+    }
   }
 
   &.base {
-	margin-right: 102px;
+    margin-right: 102px;
 
-	& .item {
-	  &:not(:last-of-type) {
-		margin-bottom: 8px;
-	  }
-	}
+    & .item {
+      &:not(:last-of-type) {
+        margin-bottom: 8px;
+      }
+    }
 
-	& .link {
-	  color: $blue-gray;
-	}
+    & .link {
+      color: $light-gray-300;
+
+      &:hover {
+        color: $yellow-300;
+      }
+    }
   }
 
   &.column {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 8px 53px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 53px;
 
-	.item:not(:last-of-type) {
-	  margin-bottom: 0;
-	}
+    .item:not(:last-of-type) {
+      margin-bottom: 0;
+    }
   }
 
   &:last-of-type {
-	margin-right: 60px;
+    margin-right: 60px;
   }
 }
 
 .link {
   @extend %base-text;
+  transition: 0.3s;
 }
 
 .header {
@@ -60,4 +69,9 @@
   @extend %base-text;
   font-weight: bold;
   color: $black;
+  transition: 0.3s;
+
+  &:hover {
+    color: $yellow-300;
+  }
 }

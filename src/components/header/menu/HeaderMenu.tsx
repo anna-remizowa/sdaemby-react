@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { Menu } from 'model/Menu';
+import { IMenu } from 'model/interfaces/IMenu';
 import { HeaderLink } from 'components/header/link/HeaderLink';
 
 import styles from './HeaderMenu.module.scss';
 
-export interface HeaderMenuProps extends Menu {
+export interface HeaderMenuProps extends IMenu {
   headerTypeBold?: boolean;
 }
 

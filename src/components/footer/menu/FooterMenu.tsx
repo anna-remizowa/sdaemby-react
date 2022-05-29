@@ -2,12 +2,12 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import { Menu } from 'model/Menu';
-import { MenuType } from 'app.constants';
+import { IMenu } from 'model/interfaces/IMenu';
+import { MenuType } from 'model/enum/MenuType';
 
 import styles from './FooterMenu.module.scss';
 
-interface FooterMenuProps extends Menu {
+interface FooterMenuProps extends IMenu {
   header?: string;
   href?: string;
   menuType: MenuType[];
@@ -31,9 +31,7 @@ export const FooterMenu: FC<FooterMenuProps> = ({
       <ul
         className={clsx(
           styles.list,
-          menuType.includes(MenuType.BASE) && styles.base,
-          menuType.includes(MenuType.BOLD) && styles.baseBold,
-          menuType.includes(MenuType.COLUMN) && styles.column
+          menuType.map<string>((type) => styles[type]).join(' ')
         )}
       >
         {items.map((item) => {

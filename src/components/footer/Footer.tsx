@@ -1,15 +1,19 @@
 import React, { FC, useEffect, useState } from 'react';
-import clsx from 'clsx';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import { ContainerType } from 'model/enum/ContainerType';
+import { Container } from 'layouts/container/Container';
 import { FooterMenu } from './menu/FooterMenu';
-import { FooterSocials, FooterSocialsSVG } from './socials/FooterSocials';
 import { FooterPayments, ImageItem } from './payments/FooterPayments';
-import { IFooter } from 'model/IFooter';
-
-import { API_URL, MenuType, REST_API, ROUTING } from 'app.constants';
-import { SVG_DATA_SET } from 'components/shared/svg/svg.data';
+import { IFooter } from 'model/interfaces/IFooter';
+import { API_URL, REST_API, ROUTING } from 'app.constants';
+import { SocialType } from 'model/enum/SocialType';
+import { MenuType } from 'model/enum/MenuType';
+import { SocialMedia } from 'components/shared/social-media/SocialMedia';
+import { COLORS } from 'model/enum/Colors';
+import { CONSTANTS } from 'constants/common.constants';
+import { ISocialsSVG } from 'model/interfaces/ISocialsSVG';
 
 import styles from './Footer.module.scss';
 
@@ -46,26 +50,23 @@ const cards: ImageItem[] = [
   },
 ];
 
-const socials: FooterSocialsSVG[] = [
+const socials: ISocialsSVG[] = [
   {
-    svg: SVG_DATA_SET.Instagram,
+    tag: SocialType.INSTAGRAM,
     width: 24,
     height: 25,
-    color: '#1E2123',
     href: 'https://www.instagram.com/',
   },
   {
-    svg: SVG_DATA_SET.VK,
+    tag: SocialType.VK,
     width: 25,
     height: 15,
-    color: '#1E2123',
     href: 'https://vk.com/',
   },
   {
-    svg: SVG_DATA_SET.Facebook,
+    tag: SocialType.FACEBOOK,
     width: 21,
     height: 21,
-    color: '#1E2123',
     href: 'https://ru-ru.facebook.com/',
   },
 ];
@@ -81,26 +82,25 @@ export const Footer: FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={clsx('wrapper-full', styles.wrapper)}>
+      <Container type={ContainerType.FULL} className={styles.wrapper}>
         <div className={styles.info}>
           <Link to={`/${ROUTING.home}`}>
             <img
               className={'logo'}
               src={require('../../assets/images/logo.png')}
-              alt={'Логотип'}
+              alt={CONSTANTS.logo}
             />
           </Link>
           <p className={styles.textLogo}>Сдаём Бай</p>
           <div className={styles.textWrapper}>
-            {appFooter.company
-              ? appFooter.company.map((pInfo, index) => {
-                  return (
-                    <p key={index} className={styles.textSmall}>
-                      {pInfo}
-                    </p>
-                  );
-                })
-              : ''}
+            {appFooter.company &&
+              appFooter.company.map((pInfo, index) => {
+                return (
+                  <p key={index} className={styles.textSmall}>
+                    {pInfo}
+                  </p>
+                );
+              })}
           </div>
         </div>
         <div className={styles.info}>
@@ -109,17 +109,14 @@ export const Footer: FC = () => {
               items={appFooter.titlesOne ? appFooter.titlesOne : []}
               menuType={[MenuType.BOLD]}
             />
-            {appFooter.apartments ? (
+            {appFooter.apartments && (
               <FooterMenu
                 items={
                   appFooter.apartments.items ? appFooter.apartments.items : []
                 }
                 menuType={[MenuType.BASE, MenuType.COLUMN]}
-                header={appFooter.apartments.header}
-                href={appFooter.apartments.href}
+                {...appFooter.apartments}
               />
-            ) : (
-              ''
             )}
 
             <FooterMenu
@@ -128,11 +125,28 @@ export const Footer: FC = () => {
             />
           </div>
           <div className={styles.infoWrapper}>
-            <FooterSocials socials={socials} />
+            <div className={styles.socials}>
+              <p className={styles.text}>{CONSTANTS.socials}</p>
+              {socials.map((social, index) => {
+                return (
+                  <SocialMedia
+                    key={index}
+                    tag={{
+                      value: social.tag,
+                      width: social.width,
+                      height: social.height,
+                    }}
+                    href={social.href}
+                    iconBackgroundColor={COLORS.WHITE}
+                    iconColor={COLORS.BLACK}
+                  />
+                );
+              })}
+            </div>
             <FooterPayments images={cards} />
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

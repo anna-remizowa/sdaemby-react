@@ -1,0 +1,93 @@
+@import 'src/styles/variables/variables';
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  height: 100%;
+}
+
+.box,
+.optionsBox {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 20px;
+
+  &:not(:first-of-type) {
+    padding-left: 20px;
+  }
+
+  &:not(:last-of-type) {
+    border-right: 1px solid rgba(102, 78, 249, 0.1);
+  }
+}
+
+.box {
+  padding-bottom: 5px;
+}
+
+.optionsButton {
+  display: flex;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.doubleInputBox {
+  display: flex;
+
+  & input {
+    width: 80px;
+  }
+}
+
+.separator {
+  margin: auto 4px;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  color: $purple-100;
+}
+
+.text {
+  @extend %base-text;
+  font-weight: 500;
+  color: $black;
+
+  & ~ svg {
+    margin-left: 5px;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.full {
+  & .box {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .box,
+  .optionsBox {
+    padding-right: 25px;
+
+    &:not(:first-of-type) {
+      padding-left: 25px;
+    }
+
+    &:last-of-type {
+      border-right: 1px solid rgba(102, 78, 249, 0.1);
+    }
+  }
+
+  .buttons {
+    margin-left: 50px;
+  }
+}

@@ -1,52 +1,150 @@
-@import '../../../styles/variables/variables';
+@import 'src/styles/variables/variables';
 
 .button {
-  min-height: 37px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 37px;
+  padding: 10px 18px;
   border: none;
   border-radius: 17px;
   @extend %base-text;
   font-weight: bold;
   cursor: pointer;
-
-  &:hover {
-	transition: background-color 0.3s ease-out;
-  }
+  background-color: white;
+  color: $black;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
 
   &.base {
-	padding: 10px 18px;
-	background: rgba(102, 78, 249, 0.1);
-	color: $purple;
+    background-color: rgba(102, 78, 249, 0.1);
+    color: $purple-200;
+  }
+
+  &.common {
+    & > svg {
+      margin-right: 11px;
+    }
+
+    &:hover {
+      color: $yellow-200;
+    }
+  }
+
+  &.purple {
+    background-color: $purple-200;
+    color: white;
+
+    &:hover {
+      background-color: $purple-300;
+    }
+
+    & > svg {
+      margin-left: 17px;
+    }
   }
 
   &.highlight {
-	padding: 10px 18px;
-	background: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
-	border-radius: 19px;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-	color: white;
+    background: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+    border-radius: 19px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: white;
 
-	&:hover {
-	  background: linear-gradient(90deg, #867cfc 0%, #6929f3 94.5%);
-	}
+    &:hover {
+      background: linear-gradient(90deg, #867cfc 0%, #6929f3 94.5%);
+    }
+
+    & > svg {
+      margin-left: 12px;
+    }
   }
 
   &.yellow {
-	padding: 9px 18px 7px;
-	background-color: $yellow;
-	color: black;
+    padding: 9px 18px 7px;
+    background-color: $yellow-100;
+    color: black;
+
+    &:hover {
+      background-color: $yellow-200;
+    }
+
+    & > svg {
+      margin-left: 10px;
+    }
   }
 
   &.big {
-	padding: 12px 24px;
-	background-color: $yellow;
-	border-radius: 33px;
+    height: 48px;
+    padding: 12px 24px;
+    border-radius: 33px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
 
-	& > svg {
-	  margin-right: 10px;
-	}
+    & > svg {
+      margin-right: 10px;
+    }
   }
 
-  &.yellow:hover, &.big:hover {
-	background-color: $yellow-dark;
+  &.small {
+    height: 33px;
+    padding: 8px 14px;
+  }
+
+  &.mini {
+    height: 26px;
+    padding: 6px 10px;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  &.baseV2 {
+    padding: 10px 15px;
+    background-color: white;
+    color: $purple-200;
+    box-shadow: 0 5px 20px rgba(0, 96, 206, 0.1);
+
+    &:hover {
+      background-color: $light-gray-120;
+    }
+
+    & > svg {
+      margin-right: 13px;
+    }
+  }
+
+  &.baseV3 {
+    background-color: rgba(102, 78, 249, 0.1);
+    color: $purple-200;
+
+    &:hover {
+      background-color: rgba(102, 78, 249, 0.2);
+    }
+  }
+
+  &.baseV4 {
+    background-color: $light-gray-100;
+    color: $black;
+
+    &:hover {
+      background-color: $light-gray-130;
+    }
+  }
+
+  &.yellowV2 {
+    padding: 10px 15px;
+    background-color: $yellow-opacity-100;
+    color: $yellow-200;
+
+    &:hover {
+      background-color: $yellow-opacity-200;
+    }
+  }
+
+  &.circle {
+    height: 33px;
+    padding: 9px;
+    border-radius: 22px;
+    background-color: $red-opacity;
   }
 }

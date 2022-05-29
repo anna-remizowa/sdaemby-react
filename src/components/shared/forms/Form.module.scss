@@ -1,0 +1,146 @@
+@import 'src/styles/variables/variables';
+
+.label,
+.input {
+  @extend %base-text;
+  font-weight: 500;
+}
+
+.label {
+  margin-bottom: 11px;
+}
+
+.element {
+  display: flex;
+  width: 100%;
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.row {
+    align-items: center;
+
+    .label {
+      margin: 0 20px 0 0;
+      white-space: nowrap;
+    }
+  }
+
+  &.base .label {
+    margin-bottom: 15px;
+    color: $gray-100;
+  }
+
+  &.light .label {
+    color: $light-gray-200;
+  }
+
+  &.purple .label {
+    color: $purple-200;
+  }
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  top: 15px;
+  left: 21px;
+  width: 20px;
+  mask-size: cover;
+  background-color: $light-gray-200;
+
+  &.user {
+    height: 20px;
+    mask-image: url('../../../../public/assets/svg/user.svg');
+  }
+
+  &.mail {
+    height: 17px;
+    mask-image: url('../../../../public/assets/svg/mail.svg');
+  }
+
+  &.metro {
+    top: 14px;
+    left: 14px;
+    height: 12px;
+    mask-image: url('../../../../public/assets/svg/metro.svg');
+  }
+
+  &.password {
+    width: 15px;
+    height: 20px;
+    mask-image: url('../../../../public/assets/svg/password.svg');
+  }
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  padding: 15px 25px;
+  background-color: $light-gray-100;
+  border: 2px solid $light-gray-100;
+  border-radius: 30px;
+  color: $black;
+
+  &::placeholder {
+    color: $gray-100;
+  }
+
+  &:focus {
+    background-color: #fff;
+    border: 2px solid $purple-opacity-100;
+
+    & ~ .icon {
+      background-color: $purple-200;
+    }
+  }
+
+  &.middle {
+    height: 37px;
+    padding: 9px 14px;
+    border-radius: 20px;
+  }
+}
+
+.isIcon {
+  & input {
+    padding-left: 55px;
+  }
+}
+
+.textarea {
+  resize: none;
+  height: 200px;
+}
+
+.error {
+  position: absolute;
+  bottom: -20px;
+  color: $red-100;
+  font-size: 12px;
+  line-height: 17px;
+
+  & ~ input,
+  & ~ textarea {
+    border: 2px solid $red-100;
+  }
+
+  & ~ .icon {
+    background-color: $red-100;
+  }
+}
+
+.iconError {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  mask-image: url('../../../../public/assets/svg/error.svg');
+  background-color: $red-100;
+}

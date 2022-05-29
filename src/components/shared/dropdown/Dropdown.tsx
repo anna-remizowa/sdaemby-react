@@ -1,19 +1,19 @@
 import React, { FC } from 'react';
 
 import styles from './Dropdown.module.scss';
-import { MenuItem } from '../../../model/Menu';
+import { IMenuItem } from 'model/interfaces/IMenu';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 interface DropdownProps {
   top?: number;
-  links: MenuItem[];
+  links: IMenuItem[];
   isShow: boolean;
   setHovered(hover: boolean): void;
 }
 
 export const Dropdown: FC<DropdownProps> = ({
-  top,
+  top = 0,
   links,
   isShow,
   setHovered,
@@ -21,7 +21,7 @@ export const Dropdown: FC<DropdownProps> = ({
   return (
     <div
       className={clsx(styles.dropdown, isShow && styles.show)}
-      style={{ paddingTop: top ? `${top}px` : 0 }}
+      style={{ paddingTop: `${top}px` }}
     >
       <ul className={styles.dropdownWrapper}>
         {links.map((link) => {

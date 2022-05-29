@@ -1,21 +1,39 @@
-import React, { FC } from 'react';
+import React, { FC, useRef } from 'react';
+
+import { SearchSVG } from 'components/shared/svg/components.svg';
+import { COLORS } from 'model/enum/Colors';
 
 import styles from './Search.module.scss';
-import { SearchSVG } from '../svg/components.svg';
-import { SVG } from '../svg/svg';
 
 interface SearchProps {
-  defaultValue: string;
+  placeholder?: string;
+  defaultValue?: string;
+  onClick?: (value: string) => void;
 }
 
-export const Search: FC<SearchProps> = ({ defaultValue }) => {
+export const Search: FC<SearchProps> = ({
+  placeholder = '',
+  defaultValue = '',
+  onClick,
+}) => {
+  const refInput = useRef<HTMLInputElement>(null);
+  const buttonClick = () => {
+    if (onClick) {
+      onClick(refInput.current?.value ? refInput.current?.value : '');
+    }
+  };
+
   return (
     <div className={styles.search}>
-      <input type="text" className={styles.input} value={defaultValue} />
-      <button className={styles.button} type="button">
-        <SVG viewBox={'0 0 17 17'} width={17} height={17}>
-          <SearchSVG color={'white'} />
-        </SVG>
+      <input
+        ref={refInput}
+        type="text"
+        className={styles.input}
+        placeholder={placeholder}
+        defaultValue={defaultValue}
+      />
+      <button className={styles.button} type="button" onClick={buttonClick}>
+        <SearchSVG color={COLORS.WHITE} width={17} height={17} />
       </button>
     </div>
   );

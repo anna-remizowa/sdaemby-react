@@ -6,31 +6,15 @@ export const PRODUCTION_MODE = 'production';
 export const REST_API = {
   header: '/header',
   footer: '/footer',
+  start: '/start',
+  newsPage: '/news-page',
   news: '/news',
+  contacts: '/contacts',
+  filter: '/filter',
+  locations: '/locations',
+  rent: '/rent',
+  catalog: '/catalog',
 };
-
-export enum ButtonType {
-  HIGHLIGHT,
-  BASE,
-  YELLOW,
-  BIG,
-}
-
-export enum LabelType {
-  PURPLE,
-  BASE,
-}
-
-export enum MenuType {
-  BOLD,
-  BASE,
-  COLUMN,
-}
-
-export enum PositionSVG {
-  LEFT = 'LEFT',
-  RIGHT = 'RIGHT',
-}
 
 export const HOME = 'Главная';
 
@@ -39,24 +23,22 @@ export const ROUTING = {
   news: 'news',
   rates: 'rates',
   ads: 'ads',
-  contacts: 'contacts',
+  contacts: 'contactus',
+  catalog: 'catalog',
+  location: 'location',
   apartmentsDay: 'apartments',
   cottages: 'cottages',
   baths: 'baths',
   carRental: 'carRental',
   favorites: 'favorites',
-  login: 'login',
+  auth: 'auth',
+  reg: 'reg',
+  confirm: 'confirm',
+  pass: 'pass',
+  addAds: 'add-ads',
 };
 
-export const enum SocialsType {
-  VK = 'VK',
-  FACEBOOK = 'Facebook_V2',
-  VIBER = 'Viber',
-  TELEGRAM = 'Telegram',
-  WHATSAPP = 'WhatsApp',
-}
-
-export const enum COLORS {
-  PURPLE = '#664EF9',
-  PURPLE_BACKGROUND = 'rgba(102, 78, 249, 0.1)',
-}
+export const LIMIT_PAGE_NEWS = 10;
+export const HOME_RENT_LOCATION_ID = 1;
+export const HOME_NEWS_LIMIT = 5;
+export const NEWS_DETAIL_COUNT_NEWS_LIMIT = 3;

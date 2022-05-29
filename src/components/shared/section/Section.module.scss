@@ -1,0 +1,36 @@
+@import 'src/styles/variables/variables';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  @extend %background;
+  top: 0;
+  right: -80px;
+  width: 800px;
+  height: 100%;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.box {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  @extend %h2;
+}

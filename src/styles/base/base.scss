@@ -1,5 +1,5 @@
 @import-normalize;
-@import '../variables/variables';
+@import 'src/styles/variables/variables';
 
 *,
 *::after,
@@ -7,7 +7,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -22,7 +23,7 @@ textarea {
   font-family: 'Inter', sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: $dark-gray;
+  color: $gray-100;
 }
 
 body,
@@ -79,24 +80,16 @@ main {
   min-height: 100%;
 }
 
-.wrapper-full, .wrapper, .wrapper-narrow {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 80px;
-}
-
-.wrapper-full {
-  max-width: 1920px;
-}
-
-.wrapper {
-  max-width: 1440px;
-}
-
-.wrapper-narrow {
-  max-width: 1004px;
-}
-
 .text {
   @extend %base-text;
+}
+
+/*Swiper*/
+.swiper-pagination-bullet {
+  background: #c5c5c5 !important;
+  opacity: 0.5;
+
+  &.swiper-pagination-bullet-active {
+    background: white !important;
+  }
 }

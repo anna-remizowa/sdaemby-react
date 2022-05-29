@@ -1,13 +1,20 @@
 import React from 'react';
-
-import { BaseLayout } from './layouts/BaseLayout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { NewsContent } from './components/pages/news/NewsContent';
-import { NotFound } from './components/pages/404/NotFound';
-import { Home } from './components/pages/home/Home';
-import { NewsDetail } from './components/pages/news-detail/NewsDetail';
+import { Provider } from 'react-redux';
 
+import { store } from './store';
 import { DEVELOPMENT_MODE, ROUTING } from './app.constants';
+import { BaseLayout } from './layouts/BaseLayout';
+import { NewsPage } from './pages/news/NewsPage';
+import { NotFound } from './pages/404/NotFound';
+import { Home } from './pages/home/Home';
+import { NewsDetail } from './pages/news-detail/NewsDetail';
+import { Contacts } from './pages/contacts/Contacts';
+import { LocationDetail } from './pages/location-detail/LocationDetail';
+import { Catalog } from './pages/catalog/Catalog';
+import { Authorization } from './pages/auth/Authorization';
+import { Registration } from './pages/auth/Registration';
+import { ConfirmRegistration } from './pages/auth/ConfirmRegistration';
 
 if (process.env.NODE_ENV === DEVELOPMENT_MODE) {
   require('mock/MockAdapter');
@@ -15,16 +22,30 @@ if (process.env.NODE_ENV === DEVELOPMENT_MODE) {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={ROUTING.home} element={<BaseLayout />}>
-          <Route index element={<Home />} />
-          <Route path={ROUTING.news} element={<NewsContent />} />
-          <Route path={`${ROUTING.news}/:newsId`} element={<NewsDetail />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path={ROUTING.home} element={<BaseLayout />}>
+            <Route index element={<Home />} />
+            <Route path={ROUTING.news} element={<NewsPage />} />
+            <Route path={`${ROUTING.news}/:newsId`} element={<NewsDetail />} />
+            <Route path={ROUTING.contacts} element={<Contacts />} />
+            <Route
+              path={`${ROUTING.catalog}/:catalogId`}
+              element={<Catalog />}
+            />
+            <Route
+              path={`${ROUTING.location}/:locationId`}
+              element={<LocationDetail />}
+            />
+            <Route path={ROUTING.auth} element={<Authorization />} />
+            <Route path={ROUTING.reg} element={<Registration />} />
+            <Route path={ROUTING.confirm} element={<ConfirmRegistration />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

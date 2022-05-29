@@ -3,11 +3,14 @@ import clsx from 'clsx';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import { Container } from 'layouts/container/Container';
+import { ContainerType } from 'model/enum/ContainerType';
 import { HeaderMenu } from './menu/HeaderMenu';
 import { Button } from 'components/shared/button/Button';
-
-import { API_URL, ButtonType, REST_API, ROUTING } from 'app.constants';
-import { IHeader } from '../../model/IHeader';
+import { API_URL, REST_API, ROUTING } from 'app.constants';
+import { IHeader } from 'model/interfaces/IHeader';
+import { ButtonStyleType } from 'model/enum/ButtonStyleType';
+import { CONSTANTS } from 'constants/common.constants';
 
 import styles from './Header.module.scss';
 
@@ -22,29 +25,29 @@ export const Header: FC = () => {
 
   return (
     <header>
-      <div className={clsx('wrapper-full', styles.top)}>
+      <Container type={ContainerType.FULL} className={styles.top}>
         <HeaderMenu items={appHeader.top ? appHeader.top : []} />
         <div className={styles.login}>
           <Link
             to={`/${ROUTING.favorites}`}
             className={clsx('text', styles.textBookmarks)}
           >
-            Закладки
+            {CONSTANTS.favorites}
           </Link>
           <Link
-            to={`/${ROUTING.login}`}
+            to={`/${ROUTING.auth}`}
             className={clsx('text', styles.textLogin)}
           >
-            Вход и регистрация
+            {CONSTANTS.signIn}
           </Link>
         </div>
-      </div>
-      <div className={clsx('wrapper-full', styles.bottom)}>
+      </Container>
+      <Container type={ContainerType.FULL} className={styles.bottom}>
         <Link to={`/${ROUTING.home}`}>
           <img
             className={'logo'}
             src={require('../../assets/images/logo.png')}
-            alt={'Логотип'}
+            alt={CONSTANTS.logo}
           />
         </Link>
 
@@ -52,8 +55,12 @@ export const Header: FC = () => {
           items={appHeader.bottom ? appHeader.bottom : []}
           headerTypeBold
         />
-        <Button types={[ButtonType.HIGHLIGHT]}>+ Разместить объявление</Button>
-      </div>
+        <Link to={`/${ROUTING.addAds}`}>
+          <Button types={[ButtonStyleType.HIGHLIGHT]}>
+            {CONSTANTS.addAds}
+          </Button>
+        </Link>
+      </Container>
     </header>
   );
 };

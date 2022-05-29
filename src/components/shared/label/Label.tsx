@@ -1,25 +1,15 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { LabelType } from '../../../app.constants';
+import { LabelStyleType } from 'model/enum/LabelStyleType';
 
 import styles from './Label.module.scss';
 
 interface LabelProps {
-  title: string;
-  type: LabelType;
+  type: LabelStyleType;
+  children: React.ReactNode;
 }
 
-export const Label: FC<LabelProps> = ({ title, type }) => {
-  return (
-    <p
-      className={clsx(
-        styles.label,
-        { [styles.base]: LabelType.BASE },
-        { [styles.purple]: type === LabelType.PURPLE }
-      )}
-    >
-      {title}
-    </p>
-  );
+export const Label: FC<LabelProps> = ({ type, children }) => {
+  return <p className={clsx(styles.label, styles[type])}>{children}</p>;
 };

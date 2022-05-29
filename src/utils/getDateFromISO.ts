@@ -1,9 +1,9 @@
-export function getDateFromISO(dateISO: string): string {
+export function getDateFromISO(dateISO: string, withoutYear?: boolean): string {
   try {
     const dateConvert = new Date(dateISO);
-    return `${dateConvert.getDate()} ${
-      MONTHS[dateConvert.getMonth() + 1]
-    } ${dateConvert.getFullYear()}`;
+    return `${dateConvert.getDate()} ${MONTHS[dateConvert.getMonth() + 1]} ${
+      withoutYear ? '' : dateConvert.getFullYear()
+    }`;
   } catch (e) {
     console.log(e);
   }
